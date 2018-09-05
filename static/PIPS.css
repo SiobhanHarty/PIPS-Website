@@ -1,0 +1,439 @@
+.current{
+}
+
+#someDiv {
+  width:550px;
+  height:80px;
+  margin:0 auto;
+  margin-top:50px;
+  overflow:hidden;
+  background-color:green;
+  padding:10px;
+}
+
+/*formally //#a5dbff*/
+.active {
+background-color: #e5f3ff
+}
+
+
+#someDiv > p {
+  display:none;
+  text-align:center;
+}
+
+#busy_indicator {
+  display: none;
+  float: right;
+  background: rgb(255,241,168);
+  margin-top: 5px;
+  z-index: 1000;
+  width: 200;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1em;
+}
+span {
+  font-size:small;
+  vertical-align:sub;
+  margin-left:8px;
+}
+
+
+
+
+body {
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    align-items: center;
+    color: #000059;
+    background: #e0eeff;
+}
+
+
+body {
+	/* background: #999; */
+	background: #e0eeff;
+	color: #000059;
+	text-align: center;
+  align-items: center;
+	font-family: Verdana, Helvetica, sans-serif, Arial,;
+	margin: 0 auto;
+	width: 800px;
+}
+
+
+/*body {
+background-color:#c9e5ff;
+background-image: linear-gradient(white 0px, transparent 0px),
+linear-gradient(90deg, white 0px, transparent 0px),
+linear-gradient(#91c6f7 2px, transparent 2px),
+linear-gradient(90deg, #91c6f7 2px, transparent 2px);
+background-size:100px 100px, 100px 100px, 20px 20px, 20px 20px;
+background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px
+}*/
+
+a {
+	color: #030030;
+}
+
+.warm {
+	color: #000066 /* #DDAA90;*/
+}
+
+.cool {
+	color: #ccccff;
+}
+
+strong {
+	font-weight: bold;
+	color: #000066; // slightly lighter version #010184
+}
+
+/* Instruction styles */
+#main {
+	margin: 0 auto;
+	width: 800px;
+	font-size: 100%;
+}
+
+.miscQ {
+  text-align: left;
+}
+
+.continueInstructions {
+  text-align: left;
+}
+.smokingquestions {
+  text-align: left;
+}
+
+.continue  {
+	width: auto;
+	margin-bottom: 20px;
+}
+
+.retake  { /*Deep Sea*/
+	width: auto;
+	margin-bottom: 20px;
+  position: relative;
+  left: 800;
+ }
+
+.instruct p {
+	text-align: justify;
+}
+
+.instruct h2 {
+	text-align: center;
+}
+
+.instruct .continue {
+	margin: 20px 20px;
+	width: 10em;
+	height: 2.5em;
+	font-size: 13pt;
+	float: right;
+}
+
+.instruct .legal {
+	font-size: 13px;
+}
+
+.instruct .header {
+	text-align: justify;
+	font-style: italic;
+}
+
+.instruct .instructions {
+	text-align: center;
+	font-style: italic;
+	font-size: 100%;
+	margin: 0 auto;
+	margin-top: 30px;
+	width: 500px;
+}
+
+#featuretable {
+	margin: 0 auto;
+}
+
+.instruct table .cell {
+	width: 240px;
+}
+/*
+.writeIn40 {
+text-align: left;
+height:20px;
+width:40px;
+font-size:100%;
+}*/
+
+.instruct table img {
+	display: inline-block;
+}
+.instruct table h3 {
+	margin: 0;
+	margin-top: 6px;
+}
+.instruct table h4 {
+	margin: 0;
+	margin-top: 6px;
+}
+
+.instruct .subbox {
+	text-align: justify;
+	width: 500px;
+	margin: 20px auto;
+}
+.instruct .subbox p {
+	padding: 15px 20px;
+	border: 1px solid white;
+}
+
+.instruct table {
+	margin: 0 0 10px;
+}
+
+/* //#002444 greyish navy */
+.instruct .outerbox {
+	border: 1px dashed #A54;
+	border: 1px solid black;
+	border: 2px solid #ddd;
+}
+
+.instruct .innerbox {
+	width: 350px;
+}
+.instruct .innerbox img {
+	margin: 0 10px;
+}
+
+.instruct hr {
+	border: .5px solid gray;
+}
+
+#testexample {
+	overflow: hidden;
+	margin: 10px;
+	text-align: center;
+}
+
+#prompt  {
+	text-align: center;
+}
+#inputs  {
+	text-align: center;
+}
+
+/* Questionnaire style */
+
+.questionnaire p, li {
+    font-size: 150%;
+}
+
+
+/* Experiment styles */
+#holder {
+	/* border: 2px solid white; */
+}
+
+#cardcanvas {
+	margin: 20px auto;
+}
+
+#testcanvas {
+	margin: 20px auto;
+}
+
+#timercanvas {
+	margin: 0 auto;
+}
+
+#instructions {
+	text-align: center;
+	width: 550px;
+	margin: 0 auto;
+}
+
+
+#stim {
+	margin: 20px auto;
+  cursor: none;
+}
+
+/*input {
+    width: 100px;
+    height: 50px;
+    font-size: 22pt;
+}*/
+
+input[type="radio"] {
+	height: 3em;
+	width: 3em;
+  vertical-align: middle;
+}
+
+input[type="checkbox"] {
+	height: 2em;
+	width: 2em;
+  vertical-align: middle;
+}
+
+input[type="number"] {
+}
+
+
+.slider ul { margin-left: 0; padding-left: 0; }
+.slider li { float: left; margin-left: 0; padding-left: 0; list-style-type: none; width: 20&#37;; }
+.slider li { color: #ccc; }
+.slider li.selected { color: black; }
+
+
+.questionnaire #warning {
+    color: red;
+    font-weight: bold;
+}
+
+.questionnaire {
+    font-size: 70%;
+    text-align: left;
+}
+.questionnaire h1 {
+    text-align: center;
+}
+.questionnaire table {
+    margin: 0 auto;
+
+	/* Border stuff: */
+	table-layout: fixed;
+	border-collapse: separate;
+	border-spacing: 0.25em;
+	border: none;
+}
+.questionnaire tr {
+    display: block;
+    border-bottom: 2px dashed white;
+}
+.questionnaire tr:last-child { border: 0; }
+
+.questionnaire td {
+    padding-right: 0.25em;
+	vertical-align: middle;
+	border-width: 0 1px;
+	border: none;
+    margin: 20px;
+    padding-bottom: 10px;
+}
+.questionnaire td:first-child, td + td {border-left: 0; }
+.questionnaire td:last-child { padding-right: 0; border-right: 0; }
+
+.answer {
+    text-align: left;
+	padding-left: 3em;
+}
+
+.questionnaire .question {
+    position: relative;
+    margin: 20px;
+}
+.questionnaire .questiontext {
+	vertical-align: top;
+    width: 280px;
+    color: #bbbbff;
+    margin: 20px;
+    font-size: 1.2em;
+}
+.questiontext em {
+	font-size: 70%;
+}
+.questionnaire textarea {
+    width: 320px;
+    height: 130px;
+}
+.questionnaire form {
+    text-align: right;
+}
+.questionnaire hr {
+    border-bottom: 1px solid #bbbbff;
+}
+
+.questionnaire ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+
+.questiontext {
+	text-align: left;
+	color: #000066;
+}
+
+#debriefing {
+	width: 640px;
+}
+
+#debriefingtext {
+	margin: 0 auto;
+	padding: 10px 20px;
+	font-size: 80%;
+	text-align: justify;
+	border: 1px solid white;
+}
+#affirmationbox {
+	position: relative
+	margin:  0 auto;
+	border: 1px dotted white;
+	padding: 10px 20px;
+	vertical-align: middle;
+}
+#affirmationbox p {
+	text-align: left;
+	font-style: italic;
+	margin-bottom: 0;
+}
+#affirmationbox  table {
+	border-spacing: 20px;
+}
+#affirmationbox  td {
+	vertical-align: middle;
+	font-size: 100%;
+	color: black;
+	height: 50px;
+	cursor: pointer;
+}
+#affirmative {
+	background: white;
+	overflow: hidden;
+	font-weight: bold;
+	width: 10em;
+}
+#negative {
+	background: white;
+	font-size: 100%;
+	width: 25em;
+}
+
+
+
+/* Misc stuff for checkboxes  */
+/* WSAS */
+.chk-box{
+vertical-align: top;
+float: right;
+text-align: left;
+margin-right:1px;
+}
+/* WSAS */
+
+
+/*Screening section*/
+.hidden { display: none; }
+.unhidden { display: block; }
+a {
+	text-decoration: none;
+}
+.hide{
+  display:none;
+}

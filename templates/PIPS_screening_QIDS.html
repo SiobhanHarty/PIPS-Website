@@ -1,0 +1,330 @@
+<head>
+<style type="text/css">
+ /*p {margin-bottom: 0em;  margin-top: 0em;}
+ i {font-size: 14px}*/
+
+ /*.alt-radio input[type=radio] {
+   position: absolute;
+ }
+
+   .alt-radio .radio-label {
+     display: inline-block;
+     position: relative;
+     margin-left: 2em;
+     top: 0.5em;
+     vertical-align: middle;
+   }*/
+   .SheetHead {
+     border: 4px solid #08083f;
+     border-radius: 7px;
+   }
+
+
+</style>
+
+<script>
+// var ProgressBar = function(){
+// if(q == -1){Progress.style.width = '0%'}
+// if(q == 0){Progress.style.width = '0%'}
+// if(q == 1){Progress.style.width = '11.2%'}
+// if(q == 2){Progress.style.width = '22.3%'}
+// if(q == 3){Progress.style.width = '33.4%'}
+// if(q == 4){Progress.style.width = '44.5%'}
+// if(q == 5){Progress.style.width = '55.6%'}
+// if(q == 6){Progress.style.width = '66.7%'}
+// if(q == 7){Progress.style.width = '77.8%'}
+// if(q == 8){Progress.style.width = '88.9%'}
+//
+//
+// return Progress.style.width
+// }
+// var Progress = document.querySelector('#progressbar');
+//
+// Progress.style.width = ProgressBar()
+
+$(":radio").click(function() {
+                  $(this).closest("tr").addClass("active").
+                  siblings("div.active").removeClass("active");
+                  });
+
+   var Check = function(){
+       // this max number should be 1 greater than number of items on scale
+
+
+       for (var i = 1; i < 17; i++) {
+
+           QIDS = document.getElementsByName("QIDS_" + i)
+
+           if(QIDS[0].checked || QIDS[1].checked || QIDS[2].checked ||QIDS[3].checked){
+               $('input#continue').css('visibility','visible')
+           }
+           else{
+               $('input#continue').css('visibility','hidden')
+               return false
+           }
+
+
+       }
+
+
+   }
+
+</script>
+
+</head>
+
+<body>
+  <!-- <center><h2>Progress within this questionnaire section</h2></center>
+  <div style="background-color: #e0eeff; width: 95%; margin:0 auto; height: 25px; border: 3px solid #000040; padding: 0px;">
+   <div id = "progressbar" style="background-color: #000040; height: 25px;overflow:hidden">&nbsp;</div>
+  </div> -->
+
+
+<div class= "instruct" id="main" style= "text-align: left;">
+  <br>&nbsp;<br>
+  <div class = "SheetHead" style = "margin-left: 5em; margin-right: 5em; padding: 5px 2px; background-color:#e0eeff;" >
+  <div style = "margin-left: 2em; margin-right: 2em; padding: 5px 2px;" >
+  <h1><center>Precision in Psychiatry Study<center></h1>
+  </div>
+  </div>
+<div class= "alt-radio">
+<br>&nbsp;<br>
+    <p>Please select the response to each item that best describes you in relation to <strong> the past seven days.</strong>
+<br>&nbsp;<br>
+
+  <form id="postquiz" action="done" method="post">
+
+<div style= "background-color:#e0eeff; margin-right: 0.75em; padding: 5px 2px;" >
+<tr class="question">
+  <td class="questiontext">
+  <b>1. Falling Asleep:</b><br>
+  </td>
+  <td class="answer">
+<input type="radio" value="0" name="QIDS_1" id="QIDS_1_0" onchange='Check()'/><label class= "radio-label" for="QIDS_1_0"><i> I never take longer than 30 min to fall asleep</i></label><br>
+<input type="radio" value="1" name="QIDS_1" id="QIDS_1_1" onchange='Check()'/><label class= "radio-label" for="QIDS_1_1"><i> I take at least 30 min to fall asleep, less than half the time</i></label><br>
+<input type="radio" value="2" name="QIDS_1" id="QIDS_1_2" onchange='Check()'/><label class= "radio-label" for="QIDS_1_2"><i> I take at least 30 min to fall asleep, more than half the time</i></label><br>
+<input type="radio" value="3" name="QIDS_1" id="QIDS_1_3" onchange='Check()'/><label class= "radio-label" for="QIDS_1_3"><i> I take at least 60 min to fall asleep, more than half the time</i></label><br>
+</td>
+</tr>
+</div>
+<br>&nbsp;<br>
+<div style= "background-color:#e0eeff; margin-right: 0.75em; padding: 5px 2px;" >
+<tr class="question">
+  <td class="questiontext">
+<b>2. Sleep During the Night:</b><br>
+</td>
+<td class="answer">
+<input type="radio" value="0" name="QIDS_2" id="QIDS_2_0" onchange='Check()'/><label class= "radio-label" for="QIDS_2_0"><i> I do not wake up at night</i></label><br>
+<input type="radio" value="1" name="QIDS_2" id="QIDS_2_1" onchange='Check()'/><label class= "radio-label" for="QIDS_2_1"><i> I have a restless, light sleep with a few brief awakenings each night</i></label><br>
+<input type="radio" value="2" name="QIDS_2" id="QIDS_2_2" onchange='Check()'/><label class= "radio-label" for="QIDS_2_2"><i> I wake up at least once a night, but I go back to sleep easily</i></label><br>
+<input type="radio" value="3" name="QIDS_2" id="QIDS_2_3" onchange='Check()'/><label class= "radio-label" for="QIDS_2_3"><i> I awaken more than once a night and stay awake for 20 min or more, more than half the time</i></label><br>
+</td>
+</tr>
+</div>
+<br>&nbsp;<br>
+<div style= "background-color:#e0eeff; margin-right: 0.75em; padding: 5px 2px;" >
+<tr class="question">
+  <td class="questiontext">
+<b>3. Waking Up Too Early:</b><br>
+</td>
+<td class="answer">
+<input type="radio" value="0" name="QIDS_3" id="QIDS_3_0" onchange='Check()'/><label class= "radio-label" for="QIDS_3_0"><i> Most of the time, I awaken no more than 30 min before I need to get up</i></label><br>
+<input type="radio" value="1" name="QIDS_3" id="QIDS_3_1" onchange='Check()'/><label class= "radio-label" for="QIDS_3_1"><i> More than half the time, I awaken more than 30 min before I need to get up</i></label><br>
+<input type="radio" value="2" name="QIDS_3" id="QIDS_3_2" onchange='Check()'/><label class= "radio-label" for="QIDS_3_2"><i> I almost always awaken at least 1 hr or so before I need to, but I go back to sleep eventually</i></label><br>
+<input type="radio" value="3" name="QIDS_3" id="QIDS_3_3" onchange='Check()'/><label class= "radio-label" for="QIDS_3_3"><i> I awaken at least 1 hr before I need to, and cannot go back to sleep</i></label><br>
+</td>
+</tr>
+</div>
+<br>&nbsp;<br>
+<div style= "background-color:#e0eeff; margin-right: 0.75em; padding: 5px 2px;" >
+<tr class="question">
+  <td class="questiontext">
+<b>4. Sleeping Too Much:</b><br>
+</td>
+<td class="answer">
+<input type="radio" value="0" name="QIDS_4" id="QIDS_4_0" onchange='Check()'/><label class= "radio-label" for="QIDS_4_0"><i> I sleep no longer than 7-8 hrs/night, without napping during the day</i></label><br>
+<input type="radio" value="1" name="QIDS_4" id="QIDS_4_1" onchange='Check()'/><label class= "radio-label" for="QIDS_4_1"><i> I sleep no longer than 10 hrs in a 24-hr period including naps</i></label><br>
+<input type="radio" value="2" name="QIDS_4" id="QIDS_4_2" onchange='Check()'/><label class= "radio-label" for="QIDS_4_2"><i> I sleep no longer than 12 hrs in a 24-hr period including naps</i></label><br>
+<input type="radio" value="3" name="QIDS_4" id="QIDS_4_3" onchange='Check()'/><label class= "radio-label" for="QIDS_4_3"><i> I sleep longer than 12 hrs in a 24-hr period including naps</i></label><br>
+</td>
+</tr>
+</div>
+<br>&nbsp;<br>
+<div style= "background-color:#e0eeff; margin-right: 0.75em; padding: 5px 2px;" >
+<tr class="question">
+  <td class="questiontext">
+<b>5. Feeling Sad:</b><br>
+</td>
+<td class="answer">
+<input type="radio" value="0" name="QIDS_5" id="QIDS_5_0" onchange='Check()'/><label class= "radio-label" for="QIDS_5_0"><i> I do not feel sad</i></label><br>
+<input type="radio" value="1" name="QIDS_5" id="QIDS_5_1" onchange='Check()'/><label class= "radio-label" for="QIDS_5_1"><i> I feel sad less than half the time</i></label><br>
+<input type="radio" value="2" name="QIDS_5" id="QIDS_5_2" onchange='Check()'/><label class= "radio-label" for="QIDS_5_2"><i> I feel sad more than half the time</i></label><br>
+<input type="radio" value="3" name="QIDS_5" id="QIDS_5_3" onchange='Check()'/><label class= "radio-label" for="QIDS_5_3"><i> I feel sad nearly all the time</i></label><br>
+</td>
+</tr>
+</div>
+<br>&nbsp;<br>
+<div style= "background-color:#e0eeff; margin-right: 0.75em; padding: 5px 2px;" >
+<tr class="question">
+  <td class="questiontext">
+<b>6. Decreased Appetite:</b><br>
+</td>
+<td class="answer">
+<input type="radio" value="0" name="QIDS_6" id="QIDS_6_0" onchange='Check()'/><label class= "radio-label" for="QIDS_6_0"><i> My usual appetite <u>has not decreased</u></i></label><br>
+<input type="radio" value="1" name="QIDS_6" id="QIDS_6_1" onchange='Check()'/><label class= "radio-label" for="QIDS_6_1"><i> I eat somewhat less often or lesser amounts of food than usual</i></label><br>
+<input type="radio" value="2" name="QIDS_6" id="QIDS_6_2" onchange='Check()'/><label class= "radio-label" for="QIDS_6_2"><i> I eat much less than usual and only with personal effort</i></label><br>
+<input type="radio" value="3" name="QIDS_6" id="QIDS_6_3" onchange='Check()'/><label class= "radio-label" for="QIDS_6_3"><i> I rarely eat within a 24-hr period, and only with extreme personal effort or when others persuade me to eat</i></label><br>
+</td>
+</tr>
+</div>
+<br>&nbsp;<br>
+<div style= "background-color:#e0eeff; margin-right: 0.75em; padding: 5px 2px;" >
+<tr class="question">
+  <td class="questiontext">
+<b>7. Increased Appetite:</b><br>
+</td>
+<td class="answer">
+<input type="radio" value="0" name="QIDS_7" id="QIDS_7_0" onchange='Check()'/><label class= "radio-label" for="QIDS_7_0"><i> My usual appetite <u>has not increased</u></i></label><br>
+<input type="radio" value="1" name="QIDS_7" id="QIDS_7_1" onchange='Check()'/><label class= "radio-label" for="QIDS_7_1"><i> I feel a need to eat more frequently than usual</i></label><br>
+<input type="radio" value="2" name="QIDS_7" id="QIDS_7_2" onchange='Check()'/><label class= "radio-label" for="QIDS_7_2"><i> I regularly eat more often and/or greater amounts of food than usual</i></label><br>
+<input type="radio" value="3" name="QIDS_7" id="QIDS_7_3" onchange='Check()'/><label class= "radio-label" for="QIDS_7_3"><i> I feel driven to overeat both at mealtime and between meals</i></label><br>
+</td>
+</tr>
+</div>
+<br>&nbsp;<br>
+<div style= "background-color:#e0eeff; margin-right: 0.75em; padding: 5px 2px;" >
+<tr class="question">
+  <td class="questiontext">
+<b>8. Decreased Weight (Within the Last Two Weeks):</b><br>
+</td>
+<td class="answer">
+<input type="radio" value="0" name="QIDS_8" id="QIDS_8_0" onchange='Check()'/><label class= "radio-label" for="QIDS_8_0"><i> My weight <u>has not decreased</u></i></label><br>
+<input type="radio" value="1" name="QIDS_8" id="QIDS_8_1" onchange='Check()'/><label class= "radio-label" for="QIDS_8_1"><i> I feel as if I&#8217;ve had a slight weight loss</i></label><br>
+<input type="radio" value="2" name="QIDS_8" id="QIDS_8_2" onchange='Check()'/><label class= "radio-label" for="QIDS_8_2"><i> I have lost 2 pounds or more</i></label><br>
+<input type="radio" value="3" name="QIDS_8" id="QIDS_8_3" onchange='Check()'/><label class= "radio-label" for="QIDS_8_3"><i> I have lost 5 pounds or more</i></label><br>
+</td>
+</tr>
+</div>
+<br>&nbsp;<br>
+<div style= "background-color:#e0eeff; margin-right: 0.75em; padding: 5px 2px;" >
+<tr class="question">
+  <td class="questiontext">
+<b>9. Increased Weight (Within the Last Two Weeks):</b><br>
+</td>
+<td class="answer">
+<input type="radio" value="0" name="QIDS_9" id="QIDS_9_0" onchange='Check()'/><label class= "radio-label" for="QIDS_9_0"><i> My weight <u>has not increased</u></i></label><br>
+<input type="radio" value="1" name="QIDS_9" id="QIDS_9_1" onchange='Check()'/><label class= "radio-label" for="QIDS_9_1"><i> I feel as if I&#8217;ve had a slight weight gain</i></label><br>
+<input type="radio" value="2" name="QIDS_9" id="QIDS_9_2" onchange='Check()'/><label class= "radio-label" for="QIDS_9_2"><i> I have gained 2 pounds or more</i></label><br>
+<input type="radio" value="3" name="QIDS_9" id="QIDS_9_3" onchange='Check()'/><label class= "radio-label" for="QIDS_9_3"><i> I have gained 5 pounds or more</i></label><br>
+</td>
+</tr>
+</div>
+<br>&nbsp;<br>
+<div style= "background-color:#e0eeff; margin-right: 0.75em; padding: 5px 2px;" >
+<tr class="question">
+  <td class="questiontext">
+<b>10. Concentration/Decision Making:</b><br>
+</td>
+<td class="answer">
+<input type="radio" value="0" name="QIDS_10" id="QIDS_10_0" onchange='Check()'/><label class= "radio-label" for="QIDS_10_0"><i> There is no change in my usual capacity to concentrate or make decisions</i></label><br>
+<input type="radio" value="1" name="QIDS_10" id="QIDS_10_1" onchange='Check()'/><label class= "radio-label" for="QIDS_10_1"><i> I occasionally feel indecisive or find that my attention wanders</i></label><br>
+<input type="radio" value="2" name="QIDS_10" id="QIDS_10_2" onchange='Check()'/><label class= "radio-label" for="QIDS_10_2"><i> Most of the time, I struggle to focus my attention or to make decisions</i></label><br>
+<input type="radio" value="3" name="QIDS_10" id="QIDS_10_3" onchange='Check()'/><label class= "radio-label" for="QIDS_10_3"><i> I cannot concentrate well enough to read or cannot make even minor decisions</i></label><br>
+</td>
+</tr>
+</div>
+<br>&nbsp;<br>
+<div style= "background-color:#e0eeff; margin-right: 0.75em; padding: 5px 2px;" >
+<tr class="question">
+  <td class="questiontext">
+<b>11. View of Myself:</b><br>
+</td>
+<td class="answer">
+<input type="radio" value="0" name="QIDS_11" id="QIDS_11_0" onchange='Check()'/><label class= "radio-label" for="QIDS_11_0"><i> I see myself as equally worthwhile and deserving as other people</i></label><br>
+<input type="radio" value="1" name="QIDS_11" id="QIDS_11_1" onchange='Check()'/><label class= "radio-label" for="QIDS_11_1"><i> I am more self-blaming than usual</i></label><br>
+<input type="radio" value="2" name="QIDS_11" id="QIDS_11_2" onchange='Check()'/><label class= "radio-label" for="QIDS_11_2"><i> I largely believe that I cause problems for others</i></label><br>
+<input type="radio" value="3" name="QIDS_11" id="QIDS_11_3" onchange='Check()'/><label class= "radio-label" for="QIDS_11_3"><i> I think almost constantly about major and minor defects in myself</i></label><br>
+</td>
+</tr>
+</div>
+<br>&nbsp;<br>
+<div style= "background-color:#e0eeff; margin-right: 0.75em; padding: 5px 2px;" >
+<tr class="question">
+  <td class="questiontext">
+<b>12. Thoughts of Death or Suicide:</b><br>
+</td>
+<td class="answer">
+<input type="radio" value="0" name="QIDS_12" id="QIDS_12_0" onchange='Check()'/><label class= "radio-label" for="QIDS_12_0"><i> I do not think of suicide or death</i></label><br>
+<input type="radio" value="1" name="QIDS_12" id="QIDS_12_1" onchange='Check()'/><label class= "radio-label" for="QIDS_12_1"><i> I feel that life is empty or wonder if it&#8217;s worth living</i></label><br>
+<input type="radio" value="2" name="QIDS_12" id="QIDS_12_2" onchange='Check()'/><label class= "radio-label" for="QIDS_12_2"><i> I think of suicide or death several times a week for several min</i></label><br>
+<input type="radio" value="3" name="QIDS_12" id="QIDS_12_3" onchange='Check()'/><label class= "radio-label" for="QIDS_12_3"><i> I think or suicide or death several times a day in some detail, or have actually tried to take my life</i></label><br>
+</td>
+</tr>
+</div>
+<br>&nbsp;<br>
+<div style= "background-color:#e0eeff; margin-right: 0.75em; padding: 5px 2px;" >
+<tr class="question">
+  <td class="questiontext">
+<b>13. General Interest:</b><br>
+</td>
+<td class="answer">
+<input type="radio" value="0" name="QIDS_13" id="QIDS_13_0" onchange='Check()'/><label class= "radio-label" for="QIDS_13_0"><i> There is no change from usual in how interested I am in other people or activities</i></label><br>
+<input type="radio" value="1" name="QIDS_13" id="QIDS_13_1" onchange='Check()'/><label class= "radio-label" for="QIDS_13_1"><i> I notice that I am less interested in people or activities</i></label><br>
+<input type="radio" value="2" name="QIDS_13" id="QIDS_13_2" onchange='Check()'/><label class= "radio-label" for="QIDS_13_2"><i> I find I have interest in only one or two of my formerly pursued activities</i></label><br>
+<input type="radio" value="3" name="QIDS_13" id="QIDS_13_3" onchange='Check()'/><label class= "radio-label" for="QIDS_13_3"><i> I have virtually no interest in formerly pursued activities</i></label><br>
+</td>
+</tr>
+</div>
+<br>&nbsp;<br>
+<div style= "background-color:#e0eeff; margin-right: 0.75em; padding: 5px 2px;" >
+<tr class="question">
+  <td class="questiontext">
+<b>14. Energy Level:</b><br>
+</td>
+<td class="answer">
+<input type="radio" value="0" name="QIDS_14" id="QIDS_14_0" onchange='Check()'/><label class= "radio-label" for="QIDS_14_0"><i> There is no change in my usual level of energy</i></label><br>
+<input type="radio" value="1" name="QIDS_14" id="QIDS_14_1" onchange='Check()'/><label class= "radio-label" for="QIDS_14_1"><i> I get tired more easily than usual</i></label><br>
+<input type="radio" value="2" name="QIDS_14" id="QIDS_14_2" onchange='Check()'/><label class= "radio-label" for="QIDS_14_2"><i> I have to make a big effort to start or finish my usual daily activities (e.g. shopping, cooking or going to work)</i></label><br>
+<input type="radio" value="3" name="QIDS_14" id="QIDS_14_3" onchange='Check()'/><label class= "radio-label" for="QIDS_14_3"><i> I really cannot carry out most of my usual daily activities because I just don&#8217;t have the energy</i></label><br>
+</td>
+</tr>
+</div>
+<br>&nbsp;<br>
+<div style= "background-color:#e0eeff; margin-right: 0.75em; padding: 5px 2px;" >
+<tr class="question">
+  <td class="questiontext">
+<b>15. Feeling slowed down:</b><br>
+</td>
+<td class="answer">
+<input type="radio" value="0" name="QIDS_15" id="QIDS_15_0" onchange='Check()'/><label class= "radio-label" for="QIDS_15_0"><i> I think, speak, and move at my usual rate of speed</i></label><br>
+<input type="radio" value="1" name="QIDS_15" id="QIDS_15_1" onchange='Check()'/><label class= "radio-label" for="QIDS_15_1"><i> I find that my thinking is slowed down or my voice sounds dull or flat</i></label><br>
+<input type="radio" value="2" name="QIDS_15" id="QIDS_15_2" onchange='Check()'/><label class= "radio-label" for="QIDS_15_2"><i> It takes me several seconds to respond to most questions and I&#8217;m sure my thinking is slowed</i></label><br>
+<input type="radio" value="3" name="QIDS_15" id="QIDS_15_3" onchange='Check()'/><label class= "radio-label" for="QIDS_15_3"><i> I am often unable to respond to questions without extreme effort</i></label><br>
+</td>
+</tr>
+</div>
+<br>&nbsp;<br>
+<div style= "background-color:#e0eeff; margin-right: 0.75em; padding: 5px 2px;" >
+<tr class="question">
+  <td class="questiontext">
+<b>16. Feeling Restless:</b><br>
+</td>
+  <td class="answer">
+<input type="radio" value="0" name="QIDS_16" id="QIDS_16_0" onchange='Check()'/><label class= "radio-label" for="QIDS_16_0"><i> I do not feel restless</i></label><br>
+<input type="radio" value="1" name="QIDS_16" id="QIDS_16_1" onchange='Check()'/><label class= "radio-label" for="QIDS_16_1"><i> I&#8217;m often fidgety, wringing my hands, or need to shift how I am sitting</i></label><br>
+<input type="radio" value="2" name="QIDS_16" id="QIDS_16_2" onchange='Check()'/><label class= "radio-label" for="QIDS_16_2"><i> I have impulses to move about and am quite restless</i></label><br>
+<input type="radio" value="3" name="QIDS_16" id="QIDS_16_3" onchange='Check()'/><label class= "radio-label" for="QIDS_16_3"><i> At times, I am unable to stay seated and need to pace around</i></label><br>
+</td>
+</td>
+</tr>
+</div>
+<br>&nbsp;<br>
+<input type="button" class="continue" id="continue" value="Continue" style="width: 6em; height: 2.5em; font-size: 13pt; float: right; margin-right: 2em; visibility: hidden;"></input>
+</form>
+
+</div>
+
+
+<p><strong>The CONTINUE button will appear here once you have answered all of the questions. Please double check your answers if you think you are finished but do not see the continue button. </strong></p>
+</div>
+</body>

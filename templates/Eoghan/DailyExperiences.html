@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale = 1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Daily Experiences Questionaire</title>
+</head>
+
+<body>
+
+
+
+  <!-- Fullscreen background image -->
+  <div id="" class="wrapper scrollspy">
+    <!-- <div class="tranparent-cover"></div> -->
+    <div class="row no-margin center-align">
+      <div class="col s12 m12 l12 center">
+        <h1>Precision in Psychiatry Study</h1></div>
+    </div>
+
+    <form id="postquiz" action="done" method="post">
+
+
+    <div class="row">
+
+      <div class="col s10 offset-s1 m10 offset-m1 l10 offset-l1 center-align">
+        <h5>The following statements refer to experiences that many people have in their everyday lives. For each question, select an answer that best describes how much that experience has distressed or bothered you during the past month.</h5>
+      </div>
+
+
+
+      <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+          <div class="spacer-5"></div>
+        <div class="carousel carousel-slider center z-depth-3">
+
+        <div class="carousel-item white blue-text" href="#one!">
+
+          <!-- I have saved up so many things that they get in the way -->
+            <br><br>
+          <div class="row left-align">
+
+            <div class="col s12 m12  l12 center-align"><h6>I have saved up so many things that they get in the way</h6></div>
+          </div>
+          <div class="spacer-2"></div>
+          <div class="row left-align">
+            <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+              <label>
+            <input type="radio" name="OCI_1" id="OCI_1" value="4"  onchange="Check()" required>
+            <span>Extremely</span>
+          </label>
+            </div>
+          </div>
+
+          <div class="row left-align">
+            <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+              <label>
+            <input type="radio" name="OCI_1" id="OCI_1" value="3"  onchange="Check()" required>
+            <span>A lot</span>
+          </label>
+            </div>
+          </div>
+
+          <div class="row left-align">
+            <div class="col s12 m2 offset-m2 l2 offset-l2 ">
+              <label>
+            <input type="radio" name="OCI_1" id="OCI_1" value="2"  onchange="Check()" required>
+            <span>Moderately</span>
+          </label>
+            </div>
+          </div>
+
+          <div class="row left-align">
+            <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+              <label>
+            <input type="radio" name="OCI_1" id="OCI_1" value="1"  onchange="Check()" required>
+            <span>A little</span>
+          </label>
+            </div>
+          </div>
+
+          <div class="row left-align">
+            <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+              <label>
+            <input type="radio" name="OCI_1" id="OCI_1" value="0"  onchange="Check()" required>
+            <span>Not at all</span>
+          </label>
+            </div>
+          </div>
+
+          <!-- Ends -->
+        </div>
+
+
+        <div class="carousel-item white blue-text" href="#two!">
+          <!-- I check things more often than necessary -->
+            <br><br>
+          <div class="row left-align">
+
+          <div class="col s12 m12 l12 center-align"><h6>I check things more often than necessary</h6></div>
+          </div>
+          <div class="spacer-2"></div>
+          <div class="row left-align">
+            <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+              <label>
+            <input name="group1" class="with-gap" type="radio" required />
+            <span>Extremely</span>
+          </label>
+            </div>
+          </div>
+
+          <div class="row left-align">
+            <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+              <label>
+            <input name="group1" class="with-gap" type="radio" required />
+            <span>A lot</span>
+          </label>
+            </div>
+          </div>
+
+          <div class="row left-align">
+            <div class="col s12 m2 offset-m2 l2 offset-l2 ">
+              <label>
+            <input name="group1" class="with-gap" type="radio" required />
+            <span>Moderately</span>
+          </label>
+            </div>
+          </div>
+
+          <div class="row left-align">
+            <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+              <label>
+            <input name="group1" class="with-gap" type="radio" required />
+            <span>A little</span>
+          </label>
+            </div>
+          </div>
+
+          <div class="row left-align">
+            <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+              <label>
+            <input name="group1" class="with-gap" type="radio" required />
+            <span>Not at all</span>
+          </label>
+            </div>
+          </div>
+
+          <!-- Ends -->
+        </div>
+
+        <!--I get upset if objects are not arranged properly -->
+        <div class="carousel-item white  blue-text" href="#three!">
+
+          <br><br>
+        <div class="row left-align">
+
+          <div class="col s12 m12  l12 center-align"><h6>I get upset if objects are not arranged properly</h6></div>
+        </div>
+        <div class="spacer-2"></div>
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Extremely</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>A lot</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m2 offset-m2 l2 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Moderately</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>A little</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Not at all</span>
+        </label>
+          </div>
+        </div>
+        </div>
+
+        <!-- Ends -->
+
+
+        <!--I find it difficult to touch an object when I know it has been touched by strangers or certain people -->
+
+        <div class="carousel-item white blue-text" href="#four!">
+
+          <br><br>
+        <div class="row left-align">
+
+        <div class="col s12 m12  l12 center-align"><h6>I find it difficult to touch an object when I know it has been touched by strangers or certain people</h6></div>
+        </div>
+        <div class="spacer-2"></div>
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Extremely</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>A lot</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m2 offset-m2 l2 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Moderately</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>A little</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Not at all</span>
+        </label>
+          </div>
+        </div>
+
+        </div>
+
+
+        <!-- Ends -->
+
+
+        <!-- I find it difficult to control my own thoughts -->
+
+        <div class="carousel-item white blue-text">
+
+          <br><br>
+        <div class="row left-align">
+
+        <div class="col s12 m12  l12 center-align"><h6>I find it difficult to control my own thoughts</h6></div>
+        </div>
+        <div class="spacer-2"></div>
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Extremely</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>A lot</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m2 offset-m2 l2 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Moderately</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>A little</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Not at all</span>
+        </label>
+          </div>
+        </div>
+
+        </div>
+
+
+        <!-- Ends -->
+
+
+        <!-- I find it difficult to control my own thoughts -->
+
+        <div class="carousel-item white blue-text">
+
+          <br><br>
+        <div class="row left-align">
+
+        <div class="col s12 m12  l12 center-align"><h6>I find it difficult to control my own thoughts</h6></div>
+        </div>
+        <div class="spacer-2"></div>
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Extremely</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>A lot</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m2 offset-m2 l2 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Moderately</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>A little</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Not at all</span>
+        </label>
+          </div>
+        </div>
+
+        </div>
+
+
+        <!-- Ends -->
+
+
+
+        <!-- I collect things I don't need -->
+
+        <div class="carousel-item white blue-text">
+
+          <br><br>
+        <div class="row left-align">
+
+        <div class="col s12 m12  l12 center-align"><h6>I collect things I don't need</h6></div>
+        </div>
+        <div class="spacer-2"></div>
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Extremely</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>A lot</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m2 offset-m2 l2 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Moderately</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>A little</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Not at all</span>
+        </label>
+          </div>
+        </div>
+
+        </div>
+
+
+        <!-- Ends -->
+
+
+        <!-- I repeatedly check doors, windows, drawers, etc -->
+
+        <div class="carousel-item white blue-text">
+
+          <br><br>
+        <div class="row left-align">
+
+        <div class="col s12 m12  l12 center-align"><h6>I repeatedly check doors, windows, drawers, etc</h6></div>
+        </div>
+        <div class="spacer-2"></div>
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Extremely</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>A lot</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m2 offset-m2 l2 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Moderately</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>A little</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Not at all</span>
+        </label>
+          </div>
+        </div>
+
+        </div>
+
+
+        <!-- Ends -->
+
+
+        <!-- I get upset if others change the way I have arranged things -->
+
+        <div class="carousel-item white blue-text">
+
+          <br><br>
+        <div class="row left-align">
+
+        <div class="col s12 m12  l12 center-align"><h6>I get upset if others change the way I have arranged things</h6></div>
+        </div>
+        <div class="spacer-2"></div>
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Extremely</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>A lot</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m2 offset-m2 l2 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Moderately</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>A little</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Not at all</span>
+        </label>
+          </div>
+        </div>
+
+        </div>
+
+
+        <!-- Ends -->
+
+
+        <!-- I feel I have to repeat certain numbers -->
+
+        <div class="carousel-item white blue-text">
+
+          <br><br>
+        <div class="row left-align">
+
+        <div class="col s12 m12  l12 center-align"><h6>I feel I have to repeat certain numbers</h6></div>
+        </div>
+        <div class="spacer-2"></div>
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Extremely</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>A lot</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m2 offset-m2 l2 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Moderately</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>A little</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Not at all</span>
+        </label>
+          </div>
+        </div>
+
+        </div>
+
+
+        <!-- Ends -->
+
+
+        <!-- I sometimes have to wash or clean myself simply because I feel contaminated -->
+
+        <div class="carousel-item white blue-text">
+
+          <br><br>
+        <div class="row left-align">
+
+        <div class="col s12 m12  l12 center-align"><h6>I sometimes have to wash or clean myself simply because I feel contaminated</h6></div>
+        </div>
+        <div class="spacer-2"></div>
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Extremely</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>A lot</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m2 offset-m2 l2 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Moderately</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>A little</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Not at all</span>
+        </label>
+          </div>
+        </div>
+
+        </div>
+
+
+        <!-- Ends -->
+
+
+
+        <!-- I am upset by unpleasant thoughts that come into my mind against my will -->
+
+        <div class="carousel-item white blue-text">
+
+          <br><br>
+        <div class="row left-align">
+
+        <div class="col s12 m12  l12 center-align"><h6>I am upset by unpleasant thoughts that come into my mind against my will</h6></div>
+        </div>
+        <div class="spacer-2"></div>
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Extremely</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>A lot</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m2 offset-m2 l2 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Moderately</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>A little</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Not at all</span>
+        </label>
+          </div>
+        </div>
+
+        </div>
+
+
+        <!-- Ends -->
+
+
+        <!-- I avoid throwing things away because I am afraid I might need them later -->
+
+        <div class="carousel-item white blue-text">
+
+          <br><br>
+        <div class="row left-align">
+
+        <div class="col s12 m12  l12 center-align"><h6>I avoid throwing things away because I am afraid I might need them later</h6></div>
+        </div>
+        <div class="spacer-2"></div>
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Extremely</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>A lot</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m2 offset-m2 l2 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Moderately</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>A little</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Not at all</span>
+        </label>
+          </div>
+        </div>
+
+        </div>
+
+
+        <!-- Ends -->
+
+
+
+        <!-- I repeatedly check gas and water taps and light switches after turning them off -->
+
+        <div class="carousel-item white blue-text">
+
+          <br><br>
+        <div class="row left-align">
+
+        <div class="col s12 m12  l12 center-align"><h6>I repeatedly check gas and water taps and light switches after turning them off</h6></div>
+        </div>
+        <div class="spacer-2"></div>
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Extremely</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>A lot</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m2 offset-m2 l2 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Moderately</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>A little</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Not at all</span>
+        </label>
+          </div>
+        </div>
+
+        </div>
+
+
+        <!-- Ends -->
+
+
+
+
+        <!--
+I need things to be arranged in a particular order -->
+
+        <div class="carousel-item white blue-text">
+
+          <br><br>
+        <div class="row left-align">
+
+        <div class="col s12 m12  l12 center-align"><h6>
+I need things to be arranged in a particular order</h6></div>
+        </div>
+        <div class="spacer-2"></div>
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Extremely</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>A lot</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m2 offset-m2 l2 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Moderately</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>A little</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Not at all</span>
+        </label>
+          </div>
+        </div>
+
+        </div>
+
+
+        <!-- Ends -->
+
+        <!--
+
+I feel that there are good and bad numbers -->
+
+        <div class="carousel-item white blue-text">
+
+          <br><br>
+        <div class="row left-align">
+
+        <div class="col s12 m12  l12 center-align"><h6>
+
+  I feel that there are good and bad numbers</h6></div>
+        </div>
+        <div class="spacer-2"></div>
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Extremely</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>A lot</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m2 offset-m2 l2 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Moderately</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>A little</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Not at all</span>
+        </label>
+          </div>
+        </div>
+
+        </div>
+
+
+        <!-- Ends -->
+
+
+
+
+        <!--
+
+I wash my hands more often and longer than necessary -->
+
+        <div class="carousel-item white blue-text">
+
+          <br><br>
+        <div class="row left-align">
+
+        <div class="col s12 m12  l12 center-align"><h6>
+
+  I wash my hands more often and longer than necessary</h6></div>
+        </div>
+        <div class="spacer-2"></div>
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Extremely</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>A lot</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m2 offset-m2 l2 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Moderately</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>A little</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Not at all</span>
+        </label>
+          </div>
+        </div>
+
+        </div>
+
+
+        <!-- Ends -->
+
+
+
+        <!--
+
+I frequently get nasty thoughts and have difficulty in getting rid of them -->
+
+        <div class="carousel-item white blue-text">
+
+          <br><br>
+        <div class="row left-align">
+
+        <div class="col s12 m12  l12 center-align"><h6>
+
+  I frequently get nasty thoughts and have difficulty in getting rid of them</h6></div>
+        </div>
+        <div class="spacer-2"></div>
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Extremely</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>A lot</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m2 offset-m2 l2 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Moderately</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>A little</span>
+        </label>
+          </div>
+        </div>
+
+        <div class="row left-align">
+          <div class="col s12 m10 offset-m2 l10 offset-l2 ">
+            <label>
+          <input name="group1" class="with-gap" type="radio" required />
+          <span>Not at all</span>
+        </label>
+          </div>
+        </div>
+
+        </div>
+
+
+        <!-- Ends -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       </div>
+
+
+      </div>
+
+    </div>
+
+
+      <div class="spacer-5"></div>
+      <div class="row">
+        <div class="col s110 m10 l10 offset-s1 offset-m1 offset-l1 center-align">
+          <h5>The CONTINUE button will become active once you have answered all of the questions. Please double check your answers if you think you are finished but the continue button is still disabled.</h5>
+        </div>
+      </div>
+
+        <div class="spacer-2"></div>
+
+        <div class="row center-align">
+          <div class="col s12 m12 l12">
+            <!-- <a href="screening-questionaire.html" id="cButton" class="waves-effect waves-light btn-large blue">Continue</a> -->
+            <button class="waves-effect waves-light btn-large blue" id="continue" value="Continue" type="submit" name="action">Continue</button>
+
+          </div>
+        </div>
+
+        <div class="spacer-5"></div>
+
+    </div>
+
+  </div>
+
+
+
+
+</form>
+
+  </div>
+
+</div>
+</div>
+
+<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+
+<script type="text/javascript">
+
+
+// var instance = M.Carousel.init({
+//    fullWidth: true,
+//    indicators: true
+//  });
+
+//  $('.carousel.carousel-slider').carousel({
+//   fullWidth: true,
+//   indicators: true
+// });
+
+// $('.carousel-slider').slider({full_width: true});//slider init
+
+$(document).ready(function(){
+     $('.carousel').carousel(
+       {
+         fullWidth: true,
+    indicators: true
+       }
+     );
+
+   });
+
+</script>
+
+</body>
+</html>

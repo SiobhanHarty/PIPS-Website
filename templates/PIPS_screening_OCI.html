@@ -1,0 +1,366 @@
+<!--
+OCI-r with radio buttons
+-->
+
+<head>
+
+  <!-- Global site tag (gtag.js) - Google AdWords: 799969281 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-799969281"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-799969281'); </script>
+
+<script>
+// var ProgressBar = function(){
+// if(q == -1){Progress.style.width = '0%'}
+// if(q == 0){Progress.style.width = '0%'}
+// if(q == 1){Progress.style.width = '11.2%'}
+// if(q == 2){Progress.style.width = '22.3%'}
+// if(q == 3){Progress.style.width = '33.4%'}
+// if(q == 4){Progress.style.width = '44.5%'}
+// if(q == 5){Progress.style.width = '55.6%'}
+// if(q == 6){Progress.style.width = '66.7%'}
+// if(q == 7){Progress.style.width = '77.8%'}
+// if(q == 8){Progress.style.width = '88.9%'}
+//
+//
+// return Progress.style.width
+// }
+// var Progress = document.querySelector('#progressbar');
+//
+// Progress.style.width = ProgressBar();
+
+    $(":radio").click(function() {
+                      $(this).closest("tr").addClass("active").
+                      siblings("div.active").removeClass("active");
+                      });
+
+
+    var Check = function(){
+        // this max number should be 1 greater than number of items on scsale
+
+        for (var i = 1; i < 19; i++) {
+            OCI = document.getElementsByName("OCI_" + i)
+            if(OCI[0].checked || OCI[1].checked || OCI[2].checked ||OCI[3].checked ||OCI[4].checked){
+                $('input#continue').css('visibility','visible')
+            }
+            else{
+                $('input#continue').css('visibility','hidden')
+                return false
+            }
+        }
+
+
+    }
+
+
+
+    function UpdateTableHeaders() {
+        $("div.divTableWithFloatingHeader").each(function() {
+                                                 var originalHeaderRow = $(".tableFloatingHeaderOriginal", this);
+                                                 var floatingHeaderRow = $(".tableFloatingHeader", this);
+                                                 var offset = $(this).offset();
+                                                 var scrollTop = $(window).scrollTop();
+                                                 if ((scrollTop > offset.top) && (scrollTop < offset.top + $(this).height())) {
+                                                 floatingHeaderRow.css("visibility", "visible");
+                                                 floatingHeaderRow.css("top", Math.min(scrollTop - offset.top, $(this).height() - floatingHeaderRow.height()) + "px");
+
+                                                 // Copy cell widths from original header
+                                                 $("th", floatingHeaderRow).each(function(index) {
+                                                                                 var cellWidth = $("th", originalHeaderRow).eq(index).css('width');
+                                                                                 $(this).css('width', cellWidth);
+                                                                                 });
+
+                                                 // Copy row width from whole table
+                                                 floatingHeaderRow.css("width", $(this).css("width"));
+                                                 }
+                                                 else {
+                                                 floatingHeaderRow.css("visibility", "hidden");
+                                                 floatingHeaderRow.css("top", "0px");
+                                                 }
+                                                 });
+    }
+
+    $(document).ready(function() {
+                      $("table.tableWithFloatingHeader").each(function() {
+                                                              $(this).wrap("<div class=\"divTableWithFloatingHeader\" style=\"position:relative\"></div>");
+
+                                                              var originalHeaderRow = $("tr:first", this)
+                                                              originalHeaderRow.before(originalHeaderRow.clone());
+                                                              var clonedHeaderRow = $("tr:first", this)
+
+                                                              clonedHeaderRow.addClass("tableFloatingHeader");
+                                                              clonedHeaderRow.css("position", "absolute");
+                                                              clonedHeaderRow.css("top", "0px");
+                                                              clonedHeaderRow.css("left", $(this).css("margin-left"));
+                                                              clonedHeaderRow.css("visibility", "hidden");
+
+                                                              originalHeaderRow.addClass("tableFloatingHeaderOriginal");
+                                                              });
+                      UpdateTableHeaders();
+                      $(window).scroll(UpdateTableHeaders);
+                      $(window).resize(UpdateTableHeaders);
+                      });
+
+</script>
+
+<style>
+.SheetHead {
+  border: 4px solid #08083f;
+  border-radius: 7px;
+}
+</style>
+</head>
+
+<body>
+  <!-- <center><h2>Progress within this questionnaire section</h2></center>
+  <div style="background-color: #e0eeff; width: 95%; margin:0 auto; height: 25px; border: 3px solid #000040; padding: 0px;">
+   <div id = "progressbar" style="background-color: #000040; height: 25px;overflow:hidden">&nbsp;</div>
+  </div> -->
+
+<div class="instruct" id="main" style= "text-align: left;">
+  <br>&nbsp;<br>
+  <div class = "SheetHead" style = "margin-left: 5em; margin-right: 5em; padding: 5px 2px; background-color:#e0eeff;" >
+  <div style = "margin-left: 2em; margin-right: 2em; padding: 5px 2px;" >
+  <h1><center>Precision in Psychiatry Study<center></h1>
+  </div>
+  </div>
+    <p>The following statements refer to experiences that many people have in their everyday lives. For each question, select an answer that best describes <strong>how much</strong> that experience has <strong>distressed</strong> or <strong>bothered</strong> you during the <strong>past month</strong>.
+
+    <form id="postquiz" action="done" method="post">
+         <table class="tableWithFloatingHeader" style="border: 0.2px;">
+           <!-- // background-color: #4bade5;"> -->
+
+            <tr class="question" style="background-color:#e0ecf9">
+              <th class="questiontext">
+              </th>
+                <th align="center" valign="bottom" width="12%">Extremely</th>
+                <th align="center" valign="bottom" width="12%">A lot</th>
+                <th align="center" valign="bottom" width="12%">Moderately</th>
+                <th align="center" valign="bottom" width="12%">A little</th>
+                <th align="center" valign="bottom" width="12%">Not at all</th>
+            </tr>
+
+
+            <tr class="question" style="background-color:#c9e1fc;">
+                <td class="questiontext">
+                  I have saved up so many things that they get in the way
+                </td>
+                <td align="center"><input type = "radio"  name= "OCI_1" id="OCI_1" value="4" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_1" id="OCI_1" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_1" id="OCI_1" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_1" id="OCI_1" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_1" id="OCI_1" value="0" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+            <tr class="question" >
+                <td class="questiontext">
+                     I check things more often than necessary
+                </td>
+                <td align="center"><input type = "radio"  name= "OCI_2" id="OCI_2" value="4" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_2" id="OCI_2" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_2" id="OCI_2" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_2" id="OCI_2" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_2" id="OCI_2" value="0" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+            <tr class="question" style="background-color:#c9e1fc;">
+                <td class="questiontext">
+                     I get upset if objects are not arranged properly
+                </td>
+                <td align="center"><input type = "radio"  name= "OCI_3" id="OCI_3" value="4" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_3" id="OCI_3" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_3" id="OCI_3" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_3" id="OCI_3" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_3" id="OCI_3" value="0" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+            <tr class="question" >
+                <td class="questiontext">
+                     I feel compelled to count while I am doing things
+                </td>
+                <td align="center"><input type = "radio"  name= "OCI_4" id="OCI_4" value="4" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_4" id="OCI_4" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_4" id="OCI_4" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_4" id="OCI_4" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_4" id="OCI_4" value="0" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+            <tr class="question" style="background-color:#c9e1fc;">
+                <td class="questiontext">
+                     I find it difficult to touch an object when I know it has been touched by strangers or certain people
+                </td>
+                <td align="center"><input type = "radio"  name= "OCI_5" id="OCI_5" value="4" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_5" id="OCI_5" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_5" id="OCI_5" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_5" id="OCI_5" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_5" id="OCI_5" value="0" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+            <tr class="question" >
+                <td class="questiontext">
+                     I find it difficult to control my own thoughts
+                </td>
+                <td align="center"><input type = "radio"  name= "OCI_6" id="OCI_6" value="4" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_6" id="OCI_6" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_6" id="OCI_6" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_6" id="OCI_6" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_6" id="OCI_6" value="0" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+
+
+            <tr class="question" style="background-color:#c9e1fc;">
+                <td class="questiontext">
+                     I collect things I don't need
+                </td>
+                <td align="center"><input type = "radio"  name= "OCI_7" id="OCI_7" value="4" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_7" id="OCI_7" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_7" id="OCI_7" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_7" id="OCI_7" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_7" id="OCI_7" value="0" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                     I repeatedly check doors, windows, drawers, etc
+                </td>
+                <td align="center"><input type = "radio"  name= "OCI_8" id="OCI_8" value="4" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_8" id="OCI_8" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_8" id="OCI_8" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_8" id="OCI_8" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_8" id="OCI_8" value="0" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+            <tr class="question" style="background-color:#c9e1fc;">
+                <td class="questiontext">
+                     I get upset if others change the way I have arranged things
+                </td>
+                <td align="center"><input type = "radio"  name= "OCI_9" id="OCI_9" value="4" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_9" id="OCI_9" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_9" id="OCI_9" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_9" id="OCI_9" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_9" id="OCI_9" value="0" style="border: none;" onchange='Check()'></td>
+
+
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                     I feel I have to repeat certain numbers
+                </td>
+                <td align="center"><input type = "radio"  name= "OCI_10" id="OCI_10" value="4" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_10" id="OCI_10" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_10" id="OCI_10" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_10" id="OCI_10" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_10" id="OCI_10" value="0" style="border: none;" onchange='Check()'></td>
+
+
+            </tr>
+            <tr class="question" style="background-color:#c9e1fc;">
+                <td class="questiontext">
+                     I sometimes have to wash or clean myself simply because I feel contaminated
+                </td>
+                <td align="center"><input type = "radio"  name= "OCI_11" id="OCI_11" value="4" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_11" id="OCI_11" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_11" id="OCI_11" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_11" id="OCI_11" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_11" id="OCI_11" value="0" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                     I am upset by unpleasant thoughts that come into my mind against my will
+                </td>
+                <td align="center"><input type = "radio"  name= "OCI_12" id="OCI_12" value="4" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_12" id="OCI_12" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_12" id="OCI_12" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_12" id="OCI_12" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_12" id="OCI_12" value="0" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+            <tr class="question" style="background-color:#c9e1fc;">
+                <td class="questiontext">
+                     I avoid throwing things away because I am afraid I might need them later
+                </td>
+                <td align="center"><input type = "radio"  name= "OCI_13" id="OCI_13" value="4" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_13" id="OCI_13" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_13" id="OCI_13" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_13" id="OCI_13" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_13" id="OCI_13" value="0" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                     I repeatedly check gas and water taps and light switches after turning them off
+                </td>
+                <td align="center"><input type = "radio"  name= "OCI_14" id="OCI_14" value="4" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_14" id="OCI_14" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_14" id="OCI_14" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_14" id="OCI_14" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_14" id="OCI_14" value="0" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+            <tr class="question" style="background-color:#c9e1fc;">
+                <td class="questiontext">
+                     I need things to be arranged in a particular order
+                </td>
+                <td align="center"><input type = "radio"  name= "OCI_15" id="OCI_15" value="4" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_15" id="OCI_15" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_15" id="OCI_15" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_15" id="OCI_15" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_15" id="OCI_15" value="0" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                     I feel that there are good and bad numbers
+                </td>
+                <td align="center"><input type = "radio"  name= "OCI_16" id="OCI_16" value="4" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_16" id="OCI_16" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_16" id="OCI_16" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_16" id="OCI_16" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_16" id="OCI_16" value="0" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+            <tr class="question" style="background-color:#c9e1fc;">
+                <td class="questiontext">
+                     I wash my hands more often and longer than necessary
+                </td>
+                <td align="center"><input type = "radio"  name= "OCI_17" id="OCI_17" value="4" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_17" id="OCI_17" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_17" id="OCI_17" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_17" id="OCI_17" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_17" id="OCI_17" value="0" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+<!--
+            <tr class="question">
+                <td class="questiontext">
+                     If you are paying attention to these questions, please select "A little" as your answer
+                </td>
+                <td align="center"><input type = "radio"  name= "OCI_trap" id="OCI_trap" value="4" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_trap" id="OCI_trap" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_trap" id="OCI_trap" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_trap" id="OCI_trap" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_trap" id="OCI_trap" value="0" style="border: none;" onchange='Check()'></td>
+
+            </tr> -->
+            <tr class="question">
+                <td class="questiontext">
+                     I frequently get nasty thoughts and have difficulty in getting rid of them
+                </td>
+                <td align="center"><input type = "radio"  name= "OCI_18" id="OCI_18" value="4" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_18" id="OCI_18" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_18" id="OCI_18" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_18" id="OCI_18" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name= "OCI_18" id="OCI_18" value="0" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+
+
+        </table>
+                       <input type="button" class="continue" id="continue" value="Continue" style="visibility: hidden;"></input>
+</form>
+</div>
+
+
+ <p class = "continueInstructions"><strong>The CONTINUE button will appear here once you have answered all of the questions. Please double check your answers if you think you are finished but do not see the continue button. </strong></p>
+
+</body>

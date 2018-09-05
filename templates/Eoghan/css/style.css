@@ -1,0 +1,440 @@
+html
+{
+  padding:0;
+  margin:0;
+  /* overflow: hidden; */
+}
+
+p{
+  margin: 0;
+  padding: 0;
+}
+
+
+h1{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 48px;
+  color: white;
+  /* color: rgb(7, 86, 103); */
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+h2{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 36px;
+  color: rgb(7, 86, 103);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h3{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 32px;
+  color: white;
+  /* color: rgb(7, 86, 103); */
+  font-weight: 600;
+  font-style: italic;
+
+}
+
+h5
+{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  /* color: white; */
+  color: rgb(7, 86, 103);
+  font-weight: 800;
+  font-style: italic;
+
+}
+
+
+
+
+.content-text
+{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 22px;
+  color: rgb(7, 86, 103);
+  font-weight: 600;
+  font-style: italic;
+
+}
+
+ol
+{
+  padding-left: 20px;
+}
+
+
+
+/* Full Background Landing pages */
+.wrapper
+{
+  position:relative;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  display: table;
+  background: rgb(144,220,236);
+  background: linear-gradient(270deg, rgba(144,220,236,1) 23%, rgba(113,179,226,1) 0100%, rgba(10,191,227,1) 100%);
+}
+
+
+/* Speech bubble container */
+
+#speech-bubble-container
+{
+  width:55%;
+  min-height: 400px;
+  max-width: 495px;
+  min-width:495px;
+  width:495px;
+
+
+}
+
+#doc
+{
+  width:180px;
+  height:414px;
+}
+
+/* Speech Bubble */
+
+.speech {
+  position: relative;
+  width: 100%;
+  max-width:580px;
+  min-width:580px;
+  height: 350px;
+  text-align: center;
+  line-height: 100px;
+  background-color: #fff;
+  border: 8px solid rgb(7, 86, 103);
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 50%;
+  -webkit-box-shadow: 2px 2px 4px black;
+  -moz-box-shadow: 2px 2px 4px black;
+  box-shadow: 2px 2px 4px black;
+}
+
+.speech:before {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 85px;
+  top: 302px;
+  border: 25px solid;
+  border-color: rgb(7, 86, 103) transparent transparent rgb(7, 86, 103);
+    transform: rotate(20deg);
+}
+
+.speech:after {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 98px;
+  top: 301px;
+  border: 15px solid;
+  border-color: #fff transparent transparent #fff;
+  transform: rotate(20deg);
+}
+
+.speech-content
+{
+  position: absolute;
+  top: 90px;
+  left:50px;
+
+  width:80%;
+  min-width: 60%;
+  max-width: 80%;
+  line-height: 1.5;
+  margin: 0 auto;
+}
+
+
+#speech-bubble-text
+{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 22px;
+  color: rgb(7, 86, 103);
+}
+
+/* Speech Bubble Ends */
+
+
+/* Down Arrow */
+.arrow-down {
+  position: absolute;
+  top: 275px;
+  left: 250px;
+
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+
+  border-top: 20px solid #f00;
+  -webkit-animation:arrow-down 1s infinite;
+}
+
+
+@-webkit-keyframes arrow-down{
+  0% {margin-top:0px;}
+
+  50%{margin-top:10px}
+  100%{margin-top:0px}
+
+}
+
+
+
+
+.no-margin
+{
+  margin-bottom: 0px;
+}
+
+
+/* Continue Button Ends */
+
+
+/* Info Page....collapsible */
+
+.collapsible
+{
+  max-width: 100%;
+  width:100%;
+  min-width:100%;
+  border-color: rgb(7, 86, 103);
+}
+
+.collapsible-header:focus {
+    outline: none;
+}
+
+.collapsible-body
+{
+  background-color: white;
+}
+
+.collapsible-intro
+{
+  font-family: "Open Sans" sans-serif;
+  color: white;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.collapsible-content
+{
+  font-family: "Open Sans" sans-serif;
+  color: rgb(7, 86, 103);
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.collapsible-content-list
+{
+  font-family: "Open Sans" sans-serif;
+  color: rgb(7, 86, 103);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+#drug-list.a
+{
+  list-style-type: circle;
+}
+
+
+/* collapsible ends */
+
+
+/* Consent Form */
+
+#consent-form
+{
+  width:100%;
+  height:400px;
+  min-height:400px;
+  max-height:400px;
+  background-color: white;
+  border-style: solid;
+  border-width: thin;
+  border-color : gray;
+  overflow-y: scroll;
+}
+
+/* Ends */
+
+
+/*  Form */
+
+#screening-questionaire-form
+{
+  position: relative;
+  width:100%;
+  height:auto;
+  background-color: white;
+}
+
+/* Ends */
+
+/*  Form */
+
+#daily-experience-questionaire-form
+{
+  position: relative;
+  width:100%;
+  height:auto;
+  background-color: white;
+}
+
+/* Ends */
+
+
+.carousel .indicators .indicator-item {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    height: 8px;
+    width: 8px;
+    margin: 24px 4px;
+    background-color: rgba(60, 140, 205, 0.5);
+    -webkit-transition: background-color .3s;
+    transition: background-color .3s;
+    border-radius: 50%;
+}
+
+.carousel .indicators .indicator-item.active {
+    background-color: #2456da;
+}
+
+
+
+
+/* Spacers */
+.spacer-25
+{
+  width: 100%;
+  min-height: 25vh;
+}
+
+.spacer-20
+{
+  width: 100%;
+  min-height: 20vh;
+}
+
+.spacer-10
+{
+  min-height: 10vh;
+}
+
+.spacer-5
+{
+  min-height: 5vh;
+}
+
+.spacer-2
+{
+  min-height: 2vh;
+}
+
+.minus-spacer
+{
+  min-height: -1vh;
+}
+
+/* Button */
+.btn-large
+{
+  width:300px;
+}
+
+
+
+@media (max-width: 768px)
+{
+  #speech-bubble
+  {
+
+    min-height: 300px;
+    max-width: 250px;
+    min-width:495px;
+    width:495px;
+
+  }
+
+  /* Down Arrow */
+  .arrow-down
+  {
+    left: 210px;
+  }
+
+  .speech:before
+  {
+
+    left: 215px;
+    top: 334px;
+
+    transform: rotate(0deg);
+  }
+
+  .speech:after
+  {
+
+    left: 225px;
+    top: 331px;
+
+    transform: rotate(0deg);
+  }
+
+  #doc
+  {
+    margin-top: 20px;
+  }
+
+  .center
+  {
+    display:block;
+  }
+
+
+
+}
+
+@media only screen and (max-width: 900px)
+{
+  .buttons-horizontal
+  {
+    display:none;
+  }
+
+  .buttons-vertical
+  {
+    display:block;
+  }
+
+}
+
+@media only screen and (min-width: 901px)
+{
+  .buttons-horizontal
+  {
+    display:block;
+  }
+
+  .buttons-vertical
+  {
+    display:none;
+  }
+
+}

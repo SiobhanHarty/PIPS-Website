@@ -1,0 +1,485 @@
+<html>
+<head>
+
+  <title>Screening Section</title>
+
+<!-- Global site tag (gtag.js) - Google AdWords: 799969281 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-799969281"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-799969281'); </script>
+
+<!-- Event snippet for Bubble4 conversion page -->
+<script> gtag('event', 'conversion', {'send_to': 'AW-799969281/ga6kCPHivoQBEIGguv0C'}); </script>
+
+  <style type="text/css" media="screen">
+  .hide{
+    display:none;
+  }
+  </style>
+
+  <script type="text/javascript" charset="utf-8">
+
+  function yesnoCheck1() {
+    if (document.getElementById('Taken_yes1').checked) {
+        document.getElementById('ifYes1').style.display = 'block';
+        document.getElementById('ifNo1').style.display = 'none';
+    }
+    if (document.getElementById('Taken_no1').checked){
+        document.getElementById('ifNo1').style.display = 'block';
+        document.getElementById('ifYes1').style.display = 'none';
+    }
+  }
+
+  function yesnoCheck2() {
+    if (document.getElementById('Taken_yes2').checked) {
+        document.getElementById('ifYes2').style.display = 'block';
+        document.getElementById('ifNo2').style.display = 'none';
+    }
+    if (document.getElementById('Taken_no2').checked){
+        document.getElementById('ifNo2').style.display = 'block';
+        document.getElementById('ifYes2').style.display = 'none';
+    }
+  }
+
+  (function(){
+    var tabs =document.getElementById('tabs');
+    var nav = tabs.getElementsByTagName('input');
+
+    /*
+    * Hide all tabs
+    */
+    function hideTabs(){
+      var tab = tabs.getElementsByTagName('div');
+      for(var i=0;i<=nav.length;i++){
+        if(tab[i].className == 'tab'){
+          tab[i].className = tab[i].className + ' hide';
+        }
+      }
+    }
+
+    /*
+    * Show the clicked tab
+    */
+    function showTab(tab){
+      document.getElementById(tab).className = 'tab'
+    }
+
+    hideTabs(); /* hide tabs on load */
+
+    /*
+    * Add click events
+    */
+    for(var i=0;i<nav.length;i++){
+      nav[i].onclick = function(){
+        hideTabs();
+        showTab(this.className);
+      }
+    }
+  })();
+
+  function onlyNumbersWithDot(e) {
+         var charCode;
+         if (e.keyCode > 0) {
+             charCode = e.which || e.keyCode;
+         }
+         else if (typeof (e.charCode) != "undefined") {
+             charCode = e.which || e.keyCode;
+         }
+         if (charCode == 46)
+             return true
+         if (charCode > 31 && (charCode < 48 || charCode > 57))
+             return false;
+         return true;
+     }
+
+
+
+  function unhide(divID) {
+    var item = document.getElementById(divID);
+    if (item) {
+      item.className=(item.className=='none')?'unnone':'none';
+    }
+  }
+
+  function previewFile(){
+       var preview = document.getElementById('imgPreview');
+       var file    = document.getElementById('imgUpload').files[0]; //sames as here
+       var reader  = new FileReader();
+       var hiddenInput = document.getElementById('hiddenInput');
+       console.log('hiddenInput' + hiddenInput)
+       reader.onloadend = function () {
+           preview.src = reader.result;
+           hiddenInput.value = reader.result;
+          console.log('hiddenInput_val' + hiddenInput.value)
+       }
+
+       if (file) {
+           reader.readAsDataURL(file); //reads the data as a URL
+       } else {
+           preview.src = "";
+       }
+  }
+
+
+  function yesnoCheck() {
+    if (document.getElementById('yesCheck').checked) {
+        document.getElementById('ifYes').style.display = 'block';
+    }
+    else document.getElementById('ifYes').style.display = 'none';
+  }
+
+  var ddl = document.getElementById('AgeDropdownId');
+  for (var i = 1; i <= 100; i++) {
+      var theOption = new Option;
+      theOption.text = i;
+      theOption.value = i;
+      ddl.options[i] = theOption;
+  }
+
+  var when1 = document.getElementById('when1');
+  for (var i = 1; i <= 14; i++) {
+      var theOption = new Option;
+      theOption.text = i;
+      theOption.value = i;
+      when1.options[i] = theOption;
+  }
+
+  var when2 = document.getElementById('when2');
+  for (var i = 1; i <= 30; i++) {
+      var theOption = new Option;
+      theOption.text = i;
+      theOption.value = i;
+      when2.options[i] = theOption;
+  }
+
+  var Check = function(){
+
+  // window.Sex = document.getElementById("Sex").value
+  window.Age = document.getElementById("AgeDropdownId").value
+
+
+  if (Age < 18 || Age > 70) {
+    alert('You must be between 18 to 70 years old!')
+  return false
+  }
+}
+
+  </script>
+
+
+    <style type="text/css">
+    p {margin-bottom: 0.5em;  margin-top: 0em;}
+    a {font-size: 16px; color: #131368;}
+    h2{text-align: center;}
+
+    .SheetHead {
+      border: 4px solid #08083f;
+      border-radius: 7px;
+    }
+
+    td {
+        border: 1px dotted #08083f;
+        border-radius: 5px;
+    }
+
+    /*Awkwardness of this due to browser compatibility issues using <hr>, centering etc.*/
+    .HRstar {
+      font-size: 6px;
+      color: navy;
+      text-align: right;
+    }
+
+    .alt-radio input[type=radio] {
+  position: absolute;
+}
+
+  .alt-radio .radio-label {
+    display: inline-block;
+    position: relative;
+    margin-left: 2em;
+    top: 0.5em;
+    vertical-align: middle;
+  }
+
+  .ScreeningQuestions {
+      border: 1px solid #08083f;
+      border-radius: 5px;
+  }
+    </style>
+
+</head>
+
+<body>
+
+  <title>Study Information</title>
+
+  <div class="instruct" id="main">
+  <br>
+  <div style= "background-color:#c9e1fc;">
+  <br>&nbsp;</br>
+  <div class = "SheetHead" style = "margin-left: 5em; margin-right: 5em; padding: 5px 2px; background-color:#e0eeff;" >
+  <div style = "margin-left: 5em; margin-right: 5em; padding: 5px 2px;" >
+  <h2><b><center>Precision in Psychiatry Study</b><br>Screening Questionnaire</center></h2>
+  </div>
+  </div>
+  <br>
+  <br>
+  <div style = "margin-left: 1.5em; margin-right: 1.5em; padding: 5px 2px;" ></div>
+  <br>
+  <div class = "ScreeningQuestions" style = "margin-left: 1em; margin-right: 1em; background-color:#e0eeff;" >
+  <br>&nbsp;</br>
+  <div style = "margin-left: 0.8em; margin-right: 0.8em;" >
+  <form id="postquiz" action="done" method="post" style= "text-align: left">
+    <tr class="question" >
+      <!-- Question 1 -->
+    <p><b>1.  What is your age?</b>
+      <select id="AgeDropdownId" name="AgeDropdown" onchange='Check()'><option value="0" disabled>--Select Age--</option></select>
+   </tr>
+  <br>&nbsp;</br>
+  <div id="tabs">
+    <!-- Question 2 -->
+    <b>2.	 Have you received an antidepressant prescription from your doctor in the past 2 weeks? </b><br />
+    <div style= "margin-left: 1.5em;" id="nav">
+      <p>
+        Yes<input type="radio" id=prescription name="tab" value="1" class="div1"/>
+        No<input type="radio" id=prescription name="tab" value="0" class="div2"/>
+      </p>
+    </div>
+
+    <div id="div1" class="tab">
+      <!-- proceed with other questions -->
+    </div>
+
+    <div id="div2" class="tab">
+      <p><font color="red">This is a requirement for participation in our study; you are not eligible.</font></p>
+    </div>
+  </div>
+  <br>
+  <!-- Question 3 -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="drug"><b>3.  Please select the antidepressant that you have been prescribed from the list below:</b><br>(Check more than one if you are taking more than one)
+    </label>
+    <div style="margin-left: 1.5em;padding: 5px 0px;" class="col-md-4">
+      <div class="radio">
+        <label for="drug-0">
+          <input type="checkbox" name="drug" id="Citalopram" value="1">
+          Citalopram (Celexa, Cipramil)
+        </label>
+      </div>
+      <div class="radio">
+        <label for="drug-1">
+          <input type="checkbox" name="drug" id="Desvenlafaxine" value="1">
+          Desvenlafaxine (Pristiq, Khedezla)
+        </label>
+      </div>
+      <div class="radio">
+        <label for="drug-2">
+          <input type="checkbox" name="drug" id="Duloxetine" value="1">
+          Duloxetine (Cymbalta, Irenka)
+        </label>
+      </div>
+      <div class="radio">
+        <label for="drug-3">
+          <input type="checkbox" name="drug" id="Escitalopram" value="1">
+          Escitalopram (Lexapro, Cipralex)
+        </label>
+      </div>
+      <div class="radio">
+        <label for="drug-4">
+          <input type="checkbox" name="drug" id="Fluoxetine" value="1">
+          Fluoxetine (Prozac, Sarafem, Rapiflux)
+        </label>
+      </div>
+      <div class="radio">
+        <label for="drug-5">
+          <input type="checkbox" name="drug" id="Fluvoxamine" value="1">
+          Fluvoxamine (Luvox, Faverin, Floxyfral, Dumyrox)
+        </label>
+      </div>
+      <div class="radio">
+        <label for="drug-6">
+          <input type="checkbox" name="drug" id="Levomilnacipran" value="1">
+          Levomilnacipran (Fetzima)
+        </label>
+      </div>
+      <div class="radio">
+        <label for="drug-7">
+          <input type="checkbox" name="drug" id="Paroxetine" value="1">
+          Paroxetine (Paxil, Seroxat, Brisdelle, Pexeva)
+        </label>
+      </div>
+      <div class="radio">
+        <label for="drug-8">
+          <input type="checkbox" name="drug" id="Sertraline" value="1">
+          Sertraline (Zoloft, Lustral)
+        </label>
+      </div>
+      <div class="radio">
+        <label for="drug-9">
+          <input type="checkbox" name="drug" id="Venlafaxine" value="1">
+          Venlafaxine (Effexor)
+        </label>
+      </div>
+      <div>
+        <br>
+        If your antidepressant medication is not listed above, please enter the name of it here:
+        <div style = "padding: 5px 5px;">
+        <textarea rows="1" cols="15" name="drug" id="other-drug"></textarea><br>
+      </div>
+      </div>
+    </div>
+  </div>
+  <br>&nbsp;</br>
+
+  <!-- Question 4 -->
+  <div>
+    <b>4.  What dose (in milligrams per day) of this medication have you been prescribed?</b><br>
+  <div style= "padding: 5px 0px;margin-left: 1.5em;">
+  <textarea rows="1" cols="8" name="getdose" id="getdose"></textarea>&nbsp;mg<br>
+  </div>
+  </div>
+  <br>&nbsp;</br>
+
+  <!-- Question 5 -->
+
+      <tr class="question">
+        <td class="questiontext">
+          <b>5.  Have you taken your first dose?</b><br>
+        </td>
+        <div style= "margin-left: 1.5em;">
+        <td>Yes <input type="radio" onclick="javascript:yesnoCheck1();" name= "Taken_1" id="Taken_yes1" value="1"/> No <input type="radio" onclick="javascript:yesnoCheck1();" name= "Taken_1" id="Taken_no1" value="0"/><br></td>
+        <div id="ifYes1" style= "display:none">
+            <br>&nbsp;</br>
+            <b> What is the total dose (in milligrams) you have taken today?</b><br>(If you have not taken it yet today, please indicate the dose that you will take later today)<br>
+            <div style = "padding: 5px 5px;">
+            <textarea rows="1" cols="8" name="doseToday" id="doseToday"></textarea>&nbsp;mg<br>
+            </div>
+            <br>&nbsp;</br>
+            <b>How many days ago did you take your first dose?</b>
+            <select id="when1" name="whenPast"><option value="">--Today (0 days)--</option></select>
+              </div>
+
+        <div id="ifNo1" style= "display:none;vertical-align: top;">
+            <b>When (days from now) do you plan to take your first dose?</b>
+            <select id="when2" name="whenFuture"><option value="">--Today (0 days)--</option></select>
+              </div>
+            </tr>
+          </div>
+
+
+  <br>&nbsp;</br>
+  <!-- Question 6 -->
+  <div id="PhotoUpload">
+    <b>6.  Please upload a photo of your prescription here.</b>
+    <div style= "margin-left: 1.2em;">
+    (Please note that the date, drug dose, drug name, and your own name must be clearly visible)<br>
+    <div style= "padding: 5px 0px;">
+    <input id="imgUpload" name="PrescriptionUpload" type="file" value ='' onchange="previewFile()"  accept="image/x-png,image/gif,image/jpeg" style="margin-left: 0em;"><br>
+    <textarea rows="1" cols="1" name="Base64" id="hiddenInput" style="visibility:hidden"></textarea>
+    <img id="imgPreview" src="" height="250" style="margin-left: 2.5em;">
+  </div>
+    </div>
+    </div>
+    <br>&nbsp;</br>
+
+    <!-- Awareness/expectation of benefits -->
+
+    <b>7. Do you know anyone (e.g. friends/family) who has taken antidepressants for a mental health problem? </b><br>
+        <div style= "margin-left: 1.5em;" >
+        Yes <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="yesCheck" value="1" > No <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="noCheck" value="0"><br>
+        <div id="ifYes" style="display:none">
+        <br>
+          <p><b>Did they benefit from them?</b><br>
+          <div class= "alt-radio" style="margin-left: 2em;">
+            <input type="radio" id="AD_benefit_1" name="AD_benefit" value="0" ><label class= "radio-label" for="AD_benefit_1"><i>No, they did not benefit</i></label><br>
+            <input type="radio" id="AD_benefit_2" name="AD_benefit" value="1" ><label class= "radio-label" for="AD_benefit_2"><i>I don’t know whether or not they benefited</i></label><br>
+            <input type="radio" id="AD_benefit_3" name="AD_benefit" value="2" ><label class= "radio-label" for="AD_benefit_3"><i>Yes, they benefited</i></label><br>
+            <input type="radio" id="AD_benefit_4" name="AD_benefit" value="3" ><label class= "radio-label" for="AD_benefit_4"><i>Some benefited others did not</i></label><br></p>
+          </div>
+            </div>
+                </div>
+
+      <br>&nbsp;</br>
+
+    <!-- Question 8 -->
+
+        <tr class="question">
+          <td class="questiontext">
+            <b>8.  Are you currently taking any other medication(s) for a brain health problem?</b><br>
+          </td>
+          <div style="margin-left: 1.5em;">
+          <td>Yes <input type="radio" onclick="javascript:yesnoCheck2();" name= "Taken_2" id="Taken_yes2" value="1"/> No <input type="radio" onclick="javascript:yesnoCheck2();" name= "Taken_2" id="Taken_no2" value="0"/><br></td>
+          <div id="ifYes2" style= "display:none">
+            <b> Please enter:</b><br />
+            <b>a)</b> Name of the medication(s):<br />
+            <textarea rows="4" cols="80" name="NeuroDrugs1" id="NeuroDrugs1"></textarea><br />
+            <b>b)</b> Reason(s) for taking the medication(s):<br />
+            <textarea rows="4" cols="80" name="NeuroDrugsReason1" id="NeuroDrugsReason1"></textarea><br />
+                </div>
+
+          <div id="ifNo2" style= "display:none">
+            <p><b>If you have taken any other medications for a brain health problem <u>in the past 4 weeks</u> please enter: </b>
+            (Leave blank, if you haven't taken any)</p>
+            <b>a)</b> Name of the medication(s):<br />
+            <textarea rows="4" cols="80" name="NeuroDrugs2" id="NeuroDrugs2"></textarea><br />
+            <b>b)</b> Reason(s) for taking the medication(s):<br />
+            <textarea rows="4" cols="80" name="NeuroDrugsReason2" id="NeuroDrugsReason2"></textarea><br />
+            <b>c)</b> Reason(s) for stopping taking the medication(s):<br />
+            <textarea rows="4" cols="80" name="NeuroDrugsReason3" id="NeuroDrugsReason3"></textarea><br />
+                </div>
+              </tr>
+            </div>
+
+
+    <br>&nbsp;</br>
+    <!-- Question 9 -->
+    <div>
+      <b>9.  Do you speak English fluently?</b>
+      <div style="margin-left: 1.5em;" id="nav">
+        <p>
+          Yes<input type="radio" name="englishfluency" id="englishfluency" value="1" />
+          No<input type="radio" name="englishfluency" id="englishfluency" value="0" />
+        </p>
+      </div>
+    </div>
+
+
+    <br>&nbsp;</br>
+    <!-- Question 10 -->
+    <div>
+      <b>10.	Where did you hear about this study?</b>
+      <textarea style= "vertical-align: middle;" rows="1" cols="15" name="StudyInfoSource" id="StudyInfoSource"></textarea><br>
+    </div>
+
+    <br>&nbsp;</br>
+    <!-- Question 11 -->
+    <div>
+      <b>11.  Please enter an email address that we can contact you on about this study:</b><br />
+      <div style = "margin-left: 1.5em;padding: 5px 5px;">
+      <input type="email" id="email" name="email" value="" placeholder="example@domain.com" required />
+    </div>
+    </div>
+
+    <br><br>
+    <div style = "margin-left: 1.8em;margin-right: 8em;">
+    Is there anything that we have not asked about you that you think might be relevant for your participation in this study?<br/>
+    <div style = "padding: 5px 0px;">
+    <textarea rows="4" cols="98" name="anythingElse" id="anythingElse"></textarea>
+    </div>
+    </div>
+    <br>&nbsp;</br>
+    <br>&nbsp;</br>
+
+    <!-- <input style= "width: 6em; height: 2.5em; font-size: 13pt; float: right; margin-right: 0.75em;" type="button" class="continue" id="continue" value="Next"></input> -->
+    <input type="button" class="continue" id="continue" value="Continue"</input>
+    <br>&nbsp;</br>
+    <br>&nbsp;</br>
+    <!-- End of survey -->
+  </form>
+  </div>
+  </div>
+  <br>&nbsp;</br>
+  <br>&nbsp;</br>
+</div>
+<br>&nbsp;</br>
+</div>
+<br>&nbsp;</br>
+</body>

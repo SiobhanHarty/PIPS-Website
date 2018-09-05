@@ -1,0 +1,158 @@
+
+<!doctype html>
+<html>
+<head>
+
+<!-- Global site tag (gtag.js) - Google AdWords: 799969281 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-799969281"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-799969281'); </script>
+<!-- Event snippet for Bubble1 conversion page -->
+<script> gtag('event', 'conversion', {'send_to': 'AW-799969281/PU9oCNnRr4QBEIGguv0C'}); </script>
+
+<style>
+
+.right{
+    float:right;
+}
+.left{
+    float:left;
+}
+.instruct{
+  font-size: 14pt;
+}
+
+input {
+    margin: 20px 20px;
+    width: 120px;
+    height: 40px;
+    font-size: 13pt;
+}
+
+ul.b {
+    list-style-type: square;
+    font-size: 10px;
+    text-align: left;
+}
+
+li {
+    padding: 3px 0px;
+}
+
+.SheetHead {
+  border: 4px solid #08083f;
+  border-radius: 7px;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    font-size: 16;
+    line-height: 1.7;
+    color: #08083f;
+}
+
+.bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+}
+
+.top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}
+
+.top-right {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+}
+
+.bottom-right {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+}
+
+.centered {
+    position: absolute;
+    top: 20%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.flash {
+   animation-name: flash;
+    animation-duration: 0.8s;
+    animation-timing-function: linear;
+    animation-iteration-count: 6;
+    animation-direction: alternate;
+    animation-play-state: running;
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+}
+
+@keyframes flash {
+    from {color: #08083f;}
+    to {color: #e0eeff;}
+}
+</style>
+
+<script>
+
+function presentBubble3() {
+	var timestamp = new Date().getTime();
+	showpage('PIPS_bubble3');
+	$("#continue").click(function () {
+                         finish();
+                         presentInfoSheet();
+                         });
+};
+
+
+
+</script>
+
+</head>
+
+
+<title>Study Information</title>
+
+<div class="instruct" id="main">
+<br>
+<div style= "background-color:#c9e1fc;">
+<div style = "margin-left: 1em; margin-right: 1em; padding: 5px 2px;" >
+<br>
+
+
+<div class = "SheetHead" style = "margin-left: 5em; margin-right: 5em; padding: 5px 2px; background-color:#e0eeff;" >
+<div style = "margin-left: 2em; margin-right: 2em; padding: 5px 2px;" >
+<h1><center>Precision in Psychiatry Study</center></h1>
+</div>
+</div>
+<p style="visibility:hidden" class="flash"><font size="6">&nbsp;&nbsp;&nbsp;Still seeking participants!</font></p>
+
+<div class="container">
+  <img src="static/images/PIPS_bubble_only.png" alt="image failed to load"  style="width:100%;" hspace="4" type="button" usemap="#workmap" >
+  <div class="centered">We are really grateful you clicked and are interested in helping with mental health research!</div>
+  <map name="workmap">
+     <area shape="rect" coords="340,175,423,215" alt="button" onclick="javascript:presentBubble3();">
+
+  </map>
+</div>
+
+<br>
+
+</div>
+</div>
+<p> &nbsp;</p>
+</div>
+</html>
