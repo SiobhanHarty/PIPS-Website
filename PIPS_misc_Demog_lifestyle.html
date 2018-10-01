@@ -1,0 +1,610 @@
+<!-- *********Socio-demographic; Exercise; Diet ********-->
+
+<html>
+<head>
+
+  <script>
+  var ProgressBar = function(){
+  if(q == -1){Progress.style.width = '0%'}
+  if(q == 0){Progress.style.width = '0%'}
+  if(q == 1){Progress.style.width = '10%'}
+  if(q == 2){Progress.style.width = '20%'}
+  if(q == 3){Progress.style.width = '30%'}
+  if(q == 4){Progress.style.width = '40%'}
+  if(q == 5){Progress.style.width = '50%'}
+  if(q == 6){Progress.style.width = '60%'}
+  if(q == 7){Progress.style.width = '70%'}
+  if(q == 8){Progress.style.width = '80%'}
+  if(q == 9){Progress.style.width = '90%'}
+
+
+  return Progress.style.width
+  }
+  var Progress = document.querySelector('#progressbar');
+
+  Progress.style.width = ProgressBar()
+
+
+  var Exercise1 = $('input:radio[name="Exercise1"]');
+  var Exercise2= $('input:radio[name="Exercise2"]');
+  Exercise1.change(function(e){
+     var $target = $(e.target);
+     if($target.is(':checked')){
+         if($target.is('[value="0"]')){
+             Exercise2.not('[value="0"]').prop('disabled', true);
+             Exercise2.filter('[value="0"]').prop('checked', true);
+         } else {
+             Exercise2.not('[value="0"]').prop('disabled', false);
+         }
+     }
+  });
+
+
+
+  </script>
+
+<style>
+
+.alt-radio input[type=radio] {
+  position: absolute;
+}
+
+  .alt-radio .radio-label_V {
+    display: inline-block;
+    position: relative;
+    margin-left: 2em;
+    top: 0.5em;
+    line-height: 1.8;
+    vertical-align: middle;
+  }
+
+  .alt-radio .radio-label {
+    display: inline-block;
+    position: relative;
+    margin-left: 1.5em;
+    top: 0.5em;
+    vertical-align: middle;
+  }
+
+.wrap {
+  font:10px Arial, san-serif;
+}
+
+form .likert {
+  list-style:none;
+  width:100%;
+  margin:0;
+  padding:0 0 35px;
+  display:block;
+  border-bottom:2px solid #efefef;
+}
+form .likert:last-of-type {border-bottom:0;}
+form .likert:before {
+  content: '';
+  position:relative;
+  top:40px;
+  left:8%;
+  display:block;
+  background-color:#001e59;
+  height:8px;
+  width:82%;
+}
+form .likert li {
+  display:inline-block;
+  width:16%;
+  text-align:center;
+  vertical-align: top;
+}
+form .likert li input[type=radio] {
+  display:block;
+  position:relative;
+  top:0;
+  left:50%;
+  margin-left:-6px;
+
+}
+form .likert li label {width:100%;}
+
+p.checkbx {margin-bottom: 0.5em;  margin-top: 0em; line-height: 1;}
+i.checkbx {float: "left"; font-size: 13px}
+
+</style>
+
+</head>
+
+<body>
+  <center><h2>Progress within this questionnaire section</h2></center>
+  <div style="background-color: #e0eeff; width: 95%; margin:0 auto; height: 25px; border: 3px solid #000040; padding: 0px;">
+   <div id = "progressbar" style="background-color: #000040; height: 25px;overflow:hidden">&nbsp;</div>
+  </div>
+
+<br>&nbsp;<br>
+<div class= "miscQ" style= "background-color:#c9e1fc;" >
+<form id="Demog_lifestyle" action="done" method="post" style= "margin-left: 0.75em;">
+<br>&nbsp;</br>
+<h2>Please answer the following questions:</h2>
+
+  <!-- Sex -->
+<div style= "background-color:#e0eeff; margin-right: 0.75em; padding: 3px;" >
+<p><b>1. What is your sex?</b></p>
+<div class = "alt-radio">
+<input type="radio" id="Sex_1" name="Sex" value="1"><label for="Sex_1" class= "radio-label_V">Female</label><br>
+<input type="radio" id="Sex_2" name="Sex" value="2"><label for="Sex_2" class= "radio-label_V">Male</label><br>
+<input type="radio" id="Sex_3" name="Sex" value="3"><label for="Sex_3" class= "radio-label_V">Intersex</label><br>
+<input type="radio" id="Sex_4" name="Sex" value="4"><label for="Sex_4" class= "radio-label_V">MtoF Female</label><br>
+<input type="radio" id="Sex_5" name="Sex" value="5" required><label for="Sex_5" class= "radio-label_V">FtoM Male</label><br>
+</div>
+<br>&nbsp;</br>
+</div>
+<br>&nbsp;</br>
+
+<!-- DOB -->
+<div style= "background-color:#e0eeff; margin-right: 0.75em; padding: 3px;" >
+<p><b>2. What is your date of birth?</b>
+<!-- <input id="DOB" type="date" value="2000-01-01"></p> -->
+<input type="date" name="DOB" id="DOB" placeholder="YYYY-MM-DD" required></input>
+</div>
+<br>&nbsp;</br>
+
+
+<!-- Country of Residence -->
+<div style= "background-color:#e0eeff; margin-right: 0.75em; padding: 3px;" >
+<p><b>3. What is your country of residence?</b>
+<select id="Country" name="Country" required>
+<option value="">Country...</option>
+<option value="Afganistan">Afghanistan</option>
+<option value="Albania">Albania</option>
+<option value="Algeria">Algeria</option>
+<option value="American Samoa">American Samoa</option>
+<option value="Andorra">Andorra</option>
+<option value="Angola">Angola</option>
+<option value="Anguilla">Anguilla</option>
+<option value="Antigua &amp; Barbuda">Antigua &amp; Barbuda</option>
+<option value="Argentina">Argentina</option>
+<option value="Armenia">Armenia</option>
+<option value="Aruba">Aruba</option>
+<option value="Australia">Australia</option>
+<option value="Austria">Austria</option>
+<option value="Azerbaijan">Azerbaijan</option>
+<option value="Bahamas">Bahamas</option>
+<option value="Bahrain">Bahrain</option>
+<option value="Bangladesh">Bangladesh</option>
+<option value="Barbados">Barbados</option>
+<option value="Belarus">Belarus</option>
+<option value="Belgium">Belgium</option>
+<option value="Belize">Belize</option>
+<option value="Benin">Benin</option>
+<option value="Bermuda">Bermuda</option>
+<option value="Bhutan">Bhutan</option>
+<option value="Bolivia">Bolivia</option>
+<option value="Bonaire">Bonaire</option>
+<option value="Bosnia &amp; Herzegovina">Bosnia &amp; Herzegovina</option>
+<option value="Botswana">Botswana</option>
+<option value="Brazil">Brazil</option>
+<option value="British Indian Ocean Ter">British Indian Ocean Ter</option>
+<option value="Brunei">Brunei</option>
+<option value="Bulgaria">Bulgaria</option>
+<option value="Burkina Faso">Burkina Faso</option>
+<option value="Burundi">Burundi</option>
+<option value="Cambodia">Cambodia</option>
+<option value="Cameroon">Cameroon</option>
+<option value="Canada">Canada</option>
+<option value="Canary Islands">Canary Islands</option>
+<option value="Cape Verde">Cape Verde</option>
+<option value="Cayman Islands">Cayman Islands</option>
+<option value="Central African Republic">Central African Republic</option>
+<option value="Chad">Chad</option>
+<option value="Channel Islands">Channel Islands</option>
+<option value="Chile">Chile</option>
+<option value="China">China</option>
+<option value="Christmas Island">Christmas Island</option>
+<option value="Cocos Island">Cocos Island</option>
+<option value="Colombia">Colombia</option>
+<option value="Comoros">Comoros</option>
+<option value="Congo">Congo</option>
+<option value="Cook Islands">Cook Islands</option>
+<option value="Costa Rica">Costa Rica</option>
+<option value="Cote DIvoire">Cote D'Ivoire</option>
+<option value="Croatia">Croatia</option>
+<option value="Cuba">Cuba</option>
+<option value="Curaco">Curacao</option>
+<option value="Cyprus">Cyprus</option>
+<option value="Czech Republic">Czech Republic</option>
+<option value="Denmark">Denmark</option>
+<option value="Djibouti">Djibouti</option>
+<option value="Dominica">Dominica</option>
+<option value="Dominican Republic">Dominican Republic</option>
+<option value="East Timor">East Timor</option>
+<option value="Ecuador">Ecuador</option>
+<option value="Egypt">Egypt</option>
+<option value="El Salvador">El Salvador</option>
+<option value="Equatorial Guinea">Equatorial Guinea</option>
+<option value="Eritrea">Eritrea</option>
+<option value="Estonia">Estonia</option>
+<option value="Ethiopia">Ethiopia</option>
+<option value="Falkland Islands">Falkland Islands</option>
+<option value="Faroe Islands">Faroe Islands</option>
+<option value="Fiji">Fiji</option>
+<option value="Finland">Finland</option>
+<option value="France">France</option>
+<option value="French Guiana">French Guiana</option>
+<option value="French Polynesia">French Polynesia</option>
+<option value="French Southern Ter">French Southern Ter</option>
+<option value="Gabon">Gabon</option>
+<option value="Gambia">Gambia</option>
+<option value="Georgia">Georgia</option>
+<option value="Germany">Germany</option>
+<option value="Ghana">Ghana</option>
+<option value="Gibraltar">Gibraltar</option>
+<option value="Great Britain">Great Britain</option>
+<option value="Greece">Greece</option>
+<option value="Greenland">Greenland</option>
+<option value="Grenada">Grenada</option>
+<option value="Guadeloupe">Guadeloupe</option>
+<option value="Guam">Guam</option>
+<option value="Guatemala">Guatemala</option>
+<option value="Guinea">Guinea</option>
+<option value="Guyana">Guyana</option>
+<option value="Haiti">Haiti</option>
+<option value="Hawaii">Hawaii</option>
+<option value="Honduras">Honduras</option>
+<option value="Hong Kong">Hong Kong</option>
+<option value="Hungary">Hungary</option>
+<option value="Iceland">Iceland</option>
+<option value="India">India</option>
+<option value="Indonesia">Indonesia</option>
+<option value="Iran">Iran</option>
+<option value="Iraq">Iraq</option>
+<option value="Ireland">Ireland</option>
+<option value="Isle of Man">Isle of Man</option>
+<option value="Israel">Israel</option>
+<option value="Italy">Italy</option>
+<option value="Jamaica">Jamaica</option>
+<option value="Japan">Japan</option>
+<option value="Jordan">Jordan</option>
+<option value="Kazakhstan">Kazakhstan</option>
+<option value="Kenya">Kenya</option>
+<option value="Kiribati">Kiribati</option>
+<option value="Korea North">Korea North</option>
+<option value="Korea Sout">Korea South</option>
+<option value="Kuwait">Kuwait</option>
+<option value="Kyrgyzstan">Kyrgyzstan</option>
+<option value="Laos">Laos</option>
+<option value="Latvia">Latvia</option>
+<option value="Lebanon">Lebanon</option>
+<option value="Lesotho">Lesotho</option>
+<option value="Liberia">Liberia</option>
+<option value="Libya">Libya</option>
+<option value="Liechtenstein">Liechtenstein</option>
+<option value="Lithuania">Lithuania</option>
+<option value="Luxembourg">Luxembourg</option>
+<option value="Macau">Macau</option>
+<option value="Macedonia">Macedonia</option>
+<option value="Madagascar">Madagascar</option>
+<option value="Malaysia">Malaysia</option>
+<option value="Malawi">Malawi</option>
+<option value="Maldives">Maldives</option>
+<option value="Mali">Mali</option>
+<option value="Malta">Malta</option>
+<option value="Marshall Islands">Marshall Islands</option>
+<option value="Martinique">Martinique</option>
+<option value="Mauritania">Mauritania</option>
+<option value="Mauritius">Mauritius</option>
+<option value="Mayotte">Mayotte</option>
+<option value="Mexico">Mexico</option>
+<option value="Midway Islands">Midway Islands</option>
+<option value="Moldova">Moldova</option>
+<option value="Monaco">Monaco</option>
+<option value="Mongolia">Mongolia</option>
+<option value="Montserrat">Montserrat</option>
+<option value="Morocco">Morocco</option>
+<option value="Mozambique">Mozambique</option>
+<option value="Myanmar">Myanmar</option>
+<option value="Nambia">Nambia</option>
+<option value="Nauru">Nauru</option>
+<option value="Nepal">Nepal</option>
+<option value="Netherland Antilles">Netherland Antilles</option>
+<option value="Netherlands">Netherlands (Holland, Europe)</option>
+<option value="Nevis">Nevis</option>
+<option value="New Caledonia">New Caledonia</option>
+<option value="New Zealand">New Zealand</option>
+<option value="Nicaragua">Nicaragua</option>
+<option value="Niger">Niger</option>
+<option value="Nigeria">Nigeria</option>
+<option value="Niue">Niue</option>
+<option value="Norfolk Island">Norfolk Island</option>
+<option value="Norway">Norway</option>
+<option value="Oman">Oman</option>
+<option value="Pakistan">Pakistan</option>
+<option value="Palau Island">Palau Island</option>
+<option value="Palestine">Palestine</option>
+<option value="Panama">Panama</option>
+<option value="Papua New Guinea">Papua New Guinea</option>
+<option value="Paraguay">Paraguay</option>
+<option value="Peru">Peru</option>
+<option value="Phillipines">Philippines</option>
+<option value="Pitcairn Island">Pitcairn Island</option>
+<option value="Poland">Poland</option>
+<option value="Portugal">Portugal</option>
+<option value="Puerto Rico">Puerto Rico</option>
+<option value="Qatar">Qatar</option>
+<option value="Republic of Montenegro">Republic of Montenegro</option>
+<option value="Republic of Serbia">Republic of Serbia</option>
+<option value="Reunion">Reunion</option>
+<option value="Romania">Romania</option>
+<option value="Russia">Russia</option>
+<option value="Rwanda">Rwanda</option>
+<option value="St Barthelemy">St Barthelemy</option>
+<option value="St Eustatius">St Eustatius</option>
+<option value="St Helena">St Helena</option>
+<option value="St Kitts-Nevis">St Kitts-Nevis</option>
+<option value="St Lucia">St Lucia</option>
+<option value="St Maarten">St Maarten</option>
+<option value="St Pierre &amp; Miquelon">St Pierre &amp; Miquelon</option>
+<option value="St Vincent &amp; Grenadines">St Vincent &amp; Grenadines</option>
+<option value="Saipan">Saipan</option>
+<option value="Samoa">Samoa</option>
+<option value="Samoa American">Samoa American</option>
+<option value="San Marino">San Marino</option>
+<option value="Sao Tome &amp; Principe">Sao Tome &amp; Principe</option>
+<option value="Saudi Arabia">Saudi Arabia</option>
+<option value="Senegal">Senegal</option>
+<option value="Serbia">Serbia</option>
+<option value="Seychelles">Seychelles</option>
+<option value="Sierra Leone">Sierra Leone</option>
+<option value="Singapore">Singapore</option>
+<option value="Slovakia">Slovakia</option>
+<option value="Slovenia">Slovenia</option>
+<option value="Solomon Islands">Solomon Islands</option>
+<option value="Somalia">Somalia</option>
+<option value="South Africa">South Africa</option>
+<option value="Spain">Spain</option>
+<option value="Sri Lanka">Sri Lanka</option>
+<option value="Sudan">Sudan</option>
+<option value="Suriname">Suriname</option>
+<option value="Swaziland">Swaziland</option>
+<option value="Sweden">Sweden</option>
+<option value="Switzerland">Switzerland</option>
+<option value="Syria">Syria</option>
+<option value="Tahiti">Tahiti</option>
+<option value="Taiwan">Taiwan</option>
+<option value="Tajikistan">Tajikistan</option>
+<option value="Tanzania">Tanzania</option>
+<option value="Thailand">Thailand</option>
+<option value="Togo">Togo</option>
+<option value="Tokelau">Tokelau</option>
+<option value="Tonga">Tonga</option>
+<option value="Trinidad &amp; Tobago">Trinidad &amp; Tobago</option>
+<option value="Tunisia">Tunisia</option>
+<option value="Turkey">Turkey</option>
+<option value="Turkmenistan">Turkmenistan</option>
+<option value="Turks &amp; Caicos Is">Turks &amp; Caicos Is</option>
+<option value="Tuvalu">Tuvalu</option>
+<option value="Uganda">Uganda</option>
+<option value="Ukraine">Ukraine</option>
+<option value="United Arab Erimates">United Arab Emirates</option>
+<option value="United Kingdom">United Kingdom</option>
+<option value="United States of America">United States of America</option>
+<option value="Uraguay">Uruguay</option>
+<option value="Uzbekistan">Uzbekistan</option>
+<option value="Vanuatu">Vanuatu</option>
+<option value="Vatican City State">Vatican City State</option>
+<option value="Venezuela">Venezuela</option>
+<option value="Vietnam">Vietnam</option>
+<option value="Virgin Islands (Brit)">Virgin Islands (Brit)</option>
+<option value="Virgin Islands (USA)">Virgin Islands (USA)</option>
+<option value="Wake Island">Wake Island</option>
+<option value="Wallis &amp; Futana Is">Wallis &amp; Futana Is</option>
+<option value="Yemen">Yemen</option>
+<option value="Zaire">Zaire</option>
+<option value="Zambia">Zambia</option>
+<option value="Zimbabwe">Zimbabwe</option>
+</select></p>
+</div>
+<br>&nbsp;</br>
+
+
+<!-- Race -->
+<div style= "background-color:#e0eeff; margin-right: 0.75em; padding: 3px;" >
+<p><b>4. What is your race?</b></p>
+
+<p class="checkbx"><input type="checkbox" id="Race" name="Race" value="1" >Asian</p>
+<p class="checkbx"><input type="checkbox" id="Race" name="Race" value="2" >Black / African-American</p>
+<p class="checkbx"><input type="checkbox" id="Race" name="Race" value="3" >White</p>
+<p class="checkbx"><input type="checkbox" id="Race" name="Race" value="4" >American Indian or Alaskan Native</p>
+<p class="checkbx"><input type="checkbox" id="Race" name="Race" value="5" >Native Hawaiian or Other Pacific Islander</p>
+<p class="checkbx"><input type="checkbox" id="Race" name="Race" value="6" >Hispanic</p>
+<p class="checkbx"><input type="checkbox" id="Race" name="Race" value="7" required>Unknown/other</p>
+
+<br>&nbsp;</br>
+</div>
+<br>&nbsp;</br>
+
+
+
+<!-- Marital Status -->
+<div style= "background-color:#e0eeff; margin-right: 0.75em; padding: 3px;" >
+<p><b>5. What is your marital status?</b></p>
+<div class = "alt-radio">
+<input type="radio" id="MStatus" name="MStatus" value="1" ><label for="MStatus" class= "radio-label_V">Single (never married)</label><br>
+<input type="radio" id="MStatus" name="MStatus" value="2" ><label for="MStatus" class= "radio-label_V">Married</label><br>
+<input type="radio" id="MStatus" name="MStatus" value="3" ><label for="MStatus" class= "radio-label_V">In a relationship</label><br>
+<input type="radio" id="MStatus" name="MStatus" value="4" ><label for="MStatus" class= "radio-label_V">Separated</label><br>
+<input type="radio" id="MStatus" name="MStatus" value="5" ><label for="MStatus" class= "radio-label_V">Divorced</label><br>
+<input type="radio" id="MStatus" name="MStatus" value="6" required><label for="MStatus" class= "radio-label_V">Widowed</label><br>
+</div>
+<br>&nbsp;</br>
+</div>
+<br>&nbsp;</br>
+
+<!-- Education -->
+<div style= "background-color:#e0eeff; margin-right: 0.75em; padding: 3px;" >
+<p><b>6. What is the highest level of education that you've completed?</b></p>
+<div class = "alt-radio">
+<input type="radio" id="Edu" name="Edu" value="0" ><label for="Edu" class= "radio-label_V">No schooling completed</label><br>
+<input type="radio" id="Edu" name="Edu" value="1" ><label for="Edu" class= "radio-label_V">Some early primary (elementary) school</label><br>
+<input type="radio" id="Edu" name="Edu" value="2" ><label for="Edu" class= "radio-label_V">Completed primary (middle) school</label><br>
+<input type="radio" id="Edu" name="Edu" value="3" ><label for="Edu" class= "radio-label_V">Some secondary education (high school)</label><br>
+<input type="radio" id="Edu" name="Edu" value="4" ><label for="Edu" class= "radio-label_V">Completed secondary education (graduated high school)</label><br>
+<input type="radio" id="Edu" name="Edu" value="5" ><label for="Edu" class= "radio-label_V">Trade/technical/vocational training</label><br>
+<input type="radio" id="Edu" name="Edu" value="6" ><label for="Edu" class= "radio-label_V">Some undergraduate education (at college or university)</label><br>
+<input type="radio" id="Edu" name="Edu" value="7" ><label for="Edu" class= "radio-label_V">Completed undergraduate education (bachelor’s degree)</label><br>
+<input type="radio" id="Edu" name="Edu" value="8" ><label for="Edu" class= "radio-label_V">Some postgraduate education</label><br>
+<input type="radio" id="Edu" name="Edu" value="9" ><label for="Edu" class= "radio-label_V">Master’s degree</label><br>
+<input type="radio" id="Edu" name="Edu" value="10" required><label for="Edu" class= "radio-label_V">Doctorate degree</label><br>
+</div>
+<br>&nbsp;</br>
+</div>
+<br>&nbsp;</br>
+
+<!-- Employed -->
+<div style= "background-color:#e0eeff; margin-right: 0.75em; padding: 3px;" >
+<p><b>7. What best describes your current employment status?</b></p>
+<div class = "alt-radio">
+<input type="radio" id="EmpStatus" name="EmpStatus" value="1" ><label for="EmpStatus" class= "radio-label_V">Unemployed, not looking for employment</label><br>
+<input type="radio" id="EmpStatus" name="EmpStatus" value="2" ><label for="EmpStatus" class= "radio-label_V">Unemployed, looking for employment</label><br>
+<input type="radio" id="EmpStatus" name="EmpStatus" value="3" ><label for="EmpStatus" class= "radio-label_V">Full-time employed for pay</label><br>
+<input type="radio" id="EmpStatus" name="EmpStatus" value="4" ><label for="EmpStatus" class= "radio-label_V">Part-time employed for pay</label><br>
+<input type="radio" id="EmpStatus" name="EmpStatus" value="5" ><label for="EmpStatus" class= "radio-label_V">Self-employed for pay</label><br>
+<input type="radio" id="EmpStatus" name="EmpStatus" value="6" required><label for="EmpStatus" class= "radio-label_V">Retired, not working</label><br>
+</div>
+<br>&nbsp;</br>
+</div>
+<br>&nbsp;</br>
+
+
+<!-- Subjective Social Status -->
+<div style= "background-color:#e0eeff; margin-right: 0.75em; padding: 3px;" >
+<p><b>8. Think of this ladder as showing where people stand in your country</b></p>
+<div style="margin-left: .75em;">
+
+<p> <img src="static/images/SSS_ladder.png" alt="image failed to load" style="width:210px;height:325px;" align="right" hspace="18"> </p>
+
+<p> At the top of the ladder are the people who are best off – those who have the most money, the best education, and the most respected jobs.</p>
+
+<p>At the bottom are the people who are worst off – those who have the least money, the least education, and the least respected job, or no job.</p>
+
+<p>The higher up you are on this ladder, the closer you are to the people at the top; the lower you are, the closer you are to the people at the bottom.</p>
+
+<div class = "alt-radio">
+<p><b>Where would you place yourself on this ladder?</b></p>
+<input id="SSStatus1" type=radio name= "SSStatus" value= "1"><label for="SSStatus1" class= "radio-label"><i>1&nbsp;&nbsp;</i></label>
+<input id="SSStatus2" type=radio name= "SSStatus" value= "2"><label for="SSStatus2" class= "radio-label"><i>2&nbsp;&nbsp;</i></label>
+<input id="SSStatus3" type=radio name= "SSStatus" value= "3"><label for="SSStatus3" class= "radio-label"><i>3&nbsp;&nbsp;</i></label>
+<input id="SSStatus4" type=radio name= "SSStatus" value= "4"><label for="SSStatus4" class= "radio-label"><i>4&nbsp;&nbsp;</i></label>
+<input id="SSStatus5" type=radio name= "SSStatus" value= "5"><label for="SSStatus5" class= "radio-label"><i>5&nbsp;&nbsp;</i></label>
+<input id="SSStatus6" type=radio name= "SSStatus" value= "6"><label for="SSStatus6" class= "radio-label"><i>6&nbsp;&nbsp;</i></label>
+<input id="SSStatus7" type=radio name= "SSStatus" value= "7"><label for="SSStatus7" class= "radio-label"><i>7&nbsp;&nbsp;</i></label>
+<input id="SSStatus8" type=radio name= "SSStatus" value= "8"><label for="SSStatus8" class= "radio-label"><i>8&nbsp;&nbsp;</i></label>
+<input id="SSStatus9" type=radio name= "SSStatus" value= "9"><label for="SSStatus9" class= "radio-label"><i>9&nbsp;&nbsp;</i></label>
+<input id="SSStatus10" type=radio name= "SSStatus" value= "10" required><label for="SSStatus10" class= "radio-label"><i>10</i></label>
+<p><i>(Select a number to indicate where you think you stand at this time of your life compared to other people in your country) </i></p>
+</div>
+</div>
+</div>
+<br>&nbsp;</br>
+
+<!-- Exercise -->
+<div class = "alt-radio">
+<div style= "background-color:#e0eeff; margin-right: 0.75em; padding: 3px;" >
+<p><b>9. &nbsp;On average, how many days per week do you engage in moderate to strenuous exercise?</b> (e.g. a brisk walk, a run, swimming, cycling, weight lifting, team sports etc.)</p>
+<input id="Exercise1_1" type=radio name= "Exercise1" value= "0"><label for="Exercise1_1" class= "radio-label"><i>0 days&nbsp;&nbsp;&nbsp;</i></label>
+<input id="Exercise1_2" type=radio name= "Exercise1" value= "1"><label for="Exercise1_2" class= "radio-label"><i>1 days&nbsp;&nbsp;&nbsp;</i></label>
+<input id="Exercise1_3" type=radio name= "Exercise1" value= "2"><label for="Exercise1_3" class= "radio-label"><i>2 days&nbsp;&nbsp;&nbsp;</i></label>
+<input id="Exercise1_4" type=radio name= "Exercise1" value= "3"><label for="Exercise1_4" class= "radio-label"><i>3 days&nbsp;&nbsp;&nbsp;</i></label>
+<input id="Exercise1_5" type=radio name= "Exercise1" value= "4"><label for="Exercise1_5" class= "radio-label"><i>4 days&nbsp;&nbsp;&nbsp;</i></label>
+<input id="Exercise1_6" type=radio name= "Exercise1" value= "5"><label for="Exercise1_6" class= "radio-label"><i>5 days&nbsp;&nbsp;&nbsp;</i></label>
+<input id="Exercise1_7" type=radio name= "Exercise1" value= "6"><label for="Exercise1_7" class= "radio-label"><i>6 days&nbsp;&nbsp;&nbsp;</i></label>
+<input id="Exercise1_8" type=radio name= "Exercise1" value= "7" required><label for="Exercise1_8" class= "radio-label"><i>7 days</i></label>
+<br>&nbsp;</br>
+<br>&nbsp;</br>
+<p><b>10. On these days, on average, how many minutes do you engage in exercise at this level?</b></p>
+<input id="Exercise2_1" type=radio name= "Exercise2" value= "0"><label for="Exercise2_1" class= "radio-label"><i>0 min.&nbsp;&nbsp;&nbsp;</i></label>
+<input id="Exercise2_2" type=radio name= "Exercise2" value= "10"><label for="Exercise2_1" class= "radio-label"><i>10 min.&nbsp;&nbsp;&nbsp;</i></label>
+<input id="Exercise2_3" type=radio name= "Exercise2" value= "20"><label for="Exercise2_1" class= "radio-label"><i>20 min.&nbsp;&nbsp;&nbsp;</i></label>
+<input id="Exercise2_4" type=radio name= "Exercise2" value= "30"><label for="Exercise2_1" class= "radio-label"><i>30 min.&nbsp;&nbsp;&nbsp;</i></label>
+<input id="Exercise2_5" type=radio name= "Exercise2" value= "40"><label for="Exercise2_1" class= "radio-label"><i>40 min.&nbsp;&nbsp;&nbsp;</i></label>
+<input id="Exercise2_6" type=radio name= "Exercise2" value= "50"><label for="Exercise2_1" class= "radio-label"><i>50 min.&nbsp;&nbsp;&nbsp;</i></label>
+<input id="Exercise2_7" type=radio name= "Exercise2" value= "60" required><label for="Exercise2_1" class= "radio-label"><i>60+ min.</i></label>
+<br>&nbsp;</br>
+</div>
+<br>&nbsp;</br>
+</div>
+
+<!-- Diet -->
+<div style= "background-color:#e0eeff; margin-right: 0.75em; padding: 3px;" >
+  <div class = "alt-radio">
+<p><b>11. How often do you usually eat fresh or canned fish? </b> (NOT including fish and chips)</p>
+<input type="radio" id="Fish" name="Fish" value="0" ><label for="Fish" class= "radio-label_V">Rarely or Never &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="radio" id="Fish" name="Fish"  value="4" ><label for="Fish" class= "radio-label_V">Twice a week</label><br>
+<input type="radio" id="Fish" name="Fish"  value="1" ><label for="Fish" class= "radio-label_V">Once a month &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="radio" id="Fish" name="Fish"  value="5" ><label for="Fish" class= "radio-label_V">Every second day</label><br>
+<input type="radio" id="Fish" name="Fish"  value="2" ><label for="Fish" class= "radio-label_V">Twice a month &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="radio" id="Fish" name="Fish"  value="6" ><label for="Fish" class= "radio-label_V">Once a day</label><br>
+<input type="radio" id="Fish" name="Fish" value="3" required><label for="Fish" class= "radio-label_V">Once a week &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="radio" id="Fish" name="Fish" value="7" ><label for="Fish" class= "radio-label_V">More than once a day</label><br>
+
+<br>&nbsp;</br>
+<b>12. Do you regularly take diet supplements that contain fish oils or omega 3 fatty acids?</b></p>
+<input type="radio" id="FishSupp" name="FishSupp" value="0" ><label for="FishSupp" class= "radio-label_V">Rarely or Never &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="radio" id="FishSupp" name="FishSupp"  value="4" ><label for="FishSupp" class= "radio-label_V">Twice a week</label><br>
+<input type="radio" id="FishSupp" name="FishSupp"  value="1" ><label for="FishSupp" class= "radio-label_V">Once a month &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="radio" id="FishSupp" name="FishSupp"  value="5" ><label for="FishSupp" class= "radio-label_V">Every second day</label><br>
+<input type="radio" id="FishSupp" name="FishSupp"  value="2" ><label for="FishSupp" class= "radio-label_V">Twice a month &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="radio" id="FishSupp" name="FishSupp"  value="6" ><label for="FishSupp" class= "radio-label_V">Once a day</label><br>
+<input type="radio" id="FishSupp" name="FishSupp" value="3" required><label for="FishSupp" class= "radio-label_V">Once a week &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="radio" id="FishSupp" name="FishSupp"  value="7" ><label for="FishSupp" class= "radio-label_V">More than once a day</label><br>
+</div>
+<br>&nbsp;</br>
+
+
+
+
+<p><b>13. In general, how healthy is your overall diet?</b></p>
+<div class="wrap">
+    <form action="">
+        <ul class='likert'>
+            <li>
+                <label>Very poor</label>
+                <input type="radio" id="Diet"  name="Diet" value="0">
+            </li>
+            <li>
+                <label>Poor</label>
+                <input type="radio" id="Diet"  name="Diet" value="1">
+            </li>
+            <li>
+                <label>Fair</label>
+                <input type="radio" id="Diet"  name="Diet" value="2">
+            </li>
+            <li>
+                <label>Good</label>
+                <input type="radio" id="Diet"  name="Diet" value="3">
+            </li>
+            <li>
+                <label>Very good</label>
+                <input type="radio" id="Diet"  name="Diet" value="4">
+            </li>
+            <li>
+                <label>Excellent</label>
+                <input type="radio" id="Diet"  name="Diet" value="5">
+
+            </li>
+
+<img src="static/images/diet_bubble_poor.png" alt="image failed to load" style="width:210px;height:138px;margin-left: 2.5em" align="left" hspace="0"> <img src="static/images/diet_bubble_excellent.png" alt="image failed to load" style="width:210px;height:138px;margin-right: 4em" align="right" hspace="0">
+<br>&nbsp;</br>
+<br>&nbsp;</br>
+<br>&nbsp;</br>
+<br>&nbsp;</br>
+</ul>
+</form>
+</div>
+<br>&nbsp;</br>
+</div>
+<br>&nbsp;</br>
+
+
+<br>&nbsp;</br>
+<br>&nbsp;</br>
+
+<input style= "width: 6em; height: 2.5em; font-size: 13pt; float: right; margin-right: 2em;" type="submit" class="continue" id="continue" value="Continue"></input>
+
+<br>&nbsp;</br>
+<br>&nbsp;</br>
+
+</form>
+</div>
+<br>&nbsp;</br>
+</body>
+</html>

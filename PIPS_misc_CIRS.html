@@ -1,0 +1,286 @@
+
+<!-- CIRS scale with radio buttons-->
+<head>
+<script>
+var ProgressBar = function(){
+if(q == -1){Progress.style.width = '0%'}
+if(q == 0){Progress.style.width = '0%'}
+if(q == 1){Progress.style.width = '10%'}
+if(q == 2){Progress.style.width = '20%'}
+if(q == 3){Progress.style.width = '30%'}
+if(q == 4){Progress.style.width = '40%'}
+if(q == 5){Progress.style.width = '50%'}
+if(q == 6){Progress.style.width = '60%'}
+if(q == 7){Progress.style.width = '70%'}
+if(q == 8){Progress.style.width = '80%'}
+if(q == 9){Progress.style.width = '90%'}
+
+
+
+return Progress.style.width
+}
+var Progress = document.querySelector('#progressbar');
+
+Progress.style.width = ProgressBar();
+
+var Check = function(){
+    // this max number should be 1 greater than number of items on scale
+
+
+    for (var i = 1; i < 14; i++) {
+
+        CIRS = document.getElementsByName("CIRS_" + i)
+
+        if(CIRS[0].checked || CIRS[1].checked ||CIRS[2].checked ||CIRS[3].checked ||CIRS[4].checked){
+            $('input#continue').css('visibility','visible')
+        }
+        else{
+            $('input#continue').css('visibility','hidden')
+            return false
+        }
+    }
+}
+</script>
+
+<style>
+td.left-align {
+  text-align: left;
+}
+</style>
+
+</head>
+
+<body>
+  <center><h2>Progress within this questionnaire section</h2></center>
+  <div style="background-color: #e0eeff; width: 95%; margin:0 auto; height: 25px; border: 3px solid #000040; padding: 0px;">
+   <div id = "progressbar" style="background-color: #000040; height: 25px;overflow:hidden">&nbsp;</div>
+  </div>
+
+<br>&nbsp;<br>
+        <table>
+
+            <tr>
+            <td colspan="3"><p style= "text-align: left;" class="ques"><b>These questions ask you about symptoms and impairment relating to different systems in your body. Each system is rated as follows:</b></p></td>
+            </tr>
+
+            <tr style="background-color: #c9e1fc;">
+            <td><p class="ques">NONE:</p></td>
+            <td class="left-align">No impairment to that organ/system.</td>
+            </tr>
+
+            <tr>
+            <td><p class="ques">MILD:</p></td>
+            <td class="left-align">Impairment does not interfere with normal activity; treatment may or may not be required; prognosis is excellent. (Examples could be skin lesions, hernias, or hemorrhoids)</td>
+            </tr>
+
+            <tr style="background-color: #c9e1fc;">
+            <td><p class="ques">MODERATE:</p></td>
+            <td class="left-align">Impairment interferes with normal activity; treatment is needed; prognosis is good.  (Examples could be gallstones, diabetes, or fractures)</td>
+            </tr>
+
+            <tr>
+            <td><p class="ques">SEVERE:</p></td>
+            <td class="left-align">Impairment is disabling; treatment is urgently needed; prognosis is guarded. (Examples could be carcinoma, pulmonary emphysema, or congestive heart failure)</td>
+            </tr>
+
+            <tr style="background-color: #c9e1fc;">
+            <td><p class="ques">EXTREMELY SEVERE:</p></td>
+            <td class="left-align">Impairment is life threatening; treatment is urgent or of an avail; prognosis is grave. (Examples could be myocardial infarction, cerebrovascular accident, gastrointestinal bleeding, or embolus)</td>
+            </tr>
+
+        </table>
+
+<br>&nbsp;</br>
+<div class="instruct" id="main">
+
+  <form id="postquiz" action="done" method="post">
+
+    <p><b>Please select the response that is most appropriate for each of the systems in your body. </b></p>
+      <table border =0.2 rules=rows>
+
+            <tr class="question" >
+                  <td class="questiontext;" style="text-align:left">
+                </td>
+                <td align="center" valign="bottom" width="10%"><i><font size=2>NONE<font></i></td>
+                <td align="center" valign="bottom" width="10%"><i><font size=2>MILD<font></i></td>
+                <td align="center" valign="bottom" width="10%"><i><font size=2>MODERATE<font></i></td>
+                <td align="center" valign="bottom" width="10%"><i><font size=2>SEVERE<font></i></td>
+                <td align="center" valign="bottom" width="11%"><i><font size=2>EXTREMELY SEVERE<font></i></td>
+            </tr>
+
+
+
+          <tr class="question" style="background-color: #c9e1fc;">
+                <td class="questiontext;" style="text-align:left">
+                  <b>1.</b> Cardiac (heart only)
+                </td>
+                <td align="center"><input type = "radio"  name="CIRS_1" id="CIRS_1" value="0" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_1" id="CIRS_1" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_1" id="CIRS_1" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_1" id="CIRS_1" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_1" id="CIRS_1" value="4" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+            <tr class="question">
+                  <td class="questiontext;" style="text-align:left">
+                  <b>2.</b> Hypertension (rating is based on severity; affected systems are rated separately)
+
+                </td>
+                <td align="center"><input type = "radio"  name="CIRS_2" id="CIRS_2" value="0" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_2" id="CIRS_2" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_2" id="CIRS_2" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_2" id="CIRS_2" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_2" id="CIRS_2" value="4" style="border: none;" onchange='Check()'></td>
+
+
+            </tr>
+              <tr class="question" style="background-color: #c9e1fc;">
+                  <td class="questiontext;" style="text-align:left">
+                  <b>3.</b> Vascular (blood, blood vessels and cells, marrow, spleen, lymphatics)
+
+                </td>
+                <td align="center"><input type = "radio"  name="CIRS_3" id="CIRS_3" value="0" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_3" id="CIRS_3" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_3" id="CIRS_3" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_3" id="CIRS_3" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_3" id="CIRS_3" value="4" style="border: none;" onchange='Check()'></td>
+
+
+            </tr>
+            <tr class="question">
+                  <td class="questiontext;" style="text-align:left">
+                  <b>4.</b> Respiratory (lungs, bronchi, trachea below the larynx)
+
+                </td>
+                <td align="center"><input type = "radio"  name="CIRS_4" id="CIRS_4" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_4" id="CIRS_4" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_4" id="CIRS_4" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_4" id="CIRS_4" value="4" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_4" id="CIRS_4" value="0" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+              <tr class="question" style="background-color: #c9e1fc;">
+                  <td class="questiontext;" style="text-align:left">
+                  <b>5.</b> ENT (eye, ear, nose, throat, larynx)
+
+                </td>
+                <td align="center"><input type = "radio"  name="CIRS_5" id="CIRS_5" value="0" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_5" id="CIRS_5" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_5" id="CIRS_5" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_5" id="CIRS_5" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_5" id="CIRS_5" value="4" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+            <tr class="question">
+                  <td class="questiontext;" style="text-align:left">
+                  <b>6.</b> Upper GI (esophagus, stomach, duodenum. Biliar and parcreatic trees; do not include diabetes)
+
+                </td>
+                <td align="center"><input type = "radio"  name="CIRS_6" id="CIRS_6" value="0" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_6" id="CIRS_6" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_6" id="CIRS_6" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_6" id="CIRS_6" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_6" id="CIRS_6" value="4" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+
+
+              <tr class="question" style="background-color: #c9e1fc;">
+                  <td class="questiontext;" style="text-align:left">
+                  <b>7.</b> Lower GI (intestines, colon, bowel, hernias)
+                </td>
+                <td align="center"><input type = "radio"  name="CIRS_7" id="CIRS_7" value="0" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_7" id="CIRS_7" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_7" id="CIRS_7" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_7" id="CIRS_7" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_7" id="CIRS_7" value="4" style="border: none;" onchange='Check()'></td>
+
+
+            </tr>
+            <tr class="question">
+                  <td class="questiontext;" style="text-align:left">
+                  <b>8.</b> Hepatic (liver only)
+
+                </td>
+                <td align="center"><input type = "radio"  name="CIRS_8" id="CIRS_8" value="0" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_8" id="CIRS_8" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_8" id="CIRS_8" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_8" id="CIRS_8" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_8" id="CIRS_8" value="4" style="border: none;" onchange='Check()'></td>
+
+
+            </tr>
+              <tr class="question" style="background-color: #c9e1fc;">
+                  <td class="questiontext;" style="text-align:left">
+                  <b>9.</b> Renal (kidneys only)
+
+                </td>
+                <td align="center"><input type = "radio"  name="CIRS_9" id="CIRS_9" value="0" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_9" id="CIRS_9" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_9" id="CIRS_9" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_9" id="CIRS_9" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_9" id="CIRS_9" value="4" style="border: none;" onchange='Check()'></td>
+
+
+            </tr>
+            <tr class="question">
+                  <td class="questiontext;" style="text-align:left">
+                  <b>10.</b> Other GU (ureters, bladder, urethra, prostate, genitals)
+
+                </td>
+                <td align="center"><input type = "radio"  name="CIRS_10" id="CIRS_10" value="0" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_10" id="CIRS_10" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_10" id="CIRS_10" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_10" id="CIRS_10" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_10" id="CIRS_10" value="4" style="border: none;" onchange='Check()'></td>
+
+
+            </tr>
+                <tr class="question" style="background-color: #c9e1fc;">
+                  <td class="questiontext;" style="text-align:left">
+                  <b>11.</b> Musculo-Skeletal-Integumentary (muscles, bone, skin)
+
+                </td>
+                <td align="center"><input type = "radio"  name="CIRS_11" id="CIRS_11" value="0" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_11" id="CIRS_11" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_11" id="CIRS_11" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_11" id="CIRS_11" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_11" id="CIRS_11" value="4" style="border: none;" onchange='Check()'></td>
+
+
+            </tr>
+            <tr class="question">
+                  <td class="questiontext;" style="text-align:left">
+                  <b>12.</b> Neurological (brain, spinal cord, nerves; do not include dementia)
+
+                </td>
+                <td align="center"><input type = "radio"  name="CIRS_12" id="CIRS_12" value="0" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_12" id="CIRS_12" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_12" id="CIRS_12" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_12" id="CIRS_12" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_12" id="CIRS_12" value="4" style="border: none;" onchange='Check()'></td>
+
+
+            </tr>
+              <tr class="question" style="background-color: #c9e1fc;">
+                  <td class="questiontext;" style="text-align:left">
+                  <b>13.</b> Endocrine-Metabolic (includes diabetes, thyroid dysfunction, diffuse infections, infections, toxicity)
+
+                </td>
+                <td align="center"><input type = "radio"  name="CIRS_13" id="CIRS_13" value="0" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_13" id="CIRS_13" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_13" id="CIRS_13" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_13" id="CIRS_13" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type = "radio"  name="CIRS_13" id="CIRS_13" value="4" style="border: none;" onchange='Check()'></td>
+
+
+            </tr>
+        </table>
+
+                      <input type="button" class="continue" id="continue" value="Continue" style="float: right; visibility: hidden;"></input>
+</form>
+</div>
+
+
+ <p style="text-align:left"><strong>The CONTINUE button will appear here once you have answered all of the questions. Please double check your answers if you think you are finished but do not see the continue button. </strong></p>
+</body>

@@ -1,0 +1,572 @@
+<!-- *********Socio-demographic; Exercise; Diet ********-->
+
+
+
+<html>
+<head>
+  <script>
+
+
+  $(":radio").click(function() {
+                    $(this).closest("tr").addClass("active").
+                    siblings("div.active").removeClass("active");
+                    });
+
+
+
+  var Check = function(){
+      // this max number should be 1 greater than number of items on scsale
+
+      for (var i = 1; i < 4; i++) {
+        console.log("i=" + i);
+          TFLTE = document.getElementsByName("TFLTE_" + i)
+      console.log("TFLTE=" + TFLTE);
+          if(TFLTE[0].checked || TFLTE[1].checked || TFLTE[2].checked || TFLTE[3].checked || TFLTE[4].checked || TFLTE[5].checked || TFLTE[6].checked || TFLTE[7].checked || TFLTE[8].checked || TFLTE[9].checked){
+
+              $('input#continue').css('visibility','visible')
+          }
+          else{
+
+              $('input#continue').css('visibility','hidden')
+              return false
+          }
+      }
+
+
+  }
+
+  function yesnoCheck() {
+    if (document.getElementById('TFLTE_yes').checked) {
+        document.getElementById('ifYes').style.display = 'block';
+    }
+    else document.getElementById('ifYes').style.display = 'none';
+}
+function yesnoCheck2() {
+  if (document.getElementById('TFLTE_yes2').checked) {
+      document.getElementById('ifYes2').style.display = 'block';
+  }
+  else document.getElementById('ifYes2').style.display = 'none';
+}
+function yesnoCheck3() {
+  if (document.getElementById('TFLTE_yes3').checked) {
+      document.getElementById('ifYes3').style.display = 'block';
+  }
+  else document.getElementById('ifYes3').style.display = 'none';
+}
+
+var dddepN = document.getElementById('TFLTE_2');
+
+ for (var i = 0; i <= 30; i++) {
+     var theOption = new Option;
+     theOption.text = i;
+     theOption.value = i;
+     dddepN.options[i] = theOption;
+}
+
+
+var dddepW = document.getElementById('TFLTE_6');
+
+ for (var i = 0; i <= 300; i++) {
+     var theOption = new Option;
+     theOption.text = i;
+     theOption.value = i;
+     dddepW.options[i] = theOption;
+}
+
+
+var ProgressBar = function(){
+if(q == -1){Progress.style.width = '0%'}
+if(q == 0){Progress.style.width = '0%'}
+if(q == 1){Progress.style.width = '10%'}
+if(q == 2){Progress.style.width = '20%'}
+if(q == 3){Progress.style.width = '30%'}
+if(q == 4){Progress.style.width = '40%'}
+if(q == 5){Progress.style.width = '50%'}
+if(q == 6){Progress.style.width = '60%'}
+if(q == 7){Progress.style.width = '70%'}
+if(q == 8){Progress.style.width = '80%'}
+if(q == 9){Progress.style.width = '90%'}
+
+
+  return Progress.style.width
+  }
+  var Progress = document.querySelector('#progressbar');
+
+  Progress.style.width = ProgressBar()
+  </script>
+
+
+
+
+<style>
+.wrap {
+  font:10px Arial, san-serif;
+}
+
+form .statement {
+  display:block;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 30px 0 0 4.25%;
+  margin-bottom:10px;
+}
+form .likert {
+  list-style:none;
+  width:100%;
+  margin:0;
+  padding:0 0 35px;
+  display:block;
+  border-bottom:2px solid #07044f;
+}
+form .likert:last-of-type {border-bottom:0;}
+form .likert:before {
+  content: '';
+  position:relative;
+  top:40px;
+  left:11%;
+  display:block;
+  background-color:#001e59;
+  height:8px;
+  width:80%;
+}
+form .likert li {
+  display:inline-block;
+  width:8.5%;
+  text-align:center;
+  vertical-align: top;
+}
+form .likert li input[type=radio] {
+  display:block;
+  position:relative;
+  top:0;
+  left:50%;
+  margin-left:-4px;
+
+}
+form .likert li label {width:100%;}
+
+form .buttons {
+  margin:10px 0;
+  padding:0 4.25%;
+  text-align:right
+}
+form .buttons button {
+  padding: 5px 10px;
+  background-color: #67ab49;
+  border: 0;
+  border-radius: 3px;
+}
+
+/*Hover and definition*/
+dfn {
+  background: rgba(0,0,0,0.2);
+  border-bottom: dashed 1px #042c7a;
+  padding: 0 0.4em;
+  cursor: help;
+  font-style: normal;
+  position: relative;
+
+}
+dfn::after {
+  content: attr(data-info);
+  display: inline;
+  position: absolute;
+  top: 22px; left: 0;
+  opacity: 0;
+  width: 230px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5em;
+  padding: 0.5em 0.8em;
+  background: #042c7a;
+  color: #fff;
+  pointer-events: none; /* This prevents the box from apearing when hovered. */
+  transition: opacity 250ms, top 250ms;
+}
+dfn::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 12px; left: 20px;
+  opacity: 0;
+  width: 0; height: 0;
+  border: solid transparent 5px;
+  border-bottom-color: rgba(0,0,0,0.8);
+  transition: opacity 250ms, top 250ms;
+}
+dfn:hover {z-index: 2;} /* Keeps the info boxes on top of other elements */
+dfn:hover::after,
+dfn:hover::before {opacity: 1;}
+dfn:hover::after {top: 30px;}
+dfn:hover::before {top: 20px;}
+
+.alt-radio input[type=radio] {
+  position: absolute;
+}
+
+  .alt-radio .radio-label {
+    display: inline-block;
+    position: relative;
+    margin-left: 1.5em;
+    top: 0.5em;
+    vertical-align: middle;
+  }
+
+
+
+  p.checkbx {margin-bottom: 0.5em;  margin-top: 0em; }
+  i.checkbx {float: "left"; font-size: 13px}
+
+</style>
+
+</head>
+
+
+  <body>
+    <center><h2>Progress within this questionnaire section</h2></center>
+    <div style="background-color: #e0eeff; width: 95%; margin:0 auto; height: 25px; border: 3px solid #000040; padding: 0px;">
+     <div id = "progressbar" style="background-color: #000040; height: 25px;overflow:hidden">&nbsp;</div>
+    </div>
+
+  <br>&nbsp;<br>
+<div class="instruct" id="main" style= "background-color:#c9e1fc;" >
+<form id="postquiz" action="done" method="post" style= "margin-left: 0.75em;">
+<br>&nbsp;</br>
+<p><b><font size =5.5>&nbsp;Please answer the following questions.</font></b></p>
+
+
+<!-- Chronicity/Age of onset -->
+<div style= "background-color:#e0eeff; margin-right: 0.75em; padding: 3px;" >
+  <div style="margin-left: 0.75em; margin-right: 0.75em">
+<p><b>1. When did you first experience the symptoms of the mental health problem you are seeking treatment for? </b> (If you cannot remember the exact date, an approximate date will be sufficient)
+<input id="TFLTE_1" name="Chronicity" type="date" placeholder="YYYY-MM-DD" ></p>
+</div>
+</div>
+<br>&nbsp;</br>
+
+
+<!-- Number of MDEs -->
+<div style= "background-color:#e0eeff; margin-right: 0.75em; padding: 3px;" >
+  <div style="margin-left: 0.75em; margin-right: 0.75em">
+<p><b>2. How many times in your life have you been clinically depressed?</b> (If you have never been clinically depressed select ‘0’)
+       <select id="TFLTE_2" name="MDE_number" >
+           <option value="select">--Select--</option>
+       </select></p>
+</div>
+</div>
+<br>&nbsp;</br>
+
+<!-- Past AntiDs -->
+
+<div style= "background-color:#e0eeff; margin-right: 0.75em; padding: 3px;" >
+  <div style="margin-left: 0.75em; margin-right: 0.75em">
+<p><b>3. Have you ever in the past completed a course of antidepressant medication for the same mental health problem you are currently experiencing?</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Yes <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="TFLTE_yes" /> No <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="TFLTE_no" /></p>
+    <div id="ifYes" style="display:none">
+
+    <div style="margin-left: 2em;">
+
+        <p><b>3.1</b> How many times would you say this kind of treatment has resulted in a significant improvement in your symptoms?</p>
+        <div class = "alt-radio">
+        <div style="margin-left: 1.5em;">
+        <input id="TFLTE_3_1" type="radio" name='yesADs1' value= "0"/> <label for="TFLTE_3_1" class= "radio-label"><i>0&nbsp;&nbsp;</i></label>
+        <input id="TFLTE_3_2" type="radio" name='yesADs1' value= "1"/> <label for="TFLTE_3_1" class= "radio-label"><i>1&nbsp;&nbsp;</i></label>
+        <input id="TFLTE_3_3" type="radio" name='yesADs1' value= "2"/> <label for="TFLTE_3_1" class= "radio-label"><i>2&nbsp;&nbsp;</i></label>
+        <input id="TFLTE_3_4" type="radio" name='yesADs1' value= "3"/><label for="TFLTE_3_1" class= "radio-label"><i>3&nbsp;&nbsp;</i></label>
+        <input id="TFLTE_3_5" type="radio" name='yesADs1' value= "4"/> <label for="TFLTE_3_1" class= "radio-label"><i>4&nbsp;&nbsp;</i></label>
+        <input id="TFLTE_3_6" type="radio" name='yesADs1' value= "5"/><label for="TFLTE_3_1" class= "radio-label"><i>5&nbsp;&nbsp;</i></label>
+        <input id="TFLTE_3_7" type="radio" name='yesADs1' value= "6"/> <label for="TFLTE_3_1" class= "radio-label"><i>6&nbsp;&nbsp;</i></label>
+        <input id="TFLTE_3_8" type="radio" name='yesADs1' value= "7"/><label for="TFLTE_3_1" class= "radio-label"><i>7&nbsp;&nbsp;</i></label>
+        <input id="TFLTE_3_9" type="radio" name='yesADs1' value= "8"/> <label for="TFLTE_3_1" class= "radio-label"><i>8&nbsp;&nbsp;</i></label>
+        <input id="TFLTE_3_10" type="radio" name='yesADs1' value= "9"/><label for="TFLTE_3_1" class= "radio-label"><i>9&nbsp;&nbsp;</i></label>
+        <input id="TFLTE_3_11" type="radio" name='yesADs1' value= "10"/> <label for="TFLTE_3_1" class= "radio-label"><i>10+</i></label>
+      </div>
+      </div>
+      <br>&nbsp;</br>
+      <p><b>3.2</b> How many times would you say this kind of treatment has <u>failed to</u> result in a significant improvement in your symptoms?</p>
+      <div class = "alt-radio">
+        <div style="margin-left: 1.5em;">
+        <input id="TFLTE_4_1" type="radio" name='yesADs2' value= "0"/> <label for="TFLTE_4_1" class= "radio-label"><i>0&nbsp;&nbsp;</i></label>
+        <input id="TFLTE_4_2" type="radio" name='yesADs2' value= "1"/> <label for="TFLTE_4_1" class= "radio-label"><i>1&nbsp;&nbsp;</i></label>
+        <input id="TFLTE_4_3" type="radio" name='yesADs2' value= "2"/> <label for="TFLTE_4_1" class= "radio-label"><i>2&nbsp;&nbsp;</i></label>
+        <input id="TFLTE_4_4" type="radio" name='yesADs2' value= "3"/><label for="TFLTE_4_1" class= "radio-label"><i>3&nbsp;&nbsp;</i></label>
+        <input id="TFLTE_4_5" type="radio" name='yesADs2' value= "4"/> <label for="TFLTE_4_1" class= "radio-label"><i>4&nbsp;&nbsp;</i></label>
+        <input id="TFLTE_4_6" type="radio" name='yesADs2' value= "5"/><label for="TFLTE_4_1" class= "radio-label"><i>5&nbsp;&nbsp;</i></label>
+        <input id="TFLTE_4_7" type="radio" name='yesADs2' value= "6"/> <label for="TFLTE_4_1" class= "radio-label"><i>6&nbsp;&nbsp;</i></label>
+        <input id="TFLTE_4_8" type="radio" name='yesADs2' value= "7"/><label for="TFLTE_4_1" class= "radio-label"><i>7&nbsp;&nbsp;</i></label>
+        <input id="TFLTE_4_9" type="radio" name='yesADs2' value= "8"/> <label for="TFLTE_4_1" class= "radio-label"><i>8&nbsp;&nbsp;</i></label>
+        <input id="TFLTE_4_10" type="radio" name='yesADs2' value= "9"/><label for="TFLTE_4_1" class= "radio-label"><i>9&nbsp;&nbsp;</i></label>
+        <input id="TFLTE_4_11" type="radio" name='yesADs2' value= "10"/> <label for="TFLTE_4_1" class= "radio-label"><i>10+</i></label>
+      </div>
+      </div>
+      <br>&nbsp;</br>
+        </div>
+
+
+      <div style="margin-left: 2em;">
+        <p><b>3.3</b> Have you ever taken an antidepressant called Sertraline (also known as Zoloft/Lustral)?<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;Yes<input type="radio" name="Sertraline" id="TFLTE_5" value="1" />No<input type="radio" name="Sertraline" id="TFLTE_5" value="0" /></p><br>
+    </div>
+  </div>
+  </div>
+</div>
+    <br>&nbsp;</br>
+
+    <div style= "background-color:#e0eeff; margin-right: 0.75em; padding: 3px;" >
+      <div style="margin-left: 0.75em; margin-right: 0.75em">
+    <p><b>4. For how many weeks have you had the symptoms that you are currently seeking treatment for?</b> (Note we are inquiring about your current <dfn data-info="A finite period in which someone is affected by specific symptoms">'episode'</dfn>, not your lifetime)
+          <select id="TFLTE_6" name="MDE_weeks">
+              <option value=" ">--Select--</option>
+          </select></p>
+    </div>
+  </div>
+    <br>&nbsp;</br>
+
+
+<div style= "background-color:#e0eeff; margin-right: 0.75em; padding: 3px;" >
+  <div style="margin-left: 0.75em; margin-right: 0.75em">
+<p><b>5. What point on this 10 point scale best describes your expectations about what is likely to happen as a result of your current treatment?</b></p>
+    <div class="wrap" style="margin-left: 1.5em;">
+        <form action="">
+            <ul class='likert'>
+                <li><label>1</label>
+                    <input type="radio" id="TFLTE_7" name="TFTLE_1" value="0" />
+                    <label><i>"I don’t expect to feel any better"</i></label>
+                </li>
+                <li><label>2</label>
+                    <input type="radio" id="TFLTE_7" name="TFTLE_1" value="1" />
+                    <label> </label>
+                </li>
+                <li><label>3</label>
+                    <input type="radio" id="TFLTE_7" name="TFTLE_1" value="2" />
+                    <label> </label>
+                </li>
+                <li><label>4</label>
+                    <input type="radio" id="TFLTE_7" name="TFTLE_1" value="3" />
+                    <label> </label>
+                </li>
+                <li><label>5</label>
+                    <input type="radio" id="TFLTE_7" name="TFTLE_1" value="4" />
+                    <label> </label>
+                </li>
+                <li><label>6</label>
+                    <input type="radio" id="TFLTE_7" name="TFTLE_1" value="5" />
+                    <label> </label>
+                </li>
+                <li><label>7</label>
+                    <input type="radio" id="TFLTE_7" name="TFTLE_1" value="6" />
+                    <label> </label>
+                </li>
+                <li><label>8</label>
+                    <input type="radio" id="TFLTE_7" name="TFTLE_1" value="7" />
+                    <label> </label>
+                </li>
+                <li><label>9</label>
+                    <input type="radio" id="TFLTE_7" name="TFTLE_1" value="8" />
+                    <label> </label>
+                </li>
+                <li><label>10</label>
+                    <input type="radio" id="TFLTE_7" name="TFTLE_1" value="9" />
+                    <label><i>"I expect to feel completely better"</i></label>
+                </li>
+
+            </ul>
+            <!-- <div class="buttons">
+                <button class="clear">Clear</button>
+                <button class="submit">Submit Rating</button>
+            </div> -->
+        </form>
+    </div>
+  </div>
+</div>
+  <br>&nbsp;</br>
+
+
+  <!-- Past PTs -->
+  <div style= "background-color:#e0eeff; margin-left: 0.75em; margin-right: 0.75em; padding: 3px;" >
+    <div style="margin-left: 0.75em; margin-right: 0.75em">
+  <p><b>6. Have you ever in the past completed a course of psychological therapy for the same mental health problem you are currently experiencing?</b><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;Yes <input type="radio" onclick="javascript:yesnoCheck2();" name="yesno2" id="TFLTE_yes2" /> No <input type="radio" onclick="javascript:yesnoCheck2();" name="yesno2" id="TFLTE_no2" /></p>
+      <div id="ifYes2" style="display:none">
+        <div style="margin-left: 2em;">
+        <p><b>6.1</b> Please select the type of psychological therapy:<br>
+        <div style="text-align:left; margin-left: 1.5em;">
+        <input id="TFLTE_8" type="checkbox" value='yesPT0_1' name= "CBT"/> <i>Cognitive Behavioural Therapy</i><br>
+        <input id="TFLTE_8" type="checkbox" value='yesPT0_2' name= "CT"/> <i>Cognitive Therapy</i><br>
+        <input id="TFLTE_8" type="checkbox" value='yesPT0_3' name= "BT"/> <i>Behavioural Therapy</i><br>
+        <input id="TFLTE_8" type="checkbox" value='yesPT0_4' name= "IPT"/> <i>Interpersonal Therapy</i><br>
+        <input id="TFLTE_8" type="checkbox" value='yesPT0_5' name= "FT"/> <i>Family Therapy</i><br>
+        <input id="TFLTE_8" type="checkbox" value='yesPT0_6' name= "Counselling"/> <i>Counselling</i><br>
+        <input id="TFLTE_8" type="checkbox" value='yesPT0_7' name= "Mindfulness"/> <i>Mindfulness</i><br>
+        <input id="TFLTE_8" type="checkbox" value='yesPT0_8' name= "Psychoanalytic"/> <i>Psychoanalytic</i><br>
+        <input id="TFLTE_8" type="checkbox" value='yesPT0_9' name= "Psychodynamic"/> <i>Psychodynamic</i><br>
+        <input id="TFLTE_8" type="checkbox" value='yesPT0_10' name= "Other"/> <i>Other</i>
+        </div></p><br>
+        </div>
+<div class = "alt-radio">
+    <div style="margin-left: 2em;">
+        <p><b>6.2</b> How many times would you say this kind of treatment has resulted in a significant improvement in your symptoms?<br>
+          <div style="margin-left: 1.5em;">
+          <input id="TFLTE_9_1" type="radio"  name='yesPT1' value= "0"/><label for="TFLTE_9_1" class= "radio-label"><i>0&nbsp;&nbsp;</i></label>
+          <input id="TFLTE_9_2" type="radio"  name='yesPT1'value= "1"/> <label for="TFLTE_9_2" class= "radio-label"><i>1&nbsp;&nbsp;</i></label>
+          <input id="TFLTE_9_3" type="radio"  name='yesPT1' value= "2"/> <label for="TFLTE_9_3" class= "radio-label"><i>2&nbsp;&nbsp;</i></label>
+          <input id="TFLTE_9_4" type="radio"  name='yesPT1' value= "3"/> <label for="TFLTE_9_4" class= "radio-label"><i>3&nbsp;&nbsp;</i></label>
+          <input id="TFLTE_9_5" type="radio"  name='yesPT1' value= "4"/> <label for="TFLTE_9_5" class= "radio-label"><i>4&nbsp;&nbsp;</i></label>
+          <input id="TFLTE_9_6" type="radio"  name='yesPT1' value= "5"/> <label for="TFLTE_9_6" class= "radio-label"><i>5&nbsp;&nbsp;</i></label>
+          <input id="TFLTE_9_7" type="radio"  name='yesPT1' value= "6"/> <label for="TFLTE_9_7" class= "radio-label"><i>6&nbsp;&nbsp;</i></label>
+          <input id="TFLTE_9_8" type="radio"  name='yesPT1' value= "7"/> <label for="TFLTE_9_8" class= "radio-label"><i>7&nbsp;&nbsp;</i></label>
+          <input id="TFLTE_9_9" type="radio"  name='yesPT1' value= "8"/> <label for="TFLTE_9_9" class= "radio-label"><i>8&nbsp;&nbsp;</i></label>
+          <input id="TFLTE_9_10" type="radio"  name='yesPT1' value= "9"/> <label for="TFLTE_9_10" class= "radio-label"><i>9&nbsp;&nbsp;</i></label>
+          <input id="TFLTE_9_11" type="radio"  name='yesPT1' value= "10"/> <label for="TFLTE_9_11" class= "radio-label"><i>10+</i></label>
+          </div></p><br>
+
+          <p><b>6.3</b> How many times would you say this kind of treatment has failed to result in a significant improvement in your symptoms?</p>
+          <div style="margin-left: 1.5em;">
+          <input id="TFLTE_10_1" type="radio"  name='yesPT2' value= "0"/> <label for="TFLTE_10_1" class= "radio-label"><i>0&nbsp;&nbsp;</i></label>
+          <input id="TFLTE_10_2" type="radio"  name='yesPT2'value= "1"/> <label for="TFLTE_10_2" class= "radio-label"><i>1&nbsp;&nbsp;</i></label>
+          <input id="TFLTE_10_3" type="radio"  name='yesPT2' value= "2"/> <label for="TFLTE_10_3" class= "radio-label"><i>2&nbsp;&nbsp;</i></label>
+          <input id="TFLTE_10_4" type="radio"  name='yesPT2' value= "3"/> <label for="TFLTE_10_4" class= "radio-label"><i>3&nbsp;&nbsp;</i></label>
+          <input id="TFLTE_10_5" type="radio"  name='yesPT2' value= "4"/> <label for="TFLTE_10_5" class= "radio-label"><i>4&nbsp;&nbsp;</i></label>
+          <input id="TFLTE_10_6" type="radio"  name='yesPT2' value= "5"/> <label for="TFLTE_10_6" class= "radio-label"><i>5&nbsp;&nbsp;</i></label>
+          <input id="TFLTE_10_7" type="radio"  name='yesPT2' value= "6"/> <label for="TFLTE_10_7" class= "radio-label"><i>6&nbsp;&nbsp;</i></label>
+          <input id="TFLTE_10_8" type="radio"  name='yesPT2' value= "7"/> <label for="TFLTE_10_8" class= "radio-label"><i>7&nbsp;&nbsp;</i></label>
+          <input id="TFLTE_10_9" type="radio"  name='yesPT2' value= "8"/> <label for="TFLTE_10_9" class= "radio-label"><i>8&nbsp;&nbsp;</i></label>
+          <input id="TFLTE_10_10" type="radio"  name='yesPT2' value= "9"/> <label for="TFLTE_10_10" class= "radio-label"><i>9&nbsp;&nbsp;</i></label>
+          <input id="TFLTE_10_11" type="radio"  name='yesPT2' value= "10"/> <label for="TFLTE_10_11" class= "radio-label"><i>10+</i></label>
+          </div></p><br>
+          </div>
+          </div>
+      </div>
+      </div>
+    </div>
+      <br>&nbsp;</br>
+
+      <!-- Current PTs -->
+      <div style= "background-color:#e0eeff; margin-left: 0.75em; margin-right: 0.75em; padding: 3px;" >
+        <div style="margin-left: 0.75em; margin-right: 0.75em">
+      <p><b>7. Are you currently receiving regular psychological therapy for the same mental health problem you are currently experiencing?</b><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;Yes <input type="radio" onclick="javascript:yesnoCheck3();" name="yesno3" id="TFLTE_yes3" /> No <input type="radio" onclick="javascript:yesnoCheck3();" name="yesno3" id="TFLTE_no3" /></p>
+          <div id="ifYes3" style="display:none">
+        <div style="text-align:left; margin-left: 1.5em;">
+            <p><b>7.1</b> Please select the type of psychological therapy:</b><br>
+            <div style="margin-left: 1.5em;">
+            <input id="TFLTE_11" type="checkbox" value='yesPT3_1' name= "CBT"/> <i>Cognitive Behavioural Therapy</i><br>
+            <input id="TFLTE_11" type="checkbox" value='yesPT3_2' name= "CT"/> <i>Cognitive Therapy</i><br>
+            <input id="TFLTE_11" type="checkbox" value='yesPT3_3' name= "BT"/> <i>Behavioural Therapy</i><br>
+            <input id="TFLTE_11" type="checkbox" value='yesPT3_4' name= "IPT"/> <i>Interpersonal Therapy</i><br>
+            <input id="TFLTE_11" type="checkbox" value='yesPT3_5' name= "FT"/> <i>Family Therapy</i><br>
+            <input id="TFLTE_11" type="checkbox" value='yesPT3_6' name= "Counselling"/> <i>Counselling</i><br>
+            <input id="TFLTE_11" type="checkbox" value='yesPT3_7' name= "Mindfulness"/> <i>Mindfulness</i><br>
+            <input id="TFLTE_11" type="checkbox" value='yesPT3_8' name= "Psychoanalytic"/> <i>Psychoanalytic</i><br>
+            <input id="TFLTE_11" type="checkbox" value='yesPT3_9' name= "Psychodynamic"/> <i>Psychodynamic</i><br>
+            <input id="TFLTE_11" type="checkbox" value='yesPT3_10' name= "Other"/> <i>Other</i>
+            </div></p><br>
+              </div>
+                  </div>
+        </div>
+      </div>
+        <br>&nbsp;</br>
+
+<!-- Family History -->
+<div class = "alt-radio">
+        <div style= "background-color:#e0eeff; margin-left: 0.75em; margin-right: 0.75em; padding: 3px;" >
+          <div style="margin-left: 0.75em; margin-right: 0.75em">
+        <p><b> 8. Do you have any close relatives who ever received a diagnosis of a mental health disorder?</b> (Please only count your biological parents, biological siblings or biological children)</p>
+        <input id="TFLTE_12_1" type="radio" name="FamHist" value= "0" /><label for="TFLTE_12_1" class= "radio-label"><i>0&nbsp;&nbsp;</i></label>
+        <input id="TFLTE_12_2" type="radio" name="FamHist" value= "1" /><label for="TFLTE_12_1" class= "radio-label"><i>1&nbsp;&nbsp;</i></label>
+        <input id="TFLTE_12_3" type="radio" name="FamHist" value= "2" /><label for="TFLTE_12_1" class= "radio-label"><i>2&nbsp;&nbsp;</i></label>
+        <input id="TFLTE_12_4" type="radio" name="FamHist" value= "3" /><label for="TFLTE_12_1" class= "radio-label"><i>3&nbsp;&nbsp;</i></label>
+        <input id="TFLTE_12_5" type="radio" name="FamHist" value= "4" /><label for="TFLTE_12_1" class= "radio-label"><i>4&nbsp;&nbsp;</i></label>
+        <input id="TFLTE_12_6" type="radio" name="FamHist" value= "5" /><label for="TFLTE_12_1" class= "radio-label"><i>5&nbsp;&nbsp;</i></label>
+        <input id="TFLTE_12_7" type="radio" name="FamHist" value= "6" /><label for="TFLTE_12_1" class= "radio-label"><i>6&nbsp;&nbsp;</i></label>
+        <input id="TFLTE_12_8" type="radio" name="FamHist" value= "7" /><label for="TFLTE_12_1" class= "radio-label"><i>7&nbsp;&nbsp;</i></label>
+        <input id="TFLTE_12_9" type="radio" name="FamHist" value= "8" /><label for="TFLTE_12_1" class= "radio-label"><i>8&nbsp;&nbsp;</i></label>
+        <input id="TFLTE_12_10" type="radio" name="FamHist" value= "9" /><label for="TFLTE_12_1" class= "radio-label"><i>9&nbsp;&nbsp;</i></label>
+        <input id="TFLTE_12_11" type="radio" name="FamHist" value= "10" /><label for="TFLTE_12_1" class= "radio-label"><i>10+&nbsp;&nbsp;</i></label>
+<br>&nbsp;</br>
+        </div>
+        </div>
+      </div>
+<br>&nbsp;</br>
+
+
+
+
+<div style= "background-color:#e0eeff; margin-left: 0.75em; margin-right: 0.75em; padding: 3px;" >
+  <div style="margin-left: 0.75em; margin-right: 0.75em">
+<p><b>9. How much confidence do you have in the opinion of the clinician who prescribed your current antidepressant medication?</b></p>
+    <div class="wrap" style="margin-left: 1.5em;">
+        <form action="">
+            <ul class='likert'>
+                <li><label>1</label>
+                    <input type="radio" id="TFLTE_13" name="TFLTE_1" value="0" onchange='Check()'/>
+                    <label><i>“No Confidence”</i></label>
+                </li>
+                <li><label>2</label>
+                    <input type="radio" id="TFLTE_13" name="TFLTE_1" value="1" onchange='Check()'/>
+                    <label> </label>
+                </li>
+                <li><label>3</label>
+                    <input type="radio" id="TFLTE_13" name="TFLTE_1" value="2" onchange='Check()'/>
+                    <label> </label>
+                </li>
+                <li><label>4</label>
+                    <input type="radio" id="TFLTE_13" name="TFLTE_1" value="3" onchange='Check()'/>
+                    <label> </label>
+                </li>
+                <li><label>5</label>
+                    <input type="radio" id="TFLTE_13" name="TFLTE_1" value="4" onchange='Check()'/>
+                    <label> </label>
+                </li>
+                <li><label>6</label>
+                    <input type="radio" id="TFLTE_13" name="TFLTE_1" value="5" onchange='Check()'/>
+                    <label> </label>
+                </li>
+                <li><label>7</label>
+                    <input type="radio" id="TFLTE_13" name="TFLTE_1" value="6" onchange='Check()'/>
+                    <label> </label>
+                </li>
+                <li><label>8</label>
+                    <input type="radio" id="TFLTE_13" name="TFLTE_1" value="7" onchange='Check()'/>
+                    <label> </label>
+                </li>
+                <li><label>9</label>
+                    <input type="radio" id="TFLTE_13" name="TFLTE_1" value="8" onchange='Check()'/>
+                    <label> </label>
+                </li>
+                <li><label>10</label>
+                    <input type="radio" id="TFLTE_13" name="TFLTE_1" value="9" onchange='Check()'/>
+                    <label><i>“Full Confidence”</i></label>
+                </li>
+
+            </ul>
+            <!-- <div class="buttons">
+                <button class="clear">Clear</button>
+                <button class="submit">Submit Rating</button>
+            </div> -->
+        </form>
+    </div>
+  </div>
+</div>
+  <br>&nbsp;</br>
+
+
+  <div style= "background-color:#e0eeff; margin-left: 0.75em; margin-right: 0.75em; padding: 3px;" >
+    <div style="margin-left: 0.75em; margin-right: 0.75em">
+  <p><b>10. Did your prescriber take a blood sample from you before they gave you the prescription for your antidepressant?</b><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes<input type="radio" name="TFLTE_3" id="TFLTE_15" value="1" onchange='Check()'/>No<input type="radio" name="TFLTE_3" id="TFLTE_15" value="0" onchange='Check()' /></p>
+  </div>
+</div>
+
+  <br>&nbsp;</br>
+
+<input type="button" class="continue" id="continue" value="Continue" style="visibility: hidden;"></input>
+
+</form>
+<br>&nbsp;</br>
+<br>&nbsp;</br>
+</div>
+<br>&nbsp;</br>
+<br>&nbsp;</br>
+</body>
+</html>

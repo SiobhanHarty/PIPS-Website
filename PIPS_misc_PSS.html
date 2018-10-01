@@ -1,0 +1,188 @@
+<!--
+PSS with radio buttons
+-->
+<head>
+
+<script>
+var ProgressBar = function(){
+if(q == -1){Progress.style.width = '0%'}
+if(q == 0){Progress.style.width = '0%'}
+if(q == 1){Progress.style.width = '10%'}
+if(q == 2){Progress.style.width = '20%'}
+if(q == 3){Progress.style.width = '30%'}
+if(q == 4){Progress.style.width = '40%'}
+if(q == 5){Progress.style.width = '50%'}
+if(q == 6){Progress.style.width = '60%'}
+if(q == 7){Progress.style.width = '70%'}
+if(q == 8){Progress.style.width = '80%'}
+if(q == 9){Progress.style.width = '90%'}
+
+
+return Progress.style.width
+}
+var Progress = document.querySelector('#progressbar');
+
+Progress.style.width = ProgressBar();
+
+    var Check = function(){
+        // this max number should be 1 greater than number of items on scale
+
+
+        for (var i = 1; i < 11; i++) {
+
+            PSS = document.getElementsByName("PSS_" + i)
+
+            if(PSS[0].checked || PSS[1].checked || PSS[2].checked ||PSS[3].checked ||PSS[4].checked){
+                $('input#continue').css('visibility','visible')
+            }
+            else{
+                $('input#continue').css('visibility','hidden')
+                return false
+            }
+        }
+    }
+
+</script>
+</head>
+
+<body>
+  <center><h2>Progress within this questionnaire section</h2></center>
+  <div style="background-color: #e0eeff; width: 95%; margin:0 auto; height: 25px; border: 3px solid #000040; padding: 0px;">
+   <div id = "progressbar" style="background-color: #000040; height: 25px;overflow:hidden">&nbsp;</div>
+  </div>
+
+<br>&nbsp;<br>
+<div class="instruct" id="main">
+
+    <p><b>These questions ask you about your feelings and thoughts during the last month. For each question, you will be asked to indicate <u>how often</u> you felt or thought a certain way.</b></p>
+
+    <form id="postquiz" action="done" method="post">
+        <table border =0.2 rules=rows>
+            <tr class="question">
+                <td class="questiontext">
+                </td>
+                <td align="center" width="8%" ><font size=2> Never</font></td>
+                <td align="center" width="8%" ><font size=2>Almost never</font></td>
+                <td align="center" width="8%"><font size=2>Sometimes</font></td>
+                <td align="center" width="8%"><font size=2>Fairly often</font></td>
+                <td align="center" width="8%"><font size=2>Very often</font></td>
+
+
+            </tr>
+          <tr class="question" style="background-color: #c9e1fc;">
+                <td class="questiontext">
+                <b>1.</b> In the last month, how often have you been upset because of something that happened unexpectedly?
+                </td>
+                <td align="center"><input type="radio"  name= "PSS_1" id="PSS_1" value="0" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_1" id="PSS_1" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_1" id="PSS_1" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_1" id="PSS_1" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_1" id="PSS_1" value="4" style="border: none;" onchange='Check()'></td>
+
+             </tr>
+
+            <tr class="question">
+                <td class="questiontext">
+                <b>2.</b> In the last month, how often have you felt that you were unable to control the important things in your life?
+                </td>
+                <td align="center"><input type="radio"  name= "PSS_2" id="PSS_2" value="0" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_2" id="PSS_2" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_2" id="PSS_2" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_2" id="PSS_2" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_2" id="PSS_2" value="4" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+
+          <tr class="question" style="background-color: #c9e1fc;">
+                <td class="questiontext">
+                <b>3.</b> In the last month, how often have you felt nervous and “stressed”?
+                </td>
+                <td align="center"><input type="radio"  name= "PSS_3" id="PSS_3" value="0" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_3" id="PSS_3" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_3" id="PSS_3" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_3" id="PSS_3" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_3" id="PSS_3" value="4" style="border: none;" onchange='Check()'></td>
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+              <b>4.</b> In the last month, how often have you felt confident about your ability to handle your personal problems?
+                </td>
+                <td align="center"><input type="radio"  name= "PSS_4" id="PSS_4" value="0" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_4" id="PSS_4" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_4" id="PSS_4" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_4" id="PSS_4" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_4" id="PSS_4" value="4" style="border: none;" onchange='Check()'></td>
+            </tr>
+
+          <tr class="question" style="background-color: #c9e1fc;">
+                <td class="questiontext">
+                 <b>5.</b> In the last month, how often have you felt that things were going your way?
+                </td>
+                <td align="center"><input type="radio"  name= "PSS_5" id="PSS_5" value="0" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_5" id="PSS_5" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_5" id="PSS_5" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_5" id="PSS_5" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_5" id="PSS_5" value="4" style="border: none;" onchange='Check()'></td>
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                  <b>6.</b> In the last month, how often have you found that you could not cope with all the things that you had to do?
+                </td>
+                <td align="center"><input type="radio"  name= "PSS_6" id="PSS_6" value="0" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_6" id="PSS_6" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_6" id="PSS_6" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_6" id="PSS_6" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_6" id="PSS_6" value="4" style="border: none;" onchange='Check()'></td>
+            </tr>
+
+          <tr class="question" style="background-color: #c9e1fc;">
+                <td class="questiontext">
+                  <b>7.</b> In the last month, how often have you been able to control irritations in your life?
+                </td>
+                <td align="center"><input type="radio"  name= "PSS_7" id="PSS_7" value="0" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_7" id="PSS_7" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_7" id="PSS_7" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_7" id="PSS_7" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_7" id="PSS_7" value="4" style="border: none;" onchange='Check()'></td>
+              </tr>
+
+            <tr class="question">
+                <td class="questiontext">
+                  <b>8.</b> In the last month, how often have you felt that you were on top of things?
+                </td>
+                <td align="center"><input type="radio"  name= "PSS_8" id="PSS_8" value="0" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_8" id="PSS_8" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_8" id="PSS_8" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_8" id="PSS_8" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_8" id="PSS_8" value="4" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+          <tr class="question" style="background-color: #c9e1fc;">
+                <td class="questiontext">
+                  <b>9.</b> In the last month, how often have you been angered because of things that were outside of your control?
+                </td>
+                <td align="center"><input type="radio"  name= "PSS_9" id="PSS_9" value="0" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_9" id="PSS_9" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_9" id="PSS_9" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_9" id="PSS_9" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_9" id="PSS_9" value="4" style="border: none;" onchange='Check()'></td>
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                <b>10.</b> In the last month, how often have you felt difficulties were piling up so high that you could not overcome them?
+                </td>
+                <td align="center"><input type="radio"  name= "PSS_10" id="PSS_10" value="0" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_10" id="PSS_10" value="1" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_10" id="PSS_10" value="2" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_10" id="PSS_10" value="3" style="border: none;" onchange='Check()'></td>
+                <td align="center"><input type="radio"  name= "PSS_10" id="PSS_10" value="4" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+        </table>
+                       <input type="button" class="continue" id="continue" value="Continue" style="visibility: hidden;"></input>
+</form>
+</div>
+
+
+ <p style="text-align:left"><strong>The CONTINUE button will appear here once you have answered all of the questions. Please double check your answers if you think you are finished but do not see the continue button. </strong></p>
+</body>

@@ -1,0 +1,148 @@
+<head>
+  <!-- <script>
+   function saveDistractorQs(){
+
+              $('textarea').each( function(i, val) {
+                  datastring = datastring.concat( "\n", [this.id, this.name, this.value]);
+                  });
+              $('input[type=checkbox]').each( function(i, val) {
+                    datastring = datastring.concat( "\n", [this.id, this.name, this.checked]);
+                  });
+                  showEnd()
+                    return false
+            };
+
+
+  </script> -->
+
+  <style>
+
+  .right{
+      float:right;
+  }
+  .left{
+      float:left;
+  }
+  .instruct{
+    font-size: 14pt;
+  }
+
+
+  .SheetHead {
+    border: 4px solid #08083f;
+    border-radius: 7px;
+  }
+
+  .container {
+      position: relative;
+      text-align: center;
+      font-size: 16;
+      line-height: 1.7;
+      color: #08083f;
+  }
+
+  .bottom-left {
+      position: absolute;
+      bottom: 8px;
+      left: 16px;
+  }
+
+  .top-left {
+      position: absolute;
+      top: 8px;
+      left: 16px;
+  }
+
+  .top-right {
+      position: absolute;
+      top: 8px;
+      right: 16px;
+  }
+
+  .bottom-right {
+      position: absolute;
+      bottom: 8px;
+      right: 16px;
+  }
+
+  .centered {
+      position: absolute;
+      top: 32%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  }
+
+  .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+  }
+
+  </style>
+
+
+</head>
+
+
+<div class="instruct" id="main" style = "text-align: left">
+<br>
+<div style= "background-color:#c9e1fc;">
+<div style = "margin-left: 1em; margin-right: 1em; padding: 5px 2px;" >
+<br>
+
+
+<div class = "SheetHead" style = "margin-left: 5em; margin-right: 5em; padding: 5px 2px; background-color:#e0eeff;" >
+<div style = "margin-left: 5em; margin-right: 5em; padding: 5px 2px;" >
+<h1><center>Almost Done!</center></h1>
+</div>
+</div>
+<br>
+<div style= "margin-right: 1.5em; margin-left: 1.5em;" >
+<p>The baseline testing session is almost over. We would just like to ask you two quick questions concerning
+distractions or potential factors that may have influenced how you responded.</p>
+<p><b>Note, how you answer these questions will in no way impact your payment. Please answer honestly.</b></p>
+<br>&nbsp;</br>
+<p><b>Q 1. Were you distracted by any of the following while you completed this study?</b><br> (Please check all that apply)</p>
+<div style = "margin-left: 3em; margin-right: 3em;" >
+<input type="checkbox" id="distractor" name="distractor_1" value="1" >TV<br>
+<input type="checkbox" id="distractor" name="distractor_2" value="2" >Phone (e.g. phone call / text messages / social media)<br>
+<input type="checkbox" id="distractor" name="distractor_3" value="3" >Something on the computer that you used for the study<br>
+<input type="checkbox" id="distractor" name="distractor_4" value="4" >Interuptions from family members or friends<br>
+<input type="checkbox" id="distractor" name="distractor_5" value="5" >Pet<br>
+<input type="checkbox" id="distractor" name="distractor_6" value="6" >Knock on the door<br>
+<input type="checkbox" id="distractor" name="distractor_7" value="7" >Background noises<br>
+<input type="checkbox" id="distractor" name="distractor_8" value="8" >Other<br>
+
+<div>
+  If you checked other, please tell us the source of distraction here:
+  <textarea rows=2 cols=90 id="distractor-other1" name="distractor-other1"></textarea>
+</div>
+</div>
+<br>&nbsp;</br>
+<p><b>Q 2. Did you consume any of the following substances within 5 hours of starting the study??</b><br> (Please check all that apply)</p>
+<div style = "margin-left: 3em; margin-right: 3em;" >
+<input type="checkbox" id="substance" name="substance_1" value="1" >Alcohol<br>
+<input type="checkbox" id="substance" name="substance_2" value="2" >Marijuana<br>
+<input type="checkbox" id="substance" name="substance_3" value="3" >Ecstasy/MDMA<br>
+<input type="checkbox" id="substance" name="substance_4" value="4" >Stimulant drugs (e.g. cocaine/amphetamines)<br>
+<input type="checkbox" id="substance" name="substance_5" value="5" >Opiates (e.g. codeine/oxycodone/heroin)<br>
+<input type="checkbox" id="substance" name="substance_6" value="6" >Sedatives or tranquilizers (e.g. Valium/Xanax)<br>
+<input type="checkbox" id="substance" name="substance_8" value="7" >Other<br>
+
+<div>
+  If you checked other, please tell us the name of the substance here:
+  <textarea rows=2 cols=90 id="distractor-other2" name="distractor-other2"></textarea>
+</div>
+</div>
+<br>&nbsp;</br>
+</div>
+<input type="button" class="continue" id="continue" value="Continue" style="visibility: visible;"></input>
+</div>
+<br>&nbsp;</br>
+<br>&nbsp;</br>
+</div>
+
+</div>
+
+<!-- onclick="javascript:saveDistractorQs();" -->

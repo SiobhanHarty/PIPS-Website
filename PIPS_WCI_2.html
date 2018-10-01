@@ -1,0 +1,486 @@
+<!-- Recreational drug use questions -->
+<head>
+<script>
+
+function yesnoCheckX() {
+  if (document.getElementById('SideEff_yesX').checked) {
+      document.getElementById('ifYesX').style.display = 'block';
+  }
+  else document.getElementById('ifYesX').style.display = 'none';
+  }
+
+function yesnoCheck1() {
+  if (document.getElementById('Taking_yes1').checked) {
+      document.getElementById('ifYes1').style.display = 'block';
+      document.getElementById('ifNo1').style.display = 'none';
+  }
+  if (document.getElementById('Taking_no1').checked){
+      document.getElementById('ifNo1').style.display = 'block';
+      document.getElementById('ifYes1').style.display = 'none';
+  }
+}
+
+function yesnoCheck2() {
+  if (document.getElementById('Taking_yes2').checked) {
+      document.getElementById('ifYes2').style.display = 'block';
+  }
+  else document.getElementById('ifYes2').style.display = 'none';
+  }
+
+
+function yesnoCheck3() {
+  if (document.getElementById('PT_WCI_yes3').checked) {
+      document.getElementById('ifYes3').style.display = 'block';
+  }
+  else document.getElementById('ifYes3').style.display = 'none';
+  }
+
+function yesnoCheck4() {
+  if (document.getElementById('Extra_WCI_yes4').checked) {
+      document.getElementById('ifYes4').style.display = 'block';
+      document.getElementById('ifNo4').style.display = 'none';
+  }
+  if (document.getElementById('Extra_WCI_no4').checked){
+      document.getElementById('ifNo4').style.display = 'block';
+      document.getElementById('ifYes4').style.display = 'none';
+  }
+}
+
+$(":radio").click(function() {
+  $(this).closest("tr").addClass("active").
+  siblings("div.active").removeClass("active");
+});
+
+
+var Check = function(){
+  // this max number should be 1 greater than number of items on scsale
+
+  for (var i = 1; i < 9; i++) {
+    RDrugs = document.getElementsByName("RDrugs_" + i)
+    RDrugsAge = document.getElementById("RDrugs_"+i+"_1_Age1")
+
+    if((RDrugs[0].checked) || (RDrugs[1].checked)) {
+
+      $('input#continue').css('visibility','visible')
+    }
+    else{
+
+      $('input#continue').css('visibility','hidden')
+
+      return false
+    }
+  }
+}
+
+$('.triggerX').click(function() {
+    $('.contentX').hide();
+    $('.' + $(this).data('rel')).show();
+});
+
+$('.trigger1').click(function() {
+    $('.content1').hide();
+    $('.' + $(this).data('rel')).show();
+});
+
+$('.trigger2').click(function() {
+    $('.content2').hide();
+    $('.' + $(this).data('rel')).show();
+});
+
+
+
+$(function(){
+    var $select = $(".1-99");
+    for (i=1;i<=70;i++){
+        $select.append($('<option></option>').val(i).html(i))
+    }
+});
+
+var HMany = document.getElementById('HMany');
+for (var i = 1; i <= 10; i++) {
+    var theOption = new Option;
+    theOption.text = i;
+    theOption.value = i;
+    HMany.options[i] = theOption;
+}
+</script>
+
+<style>
+
+.content1 {
+    display: none;
+}
+.content2 {
+    display: none;
+}
+
+form .buttons button {
+  padding: 5px 10px;
+  background-color: #67ab49;
+  border: 0;
+  border-radius: 3px;
+}
+.SheetHead {
+  border: 4px solid #08083f;
+  border-radius: 7px;
+}
+
+.alt-radio input[type=radio] {
+position: absolute;
+}
+
+.alt-radio .radio-label {
+display: inline-block;
+position: relative;
+margin-left: 2em;
+top: 0.5em;
+vertical-align: middle;
+}
+
+.WCI_Questions {
+    border: 1px solid #08083f;
+    border-radius: 5px;
+}
+
+</style>
+
+</head>
+
+<!-- Lighter blue (greyish): #eaf2fc -->
+
+<body>
+
+  <div class="instruct" id="main">
+  <br>
+  <div style= "background-color:#c9e1fc;">
+  <br>&nbsp;</br>
+  <div class = "SheetHead" style = "margin-left: 5em; margin-right: 5em; padding: 5px 2px; background-color:#e0eeff;" >
+  <div style = "margin-left: 2em; margin-right: 2em; padding: 5px 2px;" >
+  <h1><center>Precision in Psychiatry Study<center></h1>
+  </div>
+  </div>
+  <br>&nbsp;<br>
+
+      <div class = "WCI_Questions" style="margin-left: 1em;margin-right: 1em;background-color:#e0eeff; text-align:left;">
+        <div style="margin-left: 1.5em;margin-right: 1.5em;">
+          <br>&nbsp;</br>
+          <tr class="question">
+            <td class="questiontext">
+              <!-- Question 1 -->
+              <b>1.	Are you still taking an antidepressant medication?</b><br>
+            </td>
+
+          <div style="margin-left: 1.5em;">
+          <td>Yes <input type="radio" onclick="javascript:yesnoCheck1();" name= "Taking_1" id="Taking_yes1" value="1"/> No <input type="radio" onclick="javascript:yesnoCheck1();" name= "Taking_1" id="Taking_no1" value="0"/><br></td>
+          <div id="ifYes1" style="display:none">
+          <br>&nbsp;</br>
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="drug"><b>1.1 Please the select medication that you are currently taking</b><br>(Check more than one if you are taking more than one)
+                  </label>
+                  <div style="margin-left: 1.5em;padding: 5px 0px;" class="col-md-4">
+                    <div class="radio">
+                      <label for="drug-0">
+                        <input type="checkbox" name="drug" id="drug-0" value="1">
+                        Citalopram (Celexa, Cipramil)
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label for="drug-1">
+                        <input type="checkbox" name="drug" id="drug-1" value="1">
+                        Desvenlafaxine (Pristiq, Khedezla)
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label for="drug-2">
+                        <input type="checkbox" name="drug" id="drug-2" value="1">
+                        Duloxetine (Cymbalta, Irenka)
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label for="drug-3">
+                        <input type="checkbox" name="drug" id="drug-3" value="1">
+                        Escitalopram (Lexapro, Cipralex)
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label for="drug-4">
+                        <input type="checkbox" name="drug" id="drug-4" value="1">
+                        Fluoxetine (Prozac, Sarafem, Rapiflux)
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label for="drug-5">
+                        <input type="checkbox" name="drug" id="drug-5" value="1">
+                        Fluvoxamine (Luvox, Faverin, Floxyfral, Dumyrox)
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label for="drug-6">
+                        <input type="checkbox" name="drug" id="drug-6" value="1">
+                        Levomilnacipran (Fetzima)
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label for="drug-7">
+                        <input type="checkbox" name="drug" id="drug-7" value="1">
+                        Paroxetine (Paxil, Seroxat, Brisdelle, Pexeva)
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label for="drug-8">
+                        <input type="checkbox" name="drug" id="drug-8" value="1">
+                        Sertraline (Zoloft, Lustral)
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label for="drug-9">
+                        <input type="checkbox" name="drug" id="drug-9" value="1">
+                        Venlafaxine (Effexor)
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <br>&nbsp;</br>
+                <b>1.2 Please select the statement that best applies to you</b><br>
+                  <form id='group_WCI_1'>
+                        <input type="radio"  name= "WCI1" id="Taking_1" value= "0" class="adhere1-btn trigger1" data-rel="adhere1" />I am taking the dose that was prescribed<br>
+                      <div class="adhere1 content1"> </div>
+                        <input type="radio"  name= "WCI1" id="Taking_1" value= "1" class="less1-btn trigger1" data-rel="less1"/>I am taking less than the dose that was prescribed <br>
+                        <div style= "margin-left: 2.5em;margin-right: 15em; background-color:#eaf2fc;">
+                        <div class="less1 content1" style = "margin-left: 0.5em;"><i>How much are you typically taking on a daily basis?</i><br>
+                          <div style= "padding: 5px 0px;">
+                            <input id="getdose1" type="text" name="getdose1">&nbsp;mg
+                          </div>
+                          </div>
+                        </div>
+                        <input type="radio"  name= "WCI1" id="Taking_1" value= "2" class="more1-btn trigger1" data-rel="more1" />I am taking more than the dose that was prescribed<br>
+                        <div style= "margin-left: 2.5em;margin-right: 15em; background-color:#eaf2fc;">
+                        <div class="more1 content1" style = "margin-left: 0.5em;"><i>How much are you typically taking on a daily basis?</i><br>
+                          <div style= "padding: 5px 0px;">
+                            <input id="getdose2" type="text" name="getdose2">&nbsp;mg
+                          </div>
+                          </div>
+                            </div>
+                    </form>
+                    <br>&nbsp;</br>
+
+                  <b>1.3 Have you been bothered by any side-effects?</b><br>
+                  <td>Yes <input type="radio" onclick="javascript:yesnoCheckX();" name= "SideEff_X" id="SideEff_yesX" value="1"/> No <input type="radio" onclick="javascript:yesnoCheckX();" name= "SideEff_X" id="SideEff_noX" value="0"/><br></td>
+                  <div id="ifYesX" style="display:none">
+                    <br>&nbsp;</br>
+                    <div><b>1.4 Please tell us the side-effect(s) you have been <u>most bothered</u> by:</b><br>
+                      <div style="text-align:left; margin-left: 0.5em; padding: 1px">
+                      <input id="SideEff" type="checkbox" value='SideEff_1' name= "NightSl"/>Night-time sleep disturbance<br>
+                      <input id="SideEff" type="checkbox" value='SideEff_2' name= "DaySl"/>Day-time Sleepiness<br>
+                      <input id="SideEff" type="checkbox" value='SideEff_3' name= "SuicTh"/>Suicidal thoughts<br>
+                      <input id="SideEff" type="checkbox" value='SideEff_4' name= "CogDiff"/>Difficulty thinking or remembering<br>
+                      <input id="SideEff" type="checkbox" value='SideEff_5' name= "PersCh"/>Personality changes, such as appearing “flat” or without emotion<br>
+                      <input id="SideEff" type="checkbox" value='SideEff_6' name= "MigHe"/>Migraines/Headaches<br>
+                      <input id="SideEff" type="checkbox" value='SideEff_7' name= "SexPr"/>Sexual problems<br>
+                      <input id="SideEff" type="checkbox" value='SideEff_8' name= "WeightG"/>Weight gain<br>
+                      <input id="SideEff" type="checkbox" value='SideEff_9' name= "MusJoi"/>Muscle/joint aches<br>
+                      <input id="SideEff" type="checkbox" value='SideEff_10' name= "Gastro"/>Gastrointestinal symptoms (e.g. nausea, diarrhea, constipation)<br>
+                      <p>&nbsp;Other side-effect(s) not listed here:<br>
+                      <div style = "padding: 2px 0px; margin-left: 0.5em;">
+                      <textarea rows="4" cols="80" name="OtherSideEff" id="SideEff"></textarea>
+                      </div>
+                      </div><br>
+                      </div>
+                  </div>
+
+
+                    </div>
+
+
+
+
+<!-- **********
+
+&nbsp;Yes<input type="radio"  name= "SideEff" id="SideEff" value= "1" class="SideFff1-btn triggerX" data-rel="SideFff1"/>&nbsp;No<input type="radio"  name= "SideEff" id="SideEff" value= "0" class="SideFff2-btn triggerX" data-rel="SideFff2"/>
+<div style= "margin-left: 2.5em;margin-right: 5em; background-color:#eaf2fc;">
+<div style = "margin-left: 0.5em;" class="SideFff1 contentX"><b>1.5 Please tell us the side-effect(s) you have been <u>most bothered</u> by:</b><br>
+  <div style="text-align:left; margin-left: 0.5em; padding: 1px">
+  <input id="SideEff" type="checkbox" value='SideEff_1' name= "NightSl"/> <i>Night-time sleep disturbance</i><br>
+  <input id="SideEff" type="checkbox" value='SideEff_2' name= "DaySl"/> <i>Day-time Sleepiness</i><br>
+  <input id="SideEff" type="checkbox" value='SideEff_3' name= "SuicTh"/> <i>Suicidal thoughts</i><br>
+  <input id="SideEff" type="checkbox" value='SideEff_4' name= "CogDiff"/> <i>Difficulty thinking or remembering</i><br>
+  <input id="SideEff" type="checkbox" value='SideEff_5' name= "PersCh"/> <i>Personality changes, such as appearing “flat” or without emotion</i><br>
+  <input id="SideEff" type="checkbox" value='SideEff_6' name= "MigHe"/> <i>Migraines/Headaches</i><br>
+  <input id="SideEff" type="checkbox" value='SideEff_7' name= "SexPr"/> <i>Sexual problems</i><br>
+  <input id="SideEff" type="checkbox" value='SideEff_8' name= "WeightG"/> <i>Weight gain</i><br>
+  <input id="SideEff" type="checkbox" value='SideEff_9' name= "MusJoi"/> <i>Muscle/joint aches</i><br>
+  <input id="SideEff" type="checkbox" value='SideEff_10' name= "Gastro"/> <i>Gastrointestinal symptoms (e.g. nausea, diarrhea, constipation)</i><br>
+  <p>&nbsp;Other side-effect(s) not listed here:<br>
+  <div style = "padding: 2px 0px; margin-left: 0.5em;">
+  <textarea rows="4" cols="80" name="OtherSideEff" id="SideEff"></textarea>
+  </div>
+  </div><br>
+  </div>
+  </div>
+
+*********** -->
+
+
+
+
+
+
+
+
+
+
+
+          <div id="ifNo1" style="display:none;vertical-align: top;">
+              <b>1.2 Please tell us why you stopped taking the antidepressant:</b>
+              <form id='group_WCI2_1'>
+
+                    <input type="radio"  name= "WCI2" id="Taking_2" value= "0" class="nonadhere1-btn trigger2" data-rel="nonadhere1"/>My mental health symptoms got worse<br>
+                    <div class="nonadhere1 content2"> </div>
+                    <input type="radio"  name= "WCI2" id="Taking_2" value= "1" class="nonadhere2-btn trigger2" data-rel="nonadhere2"/>The medication was not making me feel better<br>
+                    <div class="nonadhere2 content2"> </div>
+                    <input type="radio"  name= "WCI2" id="Taking_2" value= "2" class="nonadhere3-btn trigger2" data-rel="nonadhere3"/>Side-effects were too strong<br>
+                    <div style= "margin-left: 2.5em;margin-right: 5em; background-color:#eaf2fc;">
+                    <div style = "margin-left: 0.5em;" class="nonadhere3 content2"><b>1.3 Please tell us the side-effect(s) you were <u>most bothered</u> by:</b><br>
+                      <div style="text-align:left; margin-left: 0.5em; padding: 1px">
+                      <input id="SideEff" type="checkbox" value='SideEff_1' name= "NightSl"/>Night-time sleep disturbance<br>
+                      <input id="SideEff" type="checkbox" value='SideEff_2' name= "DaySl"/>Day-time Sleepiness<br>
+                      <input id="SideEff" type="checkbox" value='SideEff_3' name= "SuicTh"/>Suicidal thoughts<br>
+                      <input id="SideEff" type="checkbox" value='SideEff_4' name= "CogDiff"/>Difficulty thinking or remembering<br>
+                      <input id="SideEff" type="checkbox" value='SideEff_5' name= "PersCh"/>Personality changes, such as appearing “flat” or without emotion<br>
+                      <input id="SideEff" type="checkbox" value='SideEff_6' name= "MigHe"/>Migraines/Headaches<br>
+                      <input id="SideEff" type="checkbox" value='SideEff_7' name= "SexPr"/>Sexual problems<br>
+                      <input id="SideEff" type="checkbox" value='SideEff_8' name= "WeightG"/>Weight gain<br>
+                      <input id="SideEff" type="checkbox" value='SideEff_9' name= "MusJoi"/>Muscle/joint aches<br>
+                      <input id="SideEff" type="checkbox" value='SideEff_10' name= "Gastro"/>Gastrointestinal symptoms (e.g. nausea, diarrhea, constipation)<br>
+                      <p>&nbsp;Other side-effect(s) not listed here:<br>
+                      <div style = "padding: 2px 0px; margin-left: 0.5em;">
+                      <textarea rows="4" cols="80" name="OtherSideEff" id="SideEff"></textarea>
+                      </div>
+                      </div><br>
+                      </div>
+                      </div>
+                    <input type="radio"  name= "WCI2" id="Taking_2" value= "3" class="nonadhere4-btn trigger2" data-rel="nonadhere4"/>Other reason<br>
+                    <div style= "margin-left: 2.5em;margin-right: 5em; background-color:#eaf2fc;">
+                    <div style = "margin-left: 0.5em;" class="nonadhere4 content2"><b>1.3 Please tell us why you stopped taking your antidepressant:</b>
+                      <div style = "padding: 2px 0px;margin-left: 0.0em;">
+                      <textarea rows="4" cols="80" name="OtherReas" id="OtherReas"></textarea>
+                      </div>
+                      </div>
+                      </div>
+                </form>
+
+
+                </div>
+              </tr>
+            <br>&nbsp;</br>
+            </div>
+              </div>
+              </div>
+
+
+<br>&nbsp;<br>
+<div class = "WCI_Questions" style="margin-left: 1em;margin-right: 1em;background-color:#e0eeff; text-align:left;">
+  <div style="margin-left: 1.5em;margin-right: 1.5em;">
+    <br>&nbsp;</br>
+    <tr class="question">
+      <td class="questiontext">
+        <!-- Question 1 -->
+        <b>2.	Have you started taking any other medications? </b><br>
+      </td>
+    <div style="margin-left: 1.5em;">
+    <td>Yes <input type="radio" onclick="javascript:yesnoCheck2();" name= "Taking_2" id="Taking_yes2" value="1"/> No <input type="radio" onclick="javascript:yesnoCheck2();" name= "Taking_2" id="Taking_no2" value="0"/><br></td>
+    <div id="ifYes2" style="display:none">
+      <p><b>2.1 Please provide details about the medication(s):</b></p>
+      <p><i>1. Medication name:&nbsp;</i><input id="getmed1" type="text" name="getmed1"><br>
+      <i>&nbsp;&nbsp;&nbsp;&nbsp;Dose:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i><input id="getMdose1" type="text" name="getMdose1">&nbsp;mg
+      </p>
+      <p><i>2. Medication name:&nbsp;</i><input id="getmed2" type="text" name="getmed2"><br>
+      <i>&nbsp;&nbsp;&nbsp;&nbsp;Dose:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i><input id="getMdose2" type="text" name="getMdose2">&nbsp;mg
+      </p>
+      <p><i>3. Medication name:&nbsp;</i><input id="getmed3" type="text" name="getmed3">&nbsp;<br>
+      <i>&nbsp;&nbsp;&nbsp;&nbsp;Dose:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i><input id="getMdose3" type="text" name="getMdose3">&nbsp;mg
+      </p>
+    </div>
+</div>
+</tr>
+</div>
+<br>&nbsp;</br>
+</div>
+
+
+<br>&nbsp;<br>
+<!-- Current PT -->
+<div class = "WCI_Questions" style="margin-left: 1em;margin-right: 1em;background-color:#e0eeff; text-align:left;">
+  <div style="margin-left: 1.5em;margin-right: 1.5em;">
+<br>&nbsp;</br>
+<p><b>3.	Are you currently receiving regular psychological therapy?</b><br>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;Yes <input type="radio" onclick="javascript:yesnoCheck3();" name="yesno3" id="PT_WCI_yes3" value="1"/> No <input type="radio" onclick="javascript:yesnoCheck3();" name="yesno3" id="PT_WCI_no3" value="0"/><br></td>
+    <div id="ifYes3" style="display:none">
+    <div class = "alt-radio">
+      <div style="margin-left: 1.5em;">
+      <p><b>3.1 Please select the type of psychological therapy:</b></p>
+      <div style="text-align:left; margin-left: 1.5em;">
+      <input id="WCI_3" type="checkbox" value='PT_WCI1_1' name= "CBT"/>Cognitive Behavioural Therapy<br>
+      <input id="WCI_3" type="checkbox" value='PT_WCI1_2' name= "CT"/>Cognitive Therapy<br>
+      <input id="WCI_3" type="checkbox" value='PT_WCI1_3' name= "BT"/>Behavioural Therapy<br>
+      <input id="WCI_3" type="checkbox" value='PT_WCI1_4' name= "IPT"/>Interpersonal Therapy<br>
+      <input id="WCI_3" type="checkbox" value='PT_WCI1_5' name= "FT"/>Family Therapy<br>
+      <input id="WCI_3" type="checkbox" value='PT_WCI1_6' name= "Counselling"/>Counselling<br>
+      <input id="WCI_3" type="checkbox" value='PT_WCI1_7' name= "Mindfulness"/>Mindfulness<br>
+      <input id="WCI_3" type="checkbox" value='PT_WCI1_8' name= "Psychoanalytic"/>Psychoanalytic<br>
+      <input id="WCI_3" type="checkbox" value='PT_WCI1_9' name= "Psychodynamic"/>Psychodynamic<br>
+      <input id="WCI_3" type="checkbox" value='PT_WCI1_10' name= "Other"/>Other</i>
+      </div><br>
+      <p><b>3.2 How many hours have you completed in the past 7 days?   </b><select id="HMany" name="HManyPT"><option value="">--0 hours--</option></select></p>
+      </div>
+      </div>
+    </div>
+    <br>&nbsp;</br>
+</div>
+</div>
+
+<br>&nbsp;<br>
+<!-- Current PT -->
+<div class = "WCI_Questions" style="margin-left: 1em;margin-right: 1em;background-color:#e0eeff; text-align:left;">
+  <div style="margin-left: 1.5em;margin-right: 1.5em;">
+<br>&nbsp;</br>
+<p><b>4. Is there any other information you would like us to know that we have not asked?</b><br>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;Yes <input type="radio" onclick="javascript:yesnoCheck4();" name="yesno4" id="Extra_WCI_yes4" value="1"/> No <input type="radio" onclick="javascript:yesnoCheck4();" name="yesno4" id="Extra_WCI_no4" value="0"/><br></td>
+    <div id="ifYes4" style="display:none;margin-left: 1em;">
+      <p>&nbsp;Please enter the information here:<br>
+      <div style = "padding: 2px 0px; margin-left: 0.5em;">
+      <textarea rows="4" cols="80" name="ExtraInfo" id="ExtraInfo"></textarea>
+    </div>
+  </div>
+    <div id="ifNo4" style="display:none">
+      Please proceed by pressing <b>'Continue'</b>
+    </div>
+    <br>&nbsp;</br>
+</div>
+</div>
+<br>&nbsp;<br>
+<input type="button" class="continue" id="continue" value="Continue"</input>
+<br>&nbsp;<br>
+</form>
+<br>&nbsp;<br>
+</div>
+<br>&nbsp;</br>
+</div>
+
+</body>
+
+
+<!-- <div style="margin-left: 1.5em;">
+<input id="WCI1_3_1" type="radio"  name='PT_WCI1' value= "0"/><label for="WCI1_3_1" class= "radio-label"></label><i>0&nbsp;&nbsp;</i></label>
+<input id="WCI1_3_2" type="radio"  name='PT_WCI1'value= "1"/> <label for="WCI1_3_2" class= "radio-label"></label><i>1&nbsp;&nbsp;</i></label>
+<input id="WCI1_3_3" type="radio"  name='PT_WCI1' value= "2"/> <label for="WCI1_3_3" class= "radio-label"></label><i>2&nbsp;&nbsp;</i></label>
+<input id="WCI1_3_4" type="radio"  name='PT_WCI1' value= "3"/> <label for="WCI1_3_4" class= "radio-label"></label><i>3&nbsp;&nbsp;</i></label>
+<input id="WCI1_3_5" type="radio"  name='PT_WCI1' value= "4"/> <label for="WCI1_3_5" class= "radio-label"></label><i>4&nbsp;&nbsp;</i></label>
+<input id="WCI1_3_6" type="radio"  name='PT_WCI1' value= "5"/> <label for="WCI1_3_6" class= "radio-label"></label><i>5&nbsp;&nbsp;</i></label>
+<input id="WCI1_3_7" type="radio"  name='PT_WCI1' value= "6"/> <label for="WCI1_3_7" class= "radio-label"></label><i>6&nbsp;&nbsp;</i></label>
+<input id="WCI1_3_8" type="radio"  name='PT_WCI1' value= "7"/> <label for="WCI1_3_8" class= "radio-label"></label><i>7&nbsp;&nbsp;</i></label>
+<input id="WCI1_3_9" type="radio"  name='PT_WCI1' value= "8"/> <label for="WCI1_3_9" class= "radio-label"></label><i>8&nbsp;&nbsp;</i></label>
+<input id="WCI1_3_10" type="radio"  name='PT_WCI1' value= "9"/> <label for="WCI1_3_10" class= "radio-label"></label><i>9&nbsp;&nbsp;</i></label>
+<input id="WCI1_3_11" type="radio"  name='PT_WCI1' value= "10"/> <label for="WCI1_3_11" class= "radio-label"></label><i>10+</i></label>
+</div> -->

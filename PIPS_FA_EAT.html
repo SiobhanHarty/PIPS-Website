@@ -1,0 +1,643 @@
+
+<!-- eat scale-->
+
+<head>
+  <script>
+  var ProgressBar = function(){
+  if(q == -1){Progress.style.width = '0%'}
+  if(q == 0){Progress.style.width = '0%'}
+  if(q == 1){Progress.style.width = '12.5%'}
+  if(q == 2){Progress.style.width = '25.0%'}
+  if(q == 3){Progress.style.width = '37.5%'}
+  if(q == 4){Progress.style.width = '50.0%'}
+  if(q == 5){Progress.style.width = '62.5%'}
+  if(q == 6){Progress.style.width = '75.0%'}
+  if(q == 7){Progress.style.width = '87.5%'}
+
+
+
+  return Progress.style.width
+  }
+  var Progress = document.querySelector('#progressbar');
+
+  Progress.style.width = ProgressBar();
+
+  $(":radio").click(function() {
+                    $(this).closest("tr").addClass("active").
+                    siblings("div.active").removeClass("active");
+                    });
+
+
+      var Check = function(){
+
+          // radio button check:
+          // this max number should be 1 greater than number of items on scale
+          for (var i = 1; i < 27; i++) {
+
+              EAT = document.getElementsByName("EAT_" + i)
+
+              if(EAT[0].checked || EAT[1].checked || EAT[2].checked || EAT[3].checked || EAT[4].checked || EAT[5].checked ){
+
+                  $('input#continue').css('visibility','visible')
+              }
+              else{
+
+                  $('input#continue').css('visibility','hidden')
+                  return false
+              }
+
+
+          }
+
+
+          for (var i = 27; i < 32; i++) {
+              var eat = document.getElementById("EAT_" + i)
+              if(eat.value !== "select"){
+                  $('input#continue').css('visibility','visible')
+              }
+              // this next visible should be set to hidden for real experiment
+              if(eat.value == "select" ){
+                  $('input#continue').css('visibility','hidden')
+                  return false
+              }
+          }
+
+          var weight = document.getElementById("currentWeight")
+          if(weight.value == ""){
+              $('input#continue').css('visibility','hidden')
+          }
+
+          var feet = document.getElementById("FeetDropdownId")
+          var inches = document.getElementById("InchesDropdownId")
+
+          if(inches.value == "select" ){
+              $('input#continue').css('visibility','hidden')
+              return false
+          }
+
+          if(feet.value == "select" ){
+              $('input#continue').css('visibility','hidden')
+              return false
+          }
+
+      }
+
+  var ddlFeet = document.getElementById('FeetDropdownId');
+
+  for (var i = 1; i <= 8; i++) {
+      var theOption = new Option;
+      theOption.text = i;
+      theOption.value = i;
+      ddlFeet.options[i] = theOption;
+  }
+
+  var ddlInches = document.getElementById('InchesDropdownId');
+
+  for (var i = 1; i <= 12; i++) {
+      var theOption = new Option;
+      theOption.text = i-1;
+      theOption.value = i-1;
+      ddlInches.options[i] = theOption;
+  }
+
+
+
+
+  function UpdateTableHeaders() {
+      $("div.divTableWithFloatingHeader").each(function() {
+                                               var originalHeaderRow = $(".tableFloatingHeaderOriginal", this);
+                                               var floatingHeaderRow = $(".tableFloatingHeader", this);
+                                               var offset = $(this).offset();
+                                               var scrollTop = $(window).scrollTop();
+                                               if ((scrollTop > offset.top) && (scrollTop < offset.top + $(this).height())) {
+                                               floatingHeaderRow.css("visibility", "visible");
+                                               floatingHeaderRow.css("top", Math.min(scrollTop - offset.top, $(this).height() - floatingHeaderRow.height()) + "px");
+
+                                               // Copy cell widths from original header
+                                               $("th", floatingHeaderRow).each(function(index) {
+                                                                               var cellWidth = $("th", originalHeaderRow).eq(index).css('width');
+                                                                               $(this).css('width', cellWidth);
+                                                                               });
+
+                                               // Copy row width from whole table
+                                               floatingHeaderRow.css("width", $(this).css("width"));
+                                               }
+                                               else {
+                                               floatingHeaderRow.css("visibility", "hidden");
+                                               floatingHeaderRow.css("top", "0px");
+                                               }
+                                               });
+  }
+
+  $(document).ready(function() {
+                    $("table.tableWithFloatingHeader").each(function() {
+                                                            $(this).wrap("<div class=\"divTableWithFloatingHeader\" style=\"position:relative\"></div>");
+
+                                                            var originalHeaderRow = $("tr:first", this)
+                                                            originalHeaderRow.before(originalHeaderRow.clone());
+                                                            var clonedHeaderRow = $("tr:first", this)
+
+                                                            clonedHeaderRow.addClass("tableFloatingHeader");
+                                                            clonedHeaderRow.css("position", "absolute");
+                                                            clonedHeaderRow.css("top", "0px");
+                                                            clonedHeaderRow.css("left", $(this).css("margin-left"));
+                                                            clonedHeaderRow.css("visibility", "hidden");
+
+                                                            originalHeaderRow.addClass("tableFloatingHeaderOriginal");
+                                                            });
+                    UpdateTableHeaders();
+                    $(window).scroll(UpdateTableHeaders);
+                    $(window).resize(UpdateTableHeaders);
+                    });
+
+
+
+      </script>
+
+  <style>
+
+      th {
+          background-color: white;
+          border: 1px solid #3b5da0;
+          }
+  td {
+      border: 1px solid #3b5da0;
+      }
+
+</style>
+
+</head>
+
+<body>
+  <center><h2>Progress within this questionnaire section</h2></center>
+  <div style="background-color: #e0eeff; width: 95%; margin:0 auto; height: 25px; border: 3px solid #000040; padding: 0px;">
+   <div id = "progressbar" style="background-color: #000040; height: 25px;overflow:hidden">&nbsp;</div>
+  </div>
+
+<br>&nbsp;<br>
+<div class="instruct" id="main">
+
+    <p>Please fill out the below form as <strong>accurately, honestly and completely </strong>as possible. There are no right or wrong answers. All of your responses are <strong>confidential</strong>.
+    <p>Please check a response for each of the following statements:</p>
+
+
+    <form id="postquiz" action="done" method="post">
+        <table class="tableWithFloatingHeader" style="border: 0.2px" background-color: #4bade5>
+
+            <tr class="question">
+                <th class="questiontext">
+                </th>
+                <th align="center" valign="bottom" width="10%"><i>Always</i></th>
+                <th align="center" valign="bottom" width="10%"><i>Usually</i></th>
+                <th align="center" valign="bottom" width="10%"><i>Often</i></th>
+                <th align="center" valign="bottom" width="10%"><i>Sometimes</i></th>
+                <th align="center" valign="bottom" width="10%"><i>Rarely</i></th>
+                <th align="center" valign="bottom" width="10%"><i>Never</i></th>
+            </tr>
+
+
+                <tr class="question" background-color: #4bade5>
+                    <td class="questiontext">
+                        I am terrified about being overweight
+                    </td>
+                    <td align="center"><input type = "radio"  name= "EAT_1" id="EAT_1" value="5" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_1" id="EAT_1" value="4" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_1" id="EAT_1" value="3" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_1" id="EAT_1" value="2" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_1" id="EAT_1" value="1" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_1" id="EAT_1" value="0" style="border: none;" onchange='Check()'></td>
+                </tr>
+                <tr class="question" background-color: #4bade5>
+                    <td class="questiontext">
+                        I avoid eating when I am hungry
+                    </td>
+                    <td align="center"><input type = "radio"  name= "EAT_2" id="EAT_2" value="5" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_2" id="EAT_2" value="4" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_2" id="EAT_2" value="3" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_2" id="EAT_2" value="2" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_2" id="EAT_2" value="1" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_2" id="EAT_2" value="0" style="border: none;" onchange='Check()'></td>
+                </tr>
+                <tr class="question">
+                    <td class="questiontext">
+                        I find myself preoccupied with food
+                    </td>
+                    <td align="center"><input type = "radio"  name= "EAT_3" id="EAT_3" value="5" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_3" id="EAT_3" value="4" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_3" id="EAT_3" value="3" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_3" id="EAT_3" value="2" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_3" id="EAT_3" value="1" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_3" id="EAT_3" value="0" style="border: none;" onchange='Check()'></td>
+
+                </tr>
+                <tr class="question">
+                    <td class="questiontext">
+                        I have gone on eating binges where I feel that I may not be able to stop
+                    </td>
+                    <td align="center"><input type = "radio"  name= "EAT_4" id="EAT_4" value="5" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_4" id="EAT_4" value="4" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_4" id="EAT_4" value="3" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_4" id="EAT_4" value="2" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_4" id="EAT_4" value="1" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_4" id="EAT_4" value="0" style="border: none;" onchange='Check()'></td>
+
+                </tr>
+                <tr class="question">
+                    <td class="questiontext">
+                        I cut my food into small pieces
+                    </td>
+                    <td align="center"><input type = "radio"  name= "EAT_5" id="EAT_5" value="5" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_5" id="EAT_5" value="4" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_5" id="EAT_5" value="3" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_5" id="EAT_5" value="2" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_5" id="EAT_5" value="1" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_5" id="EAT_5" value="0" style="border: none;" onchange='Check()'></td>
+
+                </tr>
+                <tr class="question">
+                    <td class="questiontext">
+                        I am aware of the calorie content of foods that I eat
+                    </td>
+                    <td align="center"><input type = "radio"  name= "EAT_6" id="EAT_6" value="5" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_6" id="EAT_6" value="4" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_6" id="EAT_6" value="3" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_6" id="EAT_6" value="2" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_6" id="EAT_6" value="1" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_6" id="EAT_6" value="0" style="border: none;" onchange='Check()'></td>
+                </tr>
+
+
+                <tr class="question">
+                    <td class="questiontext">
+                        I particularly avoid food with a high carbohydrate content (i.e. bread, rice, potatoes, etc.)
+                    </td>
+                    <td align="center"><input type = "radio"  name= "EAT_7" id="EAT_7" value="5" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_7" id="EAT_7" value="4" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_7" id="EAT_7" value="3" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_7" id="EAT_7" value="2" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_7" id="EAT_7" value="1" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_7" id="EAT_7" value="0" style="border: none;" onchange='Check()'></td>
+
+                </tr>
+                <tr class="question">
+                    <td class="questiontext">
+                        I feel that others would prefer if I ate more
+                    </td>
+                    <td align="center"><input type = "radio"  name= "EAT_8" id="EAT_8" value="5" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_8" id="EAT_8" value="4" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_8" id="EAT_8" value="3" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_8" id="EAT_8" value="2" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_8" id="EAT_8" value="1" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_8" id="EAT_8" value="0" style="border: none;" onchange='Check()'></td>
+
+                </tr>
+                <tr class="question">
+                    <td class="questiontext">
+                        I vomit after I have eaten
+                    </td>
+                    <td align="center"><input type = "radio"  name= "EAT_9" id="EAT_9" value="5" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_9" id="EAT_9" value="4" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_9" id="EAT_9" value="3" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_9" id="EAT_9" value="2" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_9" id="EAT_9" value="1" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_9" id="EAT_9" value="0" style="border: none;" onchange='Check()'></td>
+
+                </tr>
+                <tr class="question">
+                    <td class="questiontext">
+                        I feel extremely guilty after eating
+                    </td>
+                    <td align="center"><input type = "radio"  name= "EAT_10" id="EAT_10" value="5" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_10" id="EAT_10" value="4" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_10" id="EAT_10" value="3" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_10" id="EAT_10" value="2" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_10" id="EAT_10" value="1" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_10" id="EAT_10" value="0" style="border: none;" onchange='Check()'></td>
+
+                </tr>
+                <tr class="question">
+                    <td class="questiontext">
+                        I am preoccupied with a desire to be thinner
+                    </td>
+                    <td align="center"><input type = "radio"  name= "EAT_11" id="EAT_11" value="5" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_11" id="EAT_11" value="4" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_11" id="EAT_11" value="3" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_11" id="EAT_11" value="2" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_11" id="EAT_11" value="1" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_11" id="EAT_11" value="0" style="border: none;" onchange='Check()'></td>
+                </tr>
+                <tr class="question">
+                    <td class="questiontext">
+                        I think about burning up calories when I exercise
+                    </td>
+                    <td align="center"><input type = "radio"  name= "EAT_12" id="EAT_12" value="5" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_12" id="EAT_12" value="4" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_12" id="EAT_12" value="3" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_12" id="EAT_12" value="2" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_12" id="EAT_12" value="1" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_12" id="EAT_12" value="0" style="border: none;" onchange='Check()'></td>
+                </tr>
+                <tr class="question">
+                    <td class="questiontext">
+                        Other people think that I am too thin
+                    </td>
+                    <td align="center"><input type = "radio"  name= "EAT_13" id="EAT_13" value="5" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_13" id="EAT_13" value="4" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_13" id="EAT_13" value="3" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_13" id="EAT_13" value="2" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_13" id="EAT_13" value="1" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_13" id="EAT_13" value="0" style="border: none;" onchange='Check()'></td>
+                </tr>
+                <tr class="question">
+                    <td class="questiontext">
+                        I am preoccupied with the thought of having fat on my body
+                    </td>
+                    <td align="center"><input type = "radio"  name= "EAT_14" id="EAT_14" value="5" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_14" id="EAT_14" value="4" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_14" id="EAT_14" value="3" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_14" id="EAT_14" value="2" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_14" id="EAT_14" value="1" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_14" id="EAT_14" value="0" style="border: none;" onchange='Check()'></td>
+                </tr>
+                <tr class="question">
+                    <td class="questiontext">
+                        I take longer than others to eat my meals
+                    </td>
+                    <td align="center"><input type = "radio"  name= "EAT_15" id="EAT_15" value="5" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_15" id="EAT_15" value="4" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_15" id="EAT_15" value="3" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_15" id="EAT_15" value="2" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_15" id="EAT_15" value="1" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_15" id="EAT_15" value="0" style="border: none;" onchange='Check()'></td>
+                </tr>
+                <tr class="question">
+                    <td class="questiontext">
+                        I avoid foods with sugar in them
+                    </td>
+                    <td align="center"><input type = "radio"  name= "EAT_16" id="EAT_16" value="5" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_16" id="EAT_16" value="4" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_16" id="EAT_16" value="3" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_16" id="EAT_16" value="2" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_16" id="EAT_16" value="1" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_16" id="EAT_16" value="0" style="border: none;" onchange='Check()'></td>
+                </tr>
+                <tr class="question">
+                    <td class="questiontext">
+                        I eat diet foods
+                    </td>
+                    <td align="center"><input type = "radio"  name= "EAT_17" id="EAT_17" value="5" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_17" id="EAT_17" value="4" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_17" id="EAT_17" value="3" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_17" id="EAT_17" value="2" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_17" id="EAT_17" value="1" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_17" id="EAT_17" value="0" style="border: none;" onchange='Check()'></td>
+                </tr>
+
+                <tr class="question">
+                    <td class="questiontext">
+                        I feel that food controls my life
+                    </td>
+                    <td align="center"><input type = "radio"  name= "EAT_18" id="EAT_18" value="5" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_18" id="EAT_18" value="4" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_18" id="EAT_18" value="3" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_18" id="EAT_18" value="2" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_18" id="EAT_18" value="1" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_18" id="EAT_18" value="0" style="border: none;" onchange='Check()'></td>
+                </tr>
+                <tr class="question">
+                    <td class="questiontext">
+                        I display self-control around food
+                    </td>
+                    <td align="center"><input type = "radio"  name= "EAT_19" id="EAT_19" value="5" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_19" id="EAT_19" value="4" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_19" id="EAT_19" value="3" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_19" id="EAT_19" value="2" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_19" id="EAT_19" value="1" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_19" id="EAT_19" value="0" style="border: none;" onchange='Check()'></td>
+                </tr>
+
+                <tr class="question">
+                    <td class="questiontext">
+                        I feel that others pressure me to eat
+                    </td>
+                    <td align="center"><input type = "radio"  name= "EAT_20" id="EAT_20" value="5" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_20" id="EAT_20" value="4" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_20" id="EAT_20" value="3" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_20" id="EAT_20" value="2" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_20" id="EAT_20" value="1" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_20" id="EAT_20" value="0" style="border: none;" onchange='Check()'></td>
+                </tr>
+
+
+
+
+                <tr class="question">
+                    <td class="questiontext">
+                        I give too much time and thought to food
+                    </td>
+                    <td align="center"><input type = "radio"  name= "EAT_21" id="EAT_21" value="5" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_21" id="EAT_21" value="4" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_21" id="EAT_21" value="3" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_21" id="EAT_21" value="2" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_21" id="EAT_21" value="1" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_21" id="EAT_21" value="0" style="border: none;" onchange='Check()'></td>
+                </tr>
+
+
+                <tr class="question">
+                    <td class="questiontext">
+                        I feel uncomfortable after eating sweets
+                    </td>
+                    <td align="center"><input type = "radio"  name= "EAT_22" id="EAT_22" value="5" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_22" id="EAT_22" value="4" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_22" id="EAT_22" value="3" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_22" id="EAT_22" value="2" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_22" id="EAT_22" value="1" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_22" id="EAT_22" value="0" style="border: none;" onchange='Check()'></td>
+                  </tr>
+
+
+                <tr class="question">
+                    <td class="questiontext">
+                        I engage in dieting behavior
+                    </td>
+                    <td align="center"><input type = "radio"  name= "EAT_23" id="EAT_23" value="5" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_23" id="EAT_23" value="4" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_23" id="EAT_23" value="3" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_23" id="EAT_23" value="2" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_23" id="EAT_23" value="1" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_23" id="EAT_23" value="0" style="border: none;" onchange='Check()'></td>
+                </tr>
+
+
+                <tr class="question">
+                    <td class="questiontext">
+                        I like my stomach to be empty
+                    </td>
+                    <td align="center"><input type = "radio"  name= "EAT_24" id="EAT_24" value="5" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_24" id="EAT_24" value="4" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_24" id="EAT_24" value="3" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_24" id="EAT_24" value="2" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_24" id="EAT_24" value="1" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_24" id="EAT_24" value="0" style="border: none;" onchange='Check()'></td>
+                </tr>
+
+
+                <tr class="question">
+                    <td class="questiontext">
+                        I have the impulse to vomit after meals
+                    </td>
+                    <td align="center"><input type = "radio"  name= "EAT_25" id="EAT_25" value="5" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_25" id="EAT_25" value="4" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_25" id="EAT_25" value="3" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_25" id="EAT_25" value="2" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_25" id="EAT_25" value="1" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_25" id="EAT_25" value="0" style="border: none;" onchange='Check()'></td>
+                </tr>
+                <tr class="question">
+                    <td class="questiontext">
+                        I enjoy trying new rich foods
+                    </td>
+                    <td align="center"><input type = "radio"  name= "EAT_26" id="EAT_26" value="0" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_26" id="EAT_26" value="1" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_26" id="EAT_26" value="2" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_26" id="EAT_26" value="3" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_26" id="EAT_26" value="4" style="border: none;" onchange='Check()'></td>
+                    <td align="center"><input type = "radio"  name= "EAT_26" id="EAT_26" value="5" style="border: none;" onchange='Check()'></td>
+                </tr>
+                <tr><td>
+                    </table>
+        <table>
+
+                <strong><p> In the past 6 months have you:</p> </strong>
+                </td></tr>
+                <tr class="question">
+                    <td class="questiontext">
+                        Gone on eating binges where you feel that you may not be able to stop?
+                    </td>
+                    <td class="answer">
+                        <select id="EAT_27" name="EAT_27" onchange='Check()'>
+                            <option value="select">--Select Answer--</option>
+                            <option value="5">Once a day or more</option>
+                            <option value="4">2-6 times a week</option>
+                            <option value="3">Once a week</option>
+                            <option value="2">2-3 times a month</option>
+                            <option value="1">Once a month or less</option>
+                            <option value="0">Never</option>
+                        </select>
+                    </td>
+                </tr>
+
+
+                <tr class="question">
+                    <td class="questiontext">
+                        Ever made yourself sick (vomited) to control your weight or shape?
+                    </td>
+                    <td class="answer">
+                        <select id="EAT_28" name="EAT_28" onchange='Check()'>
+                            <option value="select">--Select Answer--</option>
+                            <option value="5">Once a day or more</option>
+                            <option value="4">2-6 times a week</option>
+                            <option value="3">Once a week</option>
+                            <option value="2">2-3 times a month</option>
+                            <option value="1">Once a month or less</option>
+                            <option value="0">Never</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr class="question">
+                    <td class="questiontext">
+                        Ever used laxatives, diet pills or diuretics (water pills) to control your weight or shape?
+                    </td>
+                    <td class="answer">
+                        <select id="EAT_29" name="EAT_29" onchange='Check()'>
+                            <option value="select">--Select Answer--</option>
+                            <option value="5">Once a day or more</option>
+                            <option value="4">2-6 times a week</option>
+                            <option value="3">Once a week</option>
+                            <option value="2">2-3 times a month</option>
+                            <option value="1">Once a month or less</option>
+                            <option value="0">Never</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class="question">
+                    <td class="questiontext">
+                       Exercised more than 60 minutes a day to lose or to control your weight?
+                    </td>
+                    <td class="answer">
+                        <select id="EAT_30" name="EAT_30" onchange='Check()'>
+                            <option value="select">--Select Answer--</option>
+                            <option value="5">Once a day or more</option>
+                            <option value="4">2-6 times a week</option>
+                            <option value="3">Once a week</option>
+                            <option value="2">2-3 times a month</option>
+                            <option value="1">Once a month or less</option>
+                            <option value="0">Never</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr class="question">
+                    <td class="questiontext">
+                        Lost 20 pounds or more in the past 6 months
+                    </td>
+                    <td class="answer">
+                        <select id="EAT_31" name="EAT_31" onchange='Check()'>
+                            <option value="select">--Select Answer--</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+
+                        </select>
+                    </td>
+                </tr>
+
+        <tr> <td>
+            <p> <strong> What is your: </strong></p>
+            </td> </tr>
+        <tr class="question">
+            <td class="questiontext">
+                Height: Feet
+            </td>
+            <td class="answer">
+                <select id="FeetDropdownId" name="EAT" onchange='Check()'>
+                    <option value="select">--Select Feet--</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr class="question">
+            <td class="questiontext">
+                Height: Inches
+            </td>
+            <td class="answer">
+                <select id="InchesDropdownId" name="EAT" onchange='Check()'>
+                    <option value="select">--Select Inches--</option>
+                </select>
+            </td>
+        </tr>
+
+
+
+        </table>
+        <br><br>
+        <table>
+            <td class="questiontext">
+        What is your weight at present (lbs) (please give your best estimate)<br/>
+        </td>
+            <td class="answer">
+        <textarea rows="1" cols="3" name="EAT" id="currentWeight" onchange="Check()"></textarea>
+        </td>
+   </table>
+
+
+        <input type="button" class="continue" id="continue" value="Continue" style="visibility: hidden;"></input>
+    </form>
+</div>
+
+
+ <p class = "continueInstructions"><strong>The CONTINUE button will appear here once you have answered all of the questions. Please double check your answers if you think you are finished but do not see the continue button. </strong></p>
+
+
+</body>

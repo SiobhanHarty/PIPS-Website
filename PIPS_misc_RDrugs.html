@@ -1,0 +1,1184 @@
+<!-- Recreational drug use questions -->
+<head>
+<script>
+var ProgressBar = function(){
+if(q == -1){Progress.style.width = '0%'}
+if(q == 0){Progress.style.width = '0%'}
+if(q == 1){Progress.style.width = '10%'}
+if(q == 2){Progress.style.width = '20%'}
+if(q == 3){Progress.style.width = '30%'}
+if(q == 4){Progress.style.width = '40%'}
+if(q == 5){Progress.style.width = '50%'}
+if(q == 6){Progress.style.width = '60%'}
+if(q == 7){Progress.style.width = '70%'}
+if(q == 8){Progress.style.width = '80%'}
+if(q == 9){Progress.style.width = '90%'}
+
+
+return Progress.style.width
+}
+var Progress = document.querySelector('#progressbar');
+
+Progress.style.width = ProgressBar()
+
+function yesnoCheck1() {
+  if (document.getElementById('RDrugs_yes1').checked) {
+      document.getElementById('ifYes1').style.display = 'block';
+  }
+  else document.getElementById('ifYes1').style.display = 'none';
+}
+function yesnoCheck2() {
+if (document.getElementById('RDrugs_yes2').checked) {
+    document.getElementById('ifYes2').style.display = 'block';
+}
+else document.getElementById('ifYes2').style.display = 'none';
+}
+function yesnoCheck3() {
+if (document.getElementById('RDrugs_yes3').checked) {
+    document.getElementById('ifYes3').style.display = 'block';
+}
+else document.getElementById('ifYes3').style.display = 'none';
+}
+function yesnoCheck4() {
+  if (document.getElementById('RDrugs_yes4').checked) {
+      document.getElementById('ifYes4').style.display = 'block';
+  }
+  else document.getElementById('ifYes4').style.display = 'none';
+}
+function yesnoCheck5() {
+if (document.getElementById('RDrugs_yes5').checked) {
+    document.getElementById('ifYes5').style.display = 'block';
+}
+else document.getElementById('ifYes5').style.display = 'none';
+}
+function yesnoCheck6() {
+if (document.getElementById('RDrugs_yes6').checked) {
+    document.getElementById('ifYes6').style.display = 'block';
+}
+else document.getElementById('ifYes6').style.display = 'none';
+}
+function yesnoCheck7() {
+if (document.getElementById('RDrugs_yes7').checked) {
+    document.getElementById('ifYes7').style.display = 'block';
+}
+else document.getElementById('ifYes7').style.display = 'none';
+}
+function yesnoCheck8() {
+if (document.getElementById('RDrugs_yes8').checked) {
+    document.getElementById('ifYes8').style.display = 'block';
+}
+else document.getElementById('ifYes8').style.display = 'none';
+}
+
+$(":radio").click(function() {
+  $(this).closest("tr").addClass("active").
+  siblings("div.active").removeClass("active");
+});
+
+
+var Check = function(){
+  // this max number should be 1 greater than number of items on scsale
+
+  for (var i = 1; i < 9; i++) {
+    RDrugs = document.getElementsByName("RDrugs_" + i)
+    RDrugsAge = document.getElementById("RDrugs_"+i+"_1_Age1")
+
+    if((RDrugs[0].checked) || (RDrugs[1].checked)) {
+
+      $('input#continue').css('visibility','visible')
+    }
+    else{
+
+      $('input#continue').css('visibility','hidden')
+
+      return false
+    }
+  }
+
+}
+
+
+$('.trigger1').click(function() {
+    $('.content1').hide();
+    $('.' + $(this).data('rel')).show();
+});
+
+$('.trigger2').click(function() {
+    $('.content2').hide();
+    $('.' + $(this).data('rel')).show();
+});
+$('.trigger3').click(function() {
+    $('.content3').hide();
+    $('.' + $(this).data('rel')).show();
+});
+
+$('.trigger4').click(function() {
+    $('.content4').hide();
+    $('.' + $(this).data('rel')).show();
+});
+$('.trigger5').click(function() {
+    $('.content5').hide();
+    $('.' + $(this).data('rel')).show();
+});
+
+$('.trigger6').click(function() {
+    $('.content6').hide();
+    $('.' + $(this).data('rel')).show();
+});
+$('.trigger7').click(function() {
+    $('.content7').hide();
+    $('.' + $(this).data('rel')).show();
+});
+
+$('.trigger8').click(function() {
+    $('.content8').hide();
+    $('.' + $(this).data('rel')).show();
+});
+
+// var Drug2Age1 = document.getElementById('RDrugs_2_1_Age1');
+//  for (var i = 0; i <= 99; i++) {
+//      var theOption = new Option;
+//      theOption.text = i;
+//      theOption.value = i;
+//      Drug2Age1.options[i] = theOption;
+// }
+// var Drug2Age2 = document.getElementById('RDrugs_2_1_Age2');
+// for (var i = 0; i <= 99; i++) {
+//     var theOption = new Option;
+//     theOption.text = i;
+//     theOption.value = i;
+//     Drug2Age2.options[i] = theOption;
+// }
+// var Drug2Age1 = document.getElementById('RDrugs_2_2_Age1');
+// for (var i = 0; i <= 99; i++) {
+//     var theOption = new Option;
+//     theOption.text = i;
+//     theOption.value = i;
+//     Drug2Age1.options[i] = theOption;
+// }
+
+$(function(){
+    var $select = $(".1-99");
+    for (i=1;i<=70;i++){
+        $select.append($('<option></option>').val(i).html(i))
+    }
+});
+
+</script>
+
+<style>
+/*#Show_RDrugs_1:not(:checked) ~ p { display: none }
+#Show_RDrugs_2:not(:checked) ~ p { display: none }*/
+
+.content1 {
+    display: none;
+}
+.content2 {
+    display: none;
+}
+.content3 {
+    display: none;
+}
+.content4 {
+    display: none;
+}
+.content5 {
+    display: none;
+}
+.content6 {
+    display: none;
+}
+.content7 {
+    display: none;
+}
+.content8 {
+    display: none;
+}
+
+
+
+.wrap {
+  font:10px Arial, san-serif;
+}
+
+form .statement {
+  display:block;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 30px 0 0 4.25%;
+  margin-bottom:10px;
+}
+form .likert {
+  list-style:none;
+  width:100%;
+  margin:0;
+  padding:0 0 35px;
+  display:block;
+  border-bottom:2px solid #efefef;
+}
+form .likert:last-of-type {border-bottom:0;}
+form .likert:before {
+  content: '';
+  position:relative;
+  top:56px;
+  left:8%;
+  display:block;
+  background-color:#042c7a;
+  height:6px;
+  width:66%;
+}
+form .likert li {
+  display:inline-block;
+  width:16%;
+  text-align:center;
+  vertical-align: top;
+}
+form .likert li input[type=radio] {
+  display:block;
+  position:relative;
+  top:0;
+  left:50%;
+  margin-left:-6px;
+
+}
+form .likert li label {width:100%;}
+form .buttons {
+  margin:30px 0;
+  padding:0 4.25%;
+  text-align:right
+}
+form .buttons button {
+  padding: 5px 10px;
+  background-color: #67ab49;
+  border: 0;
+  border-radius: 10px 0px 0px 10px;
+}
+
+
+</style>
+
+</head>
+
+<body>
+  <center><h2>Progress within this questionnaire section</h2></center>
+  <div style="background-color: #e0eeff; width: 95%; margin:0 auto; height: 25px; border: 3px solid #000040; padding: 0px;">
+   <div id = "progressbar" style="background-color: #000040; height: 25px;overflow:hidden">&nbsp;</div>
+  </div>
+
+<br>&nbsp;<br>
+  <div class= "instruct" id="main" style= "text-align: left;">
+
+
+
+  <form id="postquiz" action="done" method="post">
+
+  <p>Below are a list of questions about drug use. Please indicate whether or not you have ever taken these drugs.<p>
+    <div style= "background-color:#c9e1fc; margin-left: 0.75em; margin-right: 0.75em; padding: 5px 2px;" >
+      <p><b><font size =4>&nbsp;&nbsp;Have you ever taken</font></b></p>
+      <div style="margin-left: 1.5em;margin-right: 1.5em;background-color:#e0eeff;">
+        <div style="padding:10px 0px 0px 10px">
+          <tr class="question;">
+            <td class="questiontext">
+              <b>…marijuana?</b><br>
+            </td>
+            <td>Yes <input type="radio" onclick="javascript:yesnoCheck1();" name= "RDrugs_1" id="RDrugs_yes1" onchange='Check()'/> No <input type="radio" onclick="javascript:yesnoCheck1();" name= "RDrugs_1" id="RDrugs_no1" onchange='Check()'/><br></td>
+            <div id="ifYes1" style="display:none">
+              <div style="margin-left:9em;">
+                <p><b>Please select the option which best applies to you:</b><br>
+                  <form id='group_RDrugs_1'>
+                    <div style="margin-left: 0em;">
+                      <label>
+                        <input type="radio"  name= "group1" id="RDrugs_1" value= "0" class="rarely1-btn trigger1" data-rel="rarely1" /> <i>I only took it once, or on a rare few occasions, <b>in the past</b></i><br>
+                      </label>
+                      <label>
+                        <input type="radio"  name= "group1" id="RDrugs_1" value= "1" class="past-frequent1-btn trigger1" data-rel="past-frequent1"/> <i>I used to take this frequently <b>in the past</b>, but I have now quit</i><br>
+                      </label>
+                      <label>
+                        <input type="radio"  name= "group1" id="RDrugs_1" value= "2" class="present-frequent1-btn trigger1" data-rel="present-frequent1" /> <i>I take this on an ongoing basis</i><br>
+                      </label>
+                    </form>
+                    <br>&nbsp;</br>
+                    <div class="frequency">
+                      <div class="rarely1 content1"> </div>
+                      <p><div class="past-frequent1 content1"><b>How frequently did you take it in the past?</b></p>
+                        <div class="wrap" style="margin-left:3em;">
+                          <form action="">
+                            <ul class='likert'>
+                              <li>
+                                <label><font size =2>Less than once a month</font></label>
+                                <input type="radio" id="RDrugs_1_freq1"  name="RDrugs_1_freq1" value="0">
+                              </li>
+                              <li>
+                                <label><font size =2>Every month &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></label>
+                                <input type="radio" id="RDrugs_1_freq1"  name="RDrugs_1_freq1" value="1">
+                              </li>
+                              <li>
+                                <label><font size =2>Every week &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></label>
+                                <input type="radio" id="RDrugs_1_freq1"  name="RDrugs_1_freq1" value="2">
+                              </li>
+                              <li>
+                                <label><font size =2>Daily or almost daily</font></label>
+                                <input type="radio" id="RDrugs_1_freq1"  name="RDrugs_1_freq1" value="3">
+                              </li>
+                              <li>
+                                <label><font size =2>More than once a day</font></label>
+                                <input type="radio" id="RDrugs_1_freq1"  name="RDrugs_1_freq1" value="4">
+                              </li>
+
+                            </ul>
+                          </form>
+                        </div>
+                        <p><b>How old were you when you started taking it?</b>
+                          <td class="answer">
+                            <select id="RDrugs_1_1_Age1" name="RDrugs_1_1_Age1" class="1-99">
+                              <option value="N/A">--Select--</option>
+                            </select>
+                          </td><br>
+                          <b>How old were you when you quit?</b>
+                          <td class="answer">
+                            <select id="RDrugs_1_1_Age2" name="RDrugs_1_1_Age2" class="1-99">
+                              <option value="N/A">--Select--</option>
+                            </select>
+                          </td>
+                        </div>
+                        <p><div class="present-frequent1 content1"><b>How frequently do you take it?</b></p>
+                          <div class="wrap" style="margin-left:3em;">
+                            <form action="">
+                              <ul class='likert'>
+                                <li>
+                                  <label><font size =2>Less than once a month</font></label>
+                                  <input type="radio" id="RDrugs_1_freq2"  name="RDrugs_1_freq2" value="0">
+                                </li>
+                                <li>
+                                  <label><font size =2>Every month &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></label>
+                                  <input type="radio" id="RDrugs_1_freq2"  name="RDrugs_1_freq2" value="1">
+                                </li>
+                                <li>
+                                  <label><font size =2>Every week &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></label>
+                                  <input type="radio" id="RDrugs_1_freq2"  name="RDrugs_1_freq2" value="2">
+                                </li>
+                                <li>
+                                  <label><font size =2>Daily or almost daily</font></label>
+                                  <input type="radio" id="RDrugs_1_freq2"  name="RDrugs_1_freq2" value="3">
+                                </li>
+                                <li>
+                                  <label><font size =2>More than once a day</font></label>
+                                  <input type="radio" id="RDrugs_1_freq2"  name="RDrugs_1_freq2" value="4">
+                                </li>
+
+                              </ul>
+                            </form>
+                          </div>
+                          <p><b>How old were you when you started taking it?</b>
+                            <td class="answer">
+                              <select id="RDrugs_1_2_Age1" name="RDrugs_1_2_Age1" class="1-99">
+                                <option value="N/A">--Select--</option>
+                              </select></p>
+                            </td>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </tr>
+              </div>
+              <br>&nbsp;</br>
+            </div>
+
+            <br>&nbsp;</br>
+
+
+            <div style="margin-left: 1.5em;margin-right: 1.5em;background-color:#e0eeff;">
+                <div style="padding:10px 0px 0px 10px">
+                <tr class="question;">
+                  <td class="questiontext">
+                    <b>…ecstasy/MDMA?</b><br>
+                  </td>
+                  <td>Yes <input type="radio" onclick="javascript:yesnoCheck2();" name= "RDrugs_2" id="RDrugs_yes2" onchange='Check()'/> No <input type="radio" onclick="javascript:yesnoCheck2();" name= "RDrugs_2" id="RDrugs_no2" onchange='Check()'/><br></td>
+                  <div id="ifYes2" style="display:none">
+                    <div style="margin-left:9em;">
+                      <p><b>Please select the option which best applies to you:</b><br>
+                        <form id='group_RDrugs_2'>
+                          <div style="margin-left: 0em;">
+                            <label>
+                              <input type="radio"  name= "group2" id="RDrugs_2" value= "0" class="rarely2-btn trigger2" data-rel="rarely2" /> <i>I only took it once, or on a rare few occasions, <b>in the past</b></i><br>
+                            </label>
+                            <label>
+                              <input type="radio"  name= "group2" id="RDrugs_2" value= "1" class="past-frequent2-btn trigger2" data-rel="past-frequent2"/> <i>I used to take this frequently <b>in the past</b>, but I have now quit</i><br>
+                            </label>
+                            <label>
+                              <input type="radio"  name= "group2" id="RDrugs_2" value= "2" class="present-frequent2-btn trigger2" data-rel="present-frequent2" /> <i>I take this on an ongoing basis</i><br>
+                            </label>
+                          </form>
+                          <br>&nbsp;</br>
+                          <div class="frequency">
+                            <div class="rarely2 content2"> </div>
+                            <p><div class="past-frequent2 content2"><b>How frequently did you take it in the past?</b></p>
+                              <div class="wrap" style="margin-left:3em;">
+                                <form action="">
+                                  <ul class='likert'>
+                                    <li>
+                                      <label><font size =2>Less than once a month</font></label>
+                                      <input type="radio" id="RDrugs_2_freq1"  name="RDrugs_2_freq1" value="0">
+                                    </li>
+                                    <li>
+                                      <label><font size =2>Every month &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></label>
+                                      <input type="radio" id="RDrugs_2_freq1"  name="RDrugs_2_freq1" value="1">
+                                    </li>
+                                    <li>
+                                      <label><font size =2>Every week &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></label>
+                                      <input type="radio" id="RDrugs_2_freq1"  name="RDrugs_2_freq1" value="2">
+                                    </li>
+                                    <li>
+                                      <label><font size =2>Daily or almost daily</font></label>
+                                      <input type="radio" id="RDrugs_2_freq1"  name="RDrugs_2_freq1" value="3">
+                                    </li>
+                                    <li>
+                                      <label><font size =2>More than once a day</font></label>
+                                      <input type="radio" id="RDrugs_2_freq1"  name="RDrugs_2_freq1" value="4">
+                                    </li>
+
+                                  </ul>
+                                </form>
+                              </div>
+                              <p><b>How old were you when you started taking it?</b>
+                                <td class="answer">
+                                  <select id="RDrugs_2_1_Age1" name="RDrugs_2_1_Age1" class="1-99">
+                                    <option value="N/A">--Select--</option>
+                                  </select></p>
+                                </td><br>
+                                <b>How old were you when you quit?</b>
+                                <td class="answer">
+                                  <select id="RDrugs_2_1_Age2" name="RDrugs_2_1_Age2" class="1-99">
+                                    <option value="N/A">--Select--</option>
+                                  </select>
+                                </td>
+                              </div>
+                              <p><div class="present-frequent2 content2"><b>How frequently do you take it?</b></p>
+                                <div class="wrap" style="margin-left:3em;">
+                                  <form action="">
+                                    <ul class='likert'>
+                                      <li>
+                                        <label><font size =2>Less than once a month</font></label>
+                                        <input type="radio" id="RDrugs_2_freq2"  name="RDrugs_2_freq2" value="0">
+                                      </li>
+                                      <li>
+                                        <label><font size =2>Every month &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></label>
+                                        <input type="radio" id="RDrugs_2_freq2"  name="RDrugs_2_freq2" value="1">
+                                      </li>
+                                      <li>
+                                        <label><font size =2>Every week &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></label>
+                                        <input type="radio" id="RDrugs_2_freq2"  name="RDrugs_2_freq2" value="2">
+                                      </li>
+                                      <li>
+                                        <label><font size =2>Daily or almost daily</font></label>
+                                        <input type="radio" id="RDrugs_2_freq2"  name="RDrugs_2_freq2" value="3">
+                                      </li>
+                                      <li>
+                                        <label><font size =2>More than once a day</font></label>
+                                        <input type="radio" id="RDrugs_2_freq2"  name="RDrugs_2_freq2" value="4">
+                                      </li>
+
+                                    </ul>
+                                  </form>
+                                </div>
+                                <p><b>How old were you when you started taking it?</b>
+                                  <td class="answer">
+                                    <select id="RDrugs_2_2_Age1" name="RDrugs_2_2_Age1" class="1-99">
+                                      <option value="N/A">--Select--</option>
+                                    </select></p>
+                                  </td>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                      </tr>
+                    </div>
+                    <br>&nbsp;</br>
+                  </div>
+
+                  <br>&nbsp;</br>
+                  <div style="margin-left: 1.5em;margin-right: 1.5em;background-color:#e0eeff;">
+                      <div style="padding:10px 0px 0px 10px">
+                      <tr class="question;">
+                        <td class="questiontext">
+                          <b>…relevin?</b><br>
+                        </td>
+                        <td>Yes <input type="radio" onclick="javascript:yesnoCheck3();" name= "RDrugs_3" id="RDrugs_yes3" onchange='Check()'/> No <input type="radio" onclick="javascript:yesnoCheck3();" name= "RDrugs_3" id="RDrugs_no3" onchange='Check()'/><br></td>
+                        <div id="ifYes3" style="display:none">
+                          <div style="margin-left:9em;">
+                            <p><b>Please select the option which best applies to you:</b><br>
+                              <form id='group_RDrugs_3'>
+                                <div style="margin-left: 0em;">
+                                  <label>
+                                    <input type="radio"  name= "group3" id="RDrugs_3" value= "0" class="rarely3-btn trigger3" data-rel="rarely3" /> <i>I only took it once, or on a rare few occasions, <b>in the past</b></i><br>
+                                  </label>
+                                  <label>
+                                    <input type="radio"  name= "group3" id="RDrugs_3" value= "1" class="past-frequent3-btn trigger3" data-rel="past-frequent3"/> <i>I used to take this frequently <b>in the past</b>, but I have now quit</i><br>
+                                  </label>
+                                  <label>
+                                    <input type="radio"  name= "group3" id="RDrugs_3" value= "2" class="present-frequent3-btn trigger3" data-rel="present-frequent3" /> <i>I take this on an ongoing basis</i><br>
+                                  </label>
+                                </form>
+                                <br>&nbsp;</br>
+                                <div class="frequency">
+                                  <div class="rarely3 content3"> </div>
+                                  <p><div class="past-frequent3 content3"><b>How frequently did you take it in the past?</b></p>
+                                    <div class="wrap" style="margin-left:3em;">
+                                      <form action="">
+                                        <ul class='likert'>
+                                          <li>
+                                            <label><font size =2>Less than once a month</font></label>
+                                            <input type="radio" id="RDrugs_3_freq1"  name="RDrugs_3_freq1" value="0">
+                                          </li>
+                                          <li>
+                                            <label><font size =2>Every month &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></label>
+                                            <input type="radio" id="RDrugs_3_freq1"  name="RDrugs_3_freq1" value="1">
+                                          </li>
+                                          <li>
+                                            <label><font size =2>Every week &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></label>
+                                            <input type="radio" id="RDrugs_3_freq1"  name="RDrugs_3_freq1" value="2">
+                                          </li>
+                                          <li>
+                                            <label><font size =2>Daily or almost daily</font></label>
+                                            <input type="radio" id="RDrugs_3_freq1"  name="RDrugs_3_freq1" value="3">
+                                          </li>
+                                          <li>
+                                            <label><font size =2>More than once a day</font></label>
+                                            <input type="radio" id="RDrugs_3_freq1"  name="RDrugs_3_freq1" value="4">
+                                          </li>
+
+                                        </ul>
+                                      </form>
+                                    </div>
+                                    <p><b>How old were you when you started taking it?</b>
+                                      <td class="answer">
+                                        <select id="RDrugs_3_1_Age1" name="RDrugs_3_1_Age1" class="1-99">
+                                          <option value="N/A">--Select--</option>
+                                        </select></p>
+                                      </td><br>
+                                      <b>How old were you when you quit?</b>
+                                      <td class="answer">
+                                        <select id="RDrugs_3_1_Age2" name="RDrugs_3_1_Age2" class="1-99">
+                                          <option value="N/A">--Select--</option>
+                                        </select>
+                                      </td>
+                                    </div>
+                                    <p><div class="present-frequent3 content3"><b>How frequently do you take it?</b></p>
+                                      <div class="wrap" style="margin-left:3em;">
+                                        <form action="">
+                                          <ul class='likert'>
+                                            <li>
+                                              <label><font size =2>Less than once a month</font></label>
+                                              <input type="radio" id="RDrugs_3_freq2"  name="RDrugs_3_freq2" value="0">
+                                            </li>
+                                            <li>
+                                              <label><font size =2>Every month &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></label>
+                                              <input type="radio" id="RDrugs_3_freq2"  name="RDrugs_3_freq2" value="1">
+                                            </li>
+                                            <li>
+                                              <label><font size =2>Every week &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></label>
+                                              <input type="radio" id="RDrugs_3_freq2"  name="RDrugs_3_freq2" value="2">
+                                            </li>
+                                            <li>
+                                              <label><font size =2>Daily or almost daily</font></label>
+                                              <input type="radio" id="RDrugs_3_freq2"  name="RDrugs_3_freq2" value="3">
+                                            </li>
+                                            <li>
+                                              <label><font size =2>More than once a day</font></label>
+                                              <input type="radio" id="RDrugs_3_freq2"  name="RDrugs_3_freq2" value="4">
+                                            </li>
+
+                                          </ul>
+                                        </form>
+                                      </div>
+                                      <p><b>How old were you when you started taking it?</b>
+                                        <td class="answer">
+                                          <select id="RDrugs_3_2_Age1" name="RDrugs_3_2_Age1" class="1-99">
+                                            <option value="N/A">--Select--</option>
+                                          </select></p>
+                                        </td>
+                                      </div>
+                                    </div>
+
+                                  </div>
+                                </div>
+                              </div>
+                            </tr>
+                          </div>
+                          <br>&nbsp;</br>
+                        </div>
+                        <br>&nbsp;</br>
+                        <div style="margin-left: 1.5em;margin-right: 1.5em;background-color:#e0eeff;">
+                            <div style="padding:10px 0px 0px 10px">
+                            <tr class="question;">
+                              <td class="questiontext">
+                                <b>…stimulant drugs (e.g. cocaine/amphetamines)?</b><br>
+                              </td>
+                              <td>Yes <input type="radio" onclick="javascript:yesnoCheck4();" name= "RDrugs_4" id="RDrugs_yes4" onchange='Check()'/> No <input type="radio" onclick="javascript:yesnoCheck4();" name= "RDrugs_4" id="RDrugs_no4" onchange='Check()'/><br></td>
+                              <div id="ifYes4" style="display:none">
+                                <div style="margin-left:9em;">
+                                  <p><b>Please select the option which best applies to you:</b><br>
+                                    <form id='group_RDrugs_4'>
+                                      <div style="margin-left: 0em;">
+                                        <label>
+                                          <input type="radio"  name= "group4" id="RDrugs_4" value= "0" class="rarely4-btn trigger4" data-rel="rarely4" /> <i>I only took it once, or on a rare few occasions, <b>in the past</b></i><br>
+                                        </label>
+                                        <label>
+                                          <input type="radio"  name= "group4" id="RDrugs_4" value= "1" class="past-frequent4-btn trigger4" data-rel="past-frequent4"/> <i>I used to take this frequently <b>in the past</b>, but I have now quit</i><br>
+                                        </label>
+                                        <label>
+                                          <input type="radio"  name= "group4" id="RDrugs_4" value= "2" class="present-frequent4-btn trigger4" data-rel="present-frequent4" /> <i>I take this on an ongoing basis</i><br>
+                                        </label>
+                                      </form>
+                                      <br>&nbsp;</br>
+                                      <div class="frequency">
+                                        <div class="rarely4 content4"> </div>
+                                        <p><div class="past-frequent4 content4"><b>How frequently did you take it in the past?</b></p>
+                                          <div class="wrap" style="margin-left:3em;">
+                                            <form action="">
+                                              <ul class='likert'>
+                                                <li>
+                                                  <label><font size =2>Less than once a month</font></label>
+                                                  <input type="radio" id="RDrugs_4_freq1"  name="RDrugs_4_freq1" value="0">
+                                                </li>
+                                                <li>
+                                                  <label><font size =2>Every month &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></label>
+                                                  <input type="radio" id="RDrugs_4_freq1"  name="RDrugs_4_freq1" value="1">
+                                                </li>
+                                                <li>
+                                                  <label><font size =2>Every week &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></label>
+                                                  <input type="radio" id="RDrugs_4_freq1"  name="RDrugs_4_freq1" value="2">
+                                                </li>
+                                                <li>
+                                                  <label><font size =2>Daily or almost daily</font></label>
+                                                  <input type="radio" id="RDrugs_4_freq1"  name="RDrugs_4_freq1" value="3">
+                                                </li>
+                                                <li>
+                                                  <label><font size =2>More than once a day</font></label>
+                                                  <input type="radio" id="RDrugs_4_freq1"  name="RDrugs_4_freq1" value="4">
+                                                </li>
+
+                                              </ul>
+                                            </form>
+                                          </div>
+                                          <p><b>How old were you when you started taking it?</b>
+                                            <td class="answer">
+                                              <select id="RDrugs_4_1_Age1" name="RDrugs_4_1_Age1" class="1-99">
+                                                <option value="N/A">--Select--</option>
+                                              </select></p>
+                                            </td><br>
+                                            <b>How old were you when you quit?</b>
+                                            <td class="answer">
+                                              <select id="RDrugs_4_1_Age2" name="RDrugs_4_1_Age2" class="1-99">
+                                                <option value="N/A">--Select--</option>
+                                              </select>
+                                            </td>
+                                          </div>
+                                          <p><div class="present-frequent4 content4"><b>How frequently do you take it?</b></p>
+                                            <div class="wrap" style="margin-left:3em;">
+                                              <form action="">
+                                                <ul class='likert'>
+                                                  <li>
+                                                    <label><font size =2>Less than once a month</font></label>
+                                                    <input type="radio" id="RDrugs_4_freq2"  name="RDrugs_4_freq2" value="0">
+                                                  </li>
+                                                  <li>
+                                                    <label><font size =2>Every month &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></label>
+                                                    <input type="radio" id="RDrugs_4_freq2"  name="RDrugs_4_freq2" value="1">
+                                                  </li>
+                                                  <li>
+                                                    <label><font size =2>Every week &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></label>
+                                                    <input type="radio" id="RDrugs_4_freq2"  name="RDrugs_4_freq2" value="2">
+                                                  </li>
+                                                  <li>
+                                                    <label><font size =2>Daily or almost daily</font></label>
+                                                    <input type="radio" id="RDrugs_4_freq2"  name="RDrugs_4_freq2" value="3">
+                                                  </li>
+                                                  <li>
+                                                    <label><font size =2>More than once a day</font></label>
+                                                    <input type="radio" id="RDrugs_4_freq2"  name="RDrugs_4_freq2" value="4">
+                                                  </li>
+
+                                                </ul>
+                                              </form>
+                                            </div>
+                                            <p><b>How old were you when you started taking it?</b>
+                                              <td class="answer">
+                                                <select id="RDrugs_4_2_Age1" name="RDrugs_4_2_Age1" class="1-99">
+                                                  <option value="N/A">--Select--</option>
+                                                </select></p>
+                                              </td>
+                                            </div>
+                                          </div>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </tr>
+                                </div>
+                                <br>&nbsp;</br>
+                              </div>
+                              <br>&nbsp;</br>
+                              <div style="margin-left: 1.5em;margin-right: 1.5em;background-color:#e0eeff;">
+                                  <div style="padding:10px 0px 0px 10px">
+                                  <tr class="question;">
+                                    <td class="questiontext">
+                                      <b>…opiates (e.g. codeine/oxycodone) on prescription, excluding Solpadeine and Neurofen Plus?</b><br>
+                                    </td>
+                                    <td>Yes <input type="radio" onclick="javascript:yesnoCheck5();" name= "RDrugs_5" id="RDrugs_yes5" onchange='Check()'/> No <input type="radio" onclick="javascript:yesnoCheck5();" name= "RDrugs_5" id="RDrugs_no5" onchange='Check()'/><br></td>
+                                    <div id="ifYes5" style="display:none">
+                                      <div style="margin-left:9em;">
+                                        <p><b>Please select the option which best applies to you:</b><br>
+                                          <form id='group_RDrugs_5'>
+                                            <div style="margin-left: 0em;">
+                                              <label>
+                                                <input type="radio"  name= "group5" id="RDrugs_5" value= "0" class="rarely5-btn trigger5" data-rel="rarely5" /> <i>I only took it once, or on a rare few occasions, <b>in the past</b></i><br>
+                                              </label>
+                                              <label>
+                                                <input type="radio"  name= "group5" id="RDrugs_5" value= "1" class="past-frequent5-btn trigger5" data-rel="past-frequent5"/> <i>I used to take this frequently <b>in the past</b>, but I have now quit</i><br>
+                                              </label>
+                                              <label>
+                                                <input type="radio"  name= "group5" id="RDrugs_5" value= "2" class="present-frequent5-btn trigger5" data-rel="present-frequent5" /> <i>I take this on an ongoing basis</i><br>
+                                              </label>
+                                            </form>
+                                            <br>&nbsp;</br>
+                                            <div class="frequency">
+                                              <div class="rarely5 content5"> </div>
+                                              <p><div class="past-frequent5 content5"><b>How frequently did you take it in the past?</b></p>
+                                                <div class="wrap" style="margin-left:3em;">
+                                                  <form action="">
+                                                    <ul class='likert'>
+                                                      <li>
+                                                        <label><font size =2>Less than once a month</font></label>
+                                                        <input type="radio" id="RDrugs_5_freq1"  name="RDrugs_5_freq1" value="0">
+                                                      </li>
+                                                      <li>
+                                                        <label><font size =2>Every month &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></label>
+                                                        <input type="radio" id="RDrugs_5_freq1"  name="RDrugs_5_freq1" value="1">
+                                                      </li>
+                                                      <li>
+                                                        <label><font size =2>Every week &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></label>
+                                                        <input type="radio" id="RDrugs_5_freq1"  name="RDrugs_5_freq1" value="2">
+                                                      </li>
+                                                      <li>
+                                                        <label><font size =2>Daily or almost daily</font></label>
+                                                        <input type="radio" id="RDrugs_5_freq1"  name="RDrugs_5_freq1" value="3">
+                                                      </li>
+                                                      <li>
+                                                        <label><font size =2>More than once a day</font></label>
+                                                        <input type="radio" id="RDrugs_5_freq1"  name="RDrugs_5_freq1" value="4">
+                                                      </li>
+
+                                                    </ul>
+                                                  </form>
+                                                </div>
+                                                <p><b>How old were you when you started taking it?</b>
+                                                  <td class="answer">
+                                                    <select id="RDrugs_5_1_Age1" name="RDrugs_5_1_Age1" class="1-99">
+                                                      <option value="N/A">--Select--</option>
+                                                    </select></p>
+                                                  </td><br>
+                                                  <b>How old were you when you quit?</b>
+                                                  <td class="answer">
+                                                    <select id="RDrugs_5_1_Age2" name="RDrugs_5_1_Age2" class="1-99">
+                                                      <option value="N/A">--Select--</option>
+                                                    </select>
+                                                  </td>
+                                                </div>
+                                                <p><div class="present-frequent5 content5"><b>How frequently do you take it?</b></p>
+                                                  <div class="wrap" style="margin-left:3em;">
+                                                    <form action="">
+                                                      <ul class='likert'>
+                                                        <li>
+                                                          <label><font size =2>Less than once a month</font></label>
+                                                          <input type="radio" id="RDrugs_5_freq2"  name="RDrugs_5_freq2" value="0">
+                                                        </li>
+                                                        <li>
+                                                          <label><font size =2>Every month &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></label>
+                                                          <input type="radio" id="RDrugs_5_freq2"  name="RDrugs_5_freq2" value="1">
+                                                        </li>
+                                                        <li>
+                                                          <label><font size =2>Every week &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></label>
+                                                          <input type="radio" id="RDrugs_5_freq2"  name="RDrugs_5_freq2" value="2">
+                                                        </li>
+                                                        <li>
+                                                          <label><font size =2>Daily or almost daily</font></label>
+                                                          <input type="radio" id="RDrugs_5_freq2"  name="RDrugs_5_freq2" value="3">
+                                                        </li>
+                                                        <li>
+                                                          <label><font size =2>More than once a day</font></label>
+                                                          <input type="radio" id="RDrugs_5_freq2"  name="RDrugs_5_freq2" value="4">
+                                                        </li>
+
+                                                      </ul>
+                                                    </form>
+                                                  </div>
+                                                  <p><b>How old were you when you started taking it?</b>
+                                                    <td class="answer">
+                                                      <select id="RDrugs_5_2_Age1" name="RDrugs_5_2_Age1" class="1-99">
+                                                        <option value="N/A">--Select--</option>
+                                                      </select></p>
+                                                    </td>
+                                                  </div>
+                                                </div>
+
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </tr>
+                                      </div>
+                                      <br>&nbsp;</br>
+                                    </div>
+                                    <br>&nbsp;</br>
+                                    <div style="margin-left: 1.5em;margin-right: 1.5em;background-color:#e0eeff;">
+                                        <div style="padding:10px 0px 0px 10px">
+                                        <tr class="question;">
+                                          <td class="questiontext">
+                                            <b>…‘street’ opiates; that is, without prescription (e.g. heroin/codeine/oxycodone)?</b><br>
+                                          </td>
+                                          <td>Yes <input type="radio" onclick="javascript:yesnoCheck6();" name= "RDrugs_6" id="RDrugs_yes6" onchange='Check()'/> No <input type="radio" onclick="javascript:yesnoCheck6();" name= "RDrugs_6" id="RDrugs_no6" onchange='Check()'/><br></td>
+                                          <div id="ifYes6" style="display:none">
+                                            <div style="margin-left:9em;">
+                                              <p><b>Please select the option which best applies to you:</b><br>
+                                                <form id='group_RDrugs_6'>
+                                                  <div style="margin-left: 0em;">
+                                                    <label>
+                                                      <input type="radio"  name= "group6" id="RDrugs_6" value= "0" class="rarely6-btn trigger6" data-rel="rarely6" /> <i>I only took it once, or on a rare few occasions, <b>in the past</b></i><br>
+                                                    </label>
+                                                    <label>
+                                                      <input type="radio"  name= "group6" id="RDrugs_6" value= "1" class="past-frequent6-btn trigger6" data-rel="past-frequent6"/> <i>I used to take this frequently <b>in the past</b>, but I have now quit</i><br>
+                                                    </label>
+                                                    <label>
+                                                      <input type="radio"  name= "group6" id="RDrugs_6" value= "2" class="present-frequent6-btn trigger6" data-rel="present-frequent6" /> <i>I take this on an ongoing basis</i><br>
+                                                    </label>
+                                                  </form>
+                                                  <br>&nbsp;</br>
+                                                  <div class="frequency">
+                                                    <div class="rarely6 content6"> </div>
+                                                    <p><div class="past-frequent6 content6"><b>How frequently did you take it in the past?</b></p>
+                                                      <div class="wrap" style="margin-left:3em;">
+                                                        <form action="">
+                                                          <ul class='likert'>
+                                                            <li>
+                                                              <label><font size =2>Less than once a month</font></label>
+                                                              <input type="radio" id="RDrugs_6_freq1"  name="RDrugs_6_freq1" value="0">
+                                                            </li>
+                                                            <li>
+                                                              <label><font size =2>Every month &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></label>
+                                                              <input type="radio" id="RDrugs_6_freq1"  name="RDrugs_6_freq1" value="1">
+                                                            </li>
+                                                            <li>
+                                                              <label><font size =2>Every week &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></label>
+                                                              <input type="radio" id="RDrugs_6_freq1"  name="RDrugs_6_freq1" value="2">
+                                                            </li>
+                                                            <li>
+                                                              <label><font size =2>Daily or almost daily</font></label>
+                                                              <input type="radio" id="RDrugs_6_freq1"  name="RDrugs_6_freq1" value="3">
+                                                            </li>
+                                                            <li>
+                                                              <label><font size =2>More than once a day</font></label>
+                                                              <input type="radio" id="RDrugs_6_freq1"  name="RDrugs_6_freq1" value="4">
+                                                            </li>
+
+                                                          </ul>
+                                                        </form>
+                                                      </div>
+                                                      <p><b>How old were you when you started taking it?</b>
+                                                        <td class="answer">
+                                                          <select id="RDrugs_6_1_Age1" name="RDrugs_6_1_Age1" class="1-99">
+                                                            <option value="N/A">--Select--</option>
+                                                          </select></p>
+                                                        </td><br>
+                                                        <b>How old were you when you quit?</b>
+                                                        <td class="answer">
+                                                          <select id="RDrugs_6_1_Age2" name="RDrugs_6_1_Age2" class="1-99">
+                                                            <option value="N/A">--Select--</option>
+                                                          </select>
+                                                        </td>
+                                                      </div>
+                                                      <p><div class="present-frequent6 content6"><b>How frequently do you take it?</b></p>
+                                                        <div class="wrap" style="margin-left:3em;">
+                                                          <form action="">
+                                                            <ul class='likert'>
+                                                              <li>
+                                                                <label><font size =2>Less than once a month</font></label>
+                                                                <input type="radio" id="RDrugs_6_freq2"  name="RDrugs_6_freq2" value="0">
+                                                              </li>
+                                                              <li>
+                                                                <label><font size =2>Every month &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></label>
+                                                                <input type="radio" id="RDrugs_6_freq2"  name="RDrugs_6_freq2" value="1">
+                                                              </li>
+                                                              <li>
+                                                                <label><font size =2>Every week &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></label>
+                                                                <input type="radio" id="RDrugs_6_freq2"  name="RDrugs_6_freq2" value="2">
+                                                              </li>
+                                                              <li>
+                                                                <label><font size =2>Daily or almost daily</font></label>
+                                                                <input type="radio" id="RDrugs_6_freq2"  name="RDrugs_6_freq2" value="3">
+                                                              </li>
+                                                              <li>
+                                                                <label><font size =2>More than once a day</font></label>
+                                                                <input type="radio" id="RDrugs_6_freq2"  name="RDrugs_6_freq2" value="4">
+                                                              </li>
+
+                                                            </ul>
+                                                          </form>
+                                                        </div>
+                                                        <p><b>How old were you when you started taking it?</b>
+                                                          <td class="answer">
+                                                            <select id="RDrugs_6_2_Age1" name="RDrugs_6_2_Age1" class="1-99">
+                                                              <option value="N/A">--Select--</option>
+                                                            </select></p>
+                                                          </td>
+                                                        </div>
+                                                      </div>
+
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </tr>
+                                            </div>
+                                            <br>&nbsp;</br>
+                                          </div>
+                                          <br>&nbsp;</br>
+
+                  <div style="margin-left: 1.5em;margin-right: 1.5em;background-color:#e0eeff;">
+                      <div style="padding:10px 0px 0px 10px">
+                      <tr class="question;">
+                        <td class="questiontext">
+                          <b>…sedatives or tranquilizers on prescription?</b><br>
+                        </td>
+                        <td>Yes <input type="radio" onclick="javascript:yesnoCheck7();" name= "RDrugs_7" id="RDrugs_yes7" onchange='Check()'/> No <input type="radio" onclick="javascript:yesnoCheck7();" name= "RDrugs_7" id="RDrugs_no7" onchange='Check()'/><br></td>
+                        <div id="ifYes7" style="display:none">
+                          <div style="margin-left:9em;">
+                            <p><b>Please select the option which best applies to you:</b><br>
+                              <form id='group_RDrugs_7'>
+                                <div style="margin-left: 0em;">
+                                  <label>
+                                    <input type="radio"  name= "group7" id="RDrugs_7" value= "0" class="rarely7-btn trigger7" data-rel="rarely7" /> <i>I only took it once, or on a rare few occasions, <b>in the past</b></i><br>
+                                  </label>
+                                  <label>
+                                    <input type="radio"  name= "group7" id="RDrugs_7" value= "1" class="past-frequent7-btn trigger7" data-rel="past-frequent7"/> <i>I used to take this frequently <b>in the past</b>, but I have now quit</i><br>
+                                  </label>
+                                  <label>
+                                    <input type="radio"  name= "group7" id="RDrugs_7" value= "2" class="present-frequent7-btn trigger7" data-rel="present-frequent7" /> <i>I take this on an ongoing basis</i><br>
+                                  </label>
+                                </form>
+                                <br>&nbsp;</br>
+                                <div class="frequency">
+                                  <div class="rarely7 content7"> </div>
+                                  <p><div class="past-frequent7 content7"><b>How frequently did you take it in the past?</b></p>
+                                    <div class="wrap" style="margin-left:3em;">
+                                      <form action="">
+                                        <ul class='likert'>
+                                          <li>
+                                            <label><font size =2>Less than once a month</font></label>
+                                            <input type="radio" id="RDrugs_7_freq1"  name="RDrugs_7_freq1" value="0">
+                                          </li>
+                                          <li>
+                                            <label><font size =2>Every month &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></label>
+                                            <input type="radio" id="RDrugs_7_freq1"  name="RDrugs_7_freq1" value="1">
+                                          </li>
+                                          <li>
+                                            <label><font size =2>Every week &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></label>
+                                            <input type="radio" id="RDrugs_7_freq1"  name="RDrugs_7_freq1" value="2">
+                                          </li>
+                                          <li>
+                                            <label><font size =2>Daily or almost daily</font></label>
+                                            <input type="radio" id="RDrugs_7_freq1"  name="RDrugs_7_freq1" value="3">
+                                          </li>
+                                          <li>
+                                            <label><font size =2>More than once a day</font></label>
+                                            <input type="radio" id="RDrugs_7_freq1"  name="RDrugs_7_freq1" value="4">
+                                          </li>
+
+                                        </ul>
+                                      </form>
+                                    </div>
+                                    <p><b>How old were you when you started taking it?</b>
+                                      <td class="answer">
+                                        <select id="RDrugs_7_1_Age1" name="RDrugs_7_1_Age1" class="1-99">
+                                          <option value="N/A">--Select--</option>
+                                        </select></p>
+                                      </td><br>
+                                      <b>How old were you when you quit?</b>
+                                      <td class="answer">
+                                        <select id="RDrugs_7_1_Age2" name="RDrugs_7_1_Age2" class="1-99">
+                                          <option value="N/A">--Select--</option>
+                                        </select>
+                                      </td>
+                                    </div>
+                                    <p><div class="present-frequent7 content7"><b>How frequently do you take it?</b></p>
+                                      <div class="wrap" style="margin-left:3em;">
+                                        <form action="">
+                                          <ul class='likert'>
+                                            <li>
+                                              <label><font size =2>Less than once a month</font></label>
+                                              <input type="radio" id="RDrugs_7_freq2"  name="RDrugs_7_freq2" value="0">
+                                            </li>
+                                            <li>
+                                              <label><font size =2>Every month &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></label>
+                                              <input type="radio" id="RDrugs_7_freq2"  name="RDrugs_7_freq2" value="1">
+                                            </li>
+                                            <li>
+                                              <label><font size =2>Every week &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></label>
+                                              <input type="radio" id="RDrugs_7_freq2"  name="RDrugs_7_freq2" value="2">
+                                            </li>
+                                            <li>
+                                              <label><font size =2>Daily or almost daily</font></label>
+                                              <input type="radio" id="RDrugs_7_freq2"  name="RDrugs_7_freq2" value="3">
+                                            </li>
+                                            <li>
+                                              <label><font size =2>More than once a day</font></label>
+                                              <input type="radio" id="RDrugs_7_freq2"  name="RDrugs_7_freq2" value="4">
+                                            </li>
+
+                                          </ul>
+                                        </form>
+                                      </div>
+                                      <p><b>How old were you when you started taking it?</b>
+                                        <td class="answer">
+                                          <select id="RDrugs_7_2_Age1" name="RDrugs_7_2_Age1" class="1-99">
+                                            <option value="N/A">--Select--</option>
+                                          </select></p>
+                                        </td>
+                                      </div>
+                                    </div>
+
+                                  </div>
+                                </div>
+                              </div>
+                            </tr>
+                          </div>
+                          <br>&nbsp;</br>
+                        </div>
+                        <br>&nbsp;</br>
+                        <div style="margin-left: 1.5em;margin-right: 1.5em;background-color:#e0eeff;">
+                            <div style="padding:10px 0px 0px 10px">
+                            <tr class="question;">
+                              <td class="questiontext">
+                                <b>…‘street’ sedatives or tranquilizers; that is, without prescription?</b><br>
+                              </td>
+                              <td>Yes <input type="radio" onclick="javascript:yesnoCheck8();" name= "RDrugs_8" id="RDrugs_yes8" onchange='Check()'/> No <input type="radio" onclick="javascript:yesnoCheck8();" name= "RDrugs_8" id="RDrugs_no8" onchange='Check()'/><br></td></td>
+                              <div id="ifYes8" style="display:none">
+                                <div style="margin-left:9em;">
+                                  <p><b>Please select the option which best applies to you:</b><br>
+                                    <form id='group_RDrugs_8'>
+                                      <div style="margin-left: 0em;">
+                                        <label>
+                                          <input type="radio"  name= "group8" id="RDrugs_8" value= "0" class="rarely8-btn trigger8" data-rel="rarely8" /> <i>I only took it once, or on a rare few occasions, <b>in the past</b></i><br>
+                                        </label>
+                                        <label>
+                                          <input type="radio"  name= "group8" id="RDrugs_8" value= "1" class="past-frequent8-btn trigger8" data-rel="past-frequent8"/> <i>I used to take this frequently <b>in the past</b>, but I have now quit</i><br>
+                                        </label>
+                                        <label>
+                                          <input type="radio"  name= "group8" id="RDrugs_8" value= "2" class="present-frequent8-btn trigger8" data-rel="present-frequent8" /> <i>I take this on an ongoing basis</i><br>
+                                        </label>
+                                      </form>
+                                      <br>&nbsp;</br>
+                                      <div class="frequency8">
+                                        <div class="rarely8 content8"> </div>
+                                        <p><div class="past-frequent8 content8"><b>How frequently did you take it in the past?</b></p>
+                                          <div class="wrap" style="margin-left:3em;">
+                                            <form action="">
+                                              <ul class='likert'>
+                                                <li>
+                                                  <label><font size =2>Less than once a month</font></label>
+                                                  <input type="radio" id="RDrugs_8_freq1"  name="RDrugs_8_freq1" value="0">
+                                                </li>
+                                                <li>
+                                                  <label><font size =2>Every month &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></label>
+                                                  <input type="radio" id="RDrugs_8_freq1"  name="RDrugs_8_freq1" value="1">
+                                                </li>
+                                                <li>
+                                                  <label><font size =2>Every week &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></label>
+                                                  <input type="radio" id="RDrugs_8_freq1"  name="RDrugs_8_freq1" value="2">
+                                                </li>
+                                                <li>
+                                                  <label><font size =2>Daily or almost daily</font></label>
+                                                  <input type="radio" id="RDrugs_8_freq1"  name="RDrugs_8_freq1" value="3">
+                                                </li>
+                                                <li>
+                                                  <label><font size =2>More than once a day</font></label>
+                                                  <input type="radio" id="RDrugs_8_freq1"  name="RDrugs_8_freq1" value="4">
+                                                </li>
+
+                                              </ul>
+                                            </form>
+                                          </div>
+                                          <p><b>How old were you when you started taking it?</b>
+                                            <td class="answer">
+                                              <select id="RDrugs_8_1_Age1" name="RDrugs_8_1_Age1" class="1-99">
+                                                <option value="N/A">--Select--</option>
+                                              </select></p>
+                                            </td><br>
+                                            <b>How old were you when you quit?</b>
+                                            <td class="answer">
+                                              <select id="RDrugs_8_1_Age2" name="RDrugs_8_1_Age2" class="1-99">
+                                                <option value="N/A">--Select--</option>
+                                              </select>
+                                            </td>
+                                          </div>
+                                          <p><div class="present-frequent8 content8"><b>How frequently do you take it?</b></p>
+                                            <div class="wrap" style="margin-left:3em;">
+                                              <form action="">
+                                                <ul class='likert'>
+                                                  <li>
+                                                    <label><font size =2>Less than once a month</font></label>
+                                                    <input type="radio" id="RDrugs_8_freq2"  name="RDrugs_8_freq2" value="0">
+                                                  </li>
+                                                  <li>
+                                                    <label><font size =2>Every month &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></label>
+                                                    <input type="radio" id="RDrugs_8_freq2"  name="RDrugs_8_freq2" value="1">
+                                                  </li>
+                                                  <li>
+                                                    <label><font size =2>Every week &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></label>
+                                                    <input type="radio" id="RDrugs_8_freq2"  name="RDrugs_8_freq2" value="2">
+                                                  </li>
+                                                  <li>
+                                                    <label><font size =2>Daily or almost daily</font></label>
+                                                    <input type="radio" id="RDrugs_8_freq2"  name="RDrugs_8_freq2" value="3">
+                                                  </li>
+                                                  <li>
+                                                    <label><font size =2>More than once a day</font></label>
+                                                    <input type="radio" id="RDrugs_8_freq2"  name="RDrugs_8_freq2" value="4">
+                                                  </li>
+
+                                                </ul>
+                                              </form>
+                                            </div>
+                                            <p><b>How old were you when you started taking it?</b>
+                                              <td class="answer">
+                                                <select id="RDrugs_8_2_Age1" name="RDrugs_8_2_Age1" class="1-99">
+                                                  <option value="N/A">--Select--</option>
+                                                </select></p>
+                                              </td>
+                                            </div>
+                                          </div>
+
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </tr>
+                                </div>
+                                <br>&nbsp;</br>
+                              </div>
+                              <br>&nbsp;</br>
+                            </div>
+
+
+                            <br>&nbsp;</br>
+                            <!-- <input style= "width: 6em; height: 2.5em; font-size: 13pt; float: right; margin-right: 0.75em;" type="button" class="continue" id="continue" value="Next"></input> -->
+                            <!-- <input type="button" class="continue" id="continue" value="Continue" style= "vertical-align: middle; width: 6em; height: 2.5em; font-size: 13pt; float: right; margin-right: 2em; visibility: hidden;"></input> -->
+                            <input type="button" class="continue" id="continue" value="Continue" style="visibility: hidden;"></input>
+                          </form>
+
+      <p><strong>The CONTINUE button will appear here once you have answered all of the questions. Please double check your answers if you think you are finished but do not see the continue button. </strong></p>
+      </div>
+      <br>&nbsp;</br>
+      <br>&nbsp;</br>
+      </body>

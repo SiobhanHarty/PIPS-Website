@@ -1,0 +1,314 @@
+
+<!-- SDS scale-->
+<head>
+  <script>
+
+  var ProgressBar = function(){
+  if(q == -1){Progress.style.width = '0%'}
+  if(q == 0){Progress.style.width = '0%'}
+  if(q == 1){Progress.style.width = '12.5%'}
+  if(q == 2){Progress.style.width = '25.0%'}
+  if(q == 3){Progress.style.width = '37.5%'}
+  if(q == 4){Progress.style.width = '50.0%'}
+  if(q == 5){Progress.style.width = '62.5%'}
+  if(q == 6){Progress.style.width = '75.0%'}
+  if(q == 7){Progress.style.width = '87.5%'}
+
+
+
+  return Progress.style.width
+  }
+  var Progress = document.querySelector('#progressbar');
+
+  Progress.style.width = ProgressBar();
+
+
+  $(":radio").click(function() {
+                    $(this).closest("tr").addClass("active").
+                    siblings("div.active").removeClass("active");
+                    });
+
+
+      var Check = function(){
+          // this max number should be 1 greater than number of items on scsale
+
+          for (var i = 1; i < 21; i++) {
+              SDS = document.getElementsByName("SDS_" + i)
+
+              if(SDS[0].checked || SDS[1].checked || SDS[2].checked ||SDS[3].checked){
+
+                  $('input#continue').css('visibility','visible')
+              }
+              else{
+
+                  $('input#continue').css('visibility','hidden')
+                  return false
+              }
+          }
+
+
+      }
+
+  </script>
+</head>
+
+<body>
+    <center><h2>Progress within this questionnaire section</h2></center>
+    <div style="background-color: #e0eeff; width: 95%; margin:0 auto; height: 25px; border: 3px solid #000040; padding: 0px;">
+     <div id = "progressbar" style="background-color: #000040; height: 25px;overflow:hidden">&nbsp;</div>
+    </div>
+
+<br>&nbsp;<br>
+<div class="instruct" id="main">
+
+    <p> Please read the following statements and then select the option that best describes how often you <b>felt or behaved</b> this way during the <b>past several days</b>.</p>
+
+    <form id="postquiz" action="done" method="post">
+        <table border =0.2 rules=rows>
+
+            <tr class="question">
+                <td class="questiontext">
+                </td>
+                <td width="15%"><i>A little of the time</i></td>
+                <td width="15%"><i>Some of the time</i></td>
+                <td width="15%"><i>Good part of the time</i></td>
+                <td width="15%"><i>Most of the time</i></td>
+            </tr>
+
+
+
+            <tr class="question">
+                <td class="questiontext">
+                  I feel down-hearted and blue.
+
+                </td>
+                <td><input type = "radio"  name= "SDS_1" id="SDS_1" value="0" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_1" id="SDS_1" value="1" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_1" id="SDS_1" value="2" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_1" id="SDS_1" value="3" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                  Morning is when I feel the best.
+
+                </td>
+                <td><input type = "radio"  name= "SDS_2" id="SDS_2" value="0" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_2" id="SDS_2" value="1" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_2" id="SDS_2" value="2" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_2" id="SDS_2" value="3" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                  I have crying spells or feel like it.
+
+                </td>
+                <td><input type = "radio"  name= "SDS_3" id="SDS_3" value="0" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_3" id="SDS_3" value="1" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_3" id="SDS_3" value="2" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_3" id="SDS_3" value="3" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                  I have trouble sleeping at night.
+
+                </td>
+                <td><input type = "radio"  name= "SDS_4" id="SDS_4" value="0" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_4" id="SDS_4" value="1" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_4" id="SDS_4" value="2" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_4" id="SDS_4" value="3" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                  I eat as much as I used to.
+
+                </td>
+                <td><input type = "radio"  name= "SDS_5" id="SDS_5" value="0" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_5" id="SDS_5" value="1" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_5" id="SDS_5" value="2" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_5" id="SDS_5" value="3" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                  I still enjoy sex.
+
+                </td>
+                <td><input type = "radio"  name= "SDS_6" id="SDS_6" value="0" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_6" id="SDS_6" value="1" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_6" id="SDS_6" value="2" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_6" id="SDS_6" value="3" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+
+
+            <tr class="question">
+                <td class="questiontext">
+                  I notice that I am losing weight.
+
+                </td>
+                <td><input type = "radio"  name= "SDS_7" id="SDS_7" value="0" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_7" id="SDS_7" value="1" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_7" id="SDS_7" value="2" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_7" id="SDS_7" value="3" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                  I have trouble with constipation.
+
+                </td>
+                <td><input type = "radio"  name= "SDS_8" id="SDS_8" value="0" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_8" id="SDS_8" value="1" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_8" id="SDS_8" value="2" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_8" id="SDS_8" value="3" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                  My heart beats faster than usual.
+
+                </td>
+                <td><input type = "radio"  name= "SDS_9" id="SDS_9" value="0" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_9" id="SDS_9" value="1" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_9" id="SDS_9" value="2" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_9" id="SDS_9" value="3" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                  I get tired for no reason.
+
+                </td>
+                <td><input type = "radio"  name= "SDS_10" id="SDS_10" value="0" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_10" id="SDS_10" value="1" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_10" id="SDS_10" value="2" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_10" id="SDS_10" value="3" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+                        <tr class="question">
+                <td class="questiontext">
+                  My mind is as clear as it used to be.
+
+                </td>
+                <td><input type = "radio"  name= "SDS_11" id="SDS_11" value="0" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_11" id="SDS_11" value="1" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_11" id="SDS_11" value="2" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_11" id="SDS_11" value="3" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                  I find it easy to do the things I used to.
+
+                </td>
+                <td><input type = "radio"  name= "SDS_12" id="SDS_12" value="0" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_12" id="SDS_12" value="1" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_12" id="SDS_12" value="2" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_12" id="SDS_12" value="3" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                  I am restless and can't sleep.
+
+                </td>
+                <td><input type = "radio"  name= "SDS_13" id="SDS_13" value="0" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_13" id="SDS_13" value="1" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_13" id="SDS_13" value="2" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_13" id="SDS_13" value="3" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                  I feel hopeful about the future.
+
+                </td>
+                <td><input type = "radio"  name= "SDS_14" id="SDS_14" value="0" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_14" id="SDS_14" value="1" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_14" id="SDS_14" value="2" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_14" id="SDS_14" value="3" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                  I am more irritable than usual.
+
+                </td>
+                <td><input type = "radio"  name= "SDS_15" id="SDS_15" value="0" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_15" id="SDS_15" value="1" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_15" id="SDS_15" value="2" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_15" id="SDS_15" value="3" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                  I find it easy to make decisions.
+
+                </td>
+                <td><input type = "radio"  name= "SDS_16" id="SDS_16" value="0" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_16" id="SDS_16" value="1" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_16" id="SDS_16" value="2" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_16" id="SDS_16" value="3" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+
+            <tr class="question">
+                <td class="questiontext">
+                  I feel that I am useful and needed.
+
+                </td>
+                <td><input type = "radio"  name= "SDS_17" id="SDS_17" value="0" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_17" id="SDS_17" value="1" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_17" id="SDS_17" value="2" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_17" id="SDS_17" value="3" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                  My life is pretty full.
+
+                </td>
+                <td><input type = "radio"  name= "SDS_18" id="SDS_18" value="0" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_18" id="SDS_18" value="1" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_18" id="SDS_18" value="2" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_18" id="SDS_18" value="3" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+
+            <tr class="question">
+                <td class="questiontext">
+                  I feel that others would be better off if I were dead.
+
+                </td>
+                <td><input type = "radio"  name= "SDS_19" id="SDS_19" value="0" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_19" id="SDS_19" value="1" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_19" id="SDS_19" value="2" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_19" id="SDS_19" value="3" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+
+            <tr class="question">
+                <td class="questiontext">
+                  I still enjoy the things I used to do.
+
+                </td>
+                <td><input type = "radio"  name= "SDS_20" id="SDS_20" value="0" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_20" id="SDS_20" value="1" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_20" id="SDS_20" value="2" style="border: none;" onchange='Check()'></td>
+                <td><input type = "radio"  name= "SDS_20" id="SDS_20" value="3" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+
+        </table>
+
+                     <input type="button" class="continue" id="continue" value="Continue" style="visibility: hidden;"></input>
+</form>
+</div>
+
+  <p class = "continueInstructions"><strong>The CONTINUE button will appear here once you have answered all of the questions. Please double check your answers if you think you are finished but do not see the continue button. </strong></p>
+
+</body>

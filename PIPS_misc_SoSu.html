@@ -1,0 +1,293 @@
+<!-- Social support scale-->
+<head>
+
+
+<script>
+var ProgressBar = function(){
+if(q == -1){Progress.style.width = '0%'}
+if(q == 0){Progress.style.width = '0%'}
+if(q == 1){Progress.style.width = '10%'}
+if(q == 2){Progress.style.width = '20%'}
+if(q == 3){Progress.style.width = '30%'}
+if(q == 4){Progress.style.width = '40%'}
+if(q == 5){Progress.style.width = '50%'}
+if(q == 6){Progress.style.width = '60%'}
+if(q == 7){Progress.style.width = '70%'}
+if(q == 8){Progress.style.width = '80%'}
+if(q == 9){Progress.style.width = '90%'}
+
+
+return Progress.style.width
+}
+var Progress = document.querySelector('#progressbar');
+
+Progress.style.width = ProgressBar();
+
+ var Check = function(){
+     // this max number should be 1 greater than number of items on scale
+
+     for (var i = 1; i < 13; i++) {
+
+         SoSu = document.getElementsByName("SoSu_" + i)
+
+         if(SoSu[0].checked || SoSu[1].checked || SoSu[2].checked ||SoSu[3].checked ||SoSu[4].checked ||SoSu[5].checked ||SoSu[6].checked){
+             $('input#continue').css('visibility','visible')
+         }
+         else{
+             $('input#continue').css('visibility','hidden')
+             return false
+         }
+     }
+ }
+</script>
+
+<style>
+ p {margin-bottom: 0em;  margin-top: 0em;}
+ i {font-size: 12px}
+
+ .alt-radio input[type=radio] {
+   position: absolute;
+ }
+
+   .alt-radio .radio-label {
+     display: inline-block;
+     position: relative;
+     margin-left: 2em;
+     top: 0.5em;
+     vertical-align: middle;
+   }
+
+</style>
+
+</head>
+
+<body>
+  <center><h2>Progress within this questionnaire section</h2></center>
+  <div style="background-color: #e0eeff; width: 95%; margin:0 auto; height: 25px; border: 3px solid #000040; padding: 0px;">
+   <div id = "progressbar" style="background-color: #000040; height: 25px;overflow:hidden">&nbsp;</div>
+  </div>
+
+<br>&nbsp;<br>
+<div class= "instruct" id="main" style= "text-align: left;">
+
+    <b>We are interested in how you feel about the following statements. Read each statement carefully. Indicate how you feel about each statement.</b></br>
+<br>&nbsp;<br>
+
+
+<form id="postquiz" action="done" method="post" class = "alt-radio">
+
+  <div style="background-color:#c9e1fc; padding: 15px;">
+  <tr class="question">
+    <td class="questiontext">
+  <b>1. There is a special person who is around when I am in need.</b></br>
+</td>
+
+<td class="answer">
+<input type="radio" value="0" name="SoSu_1" id="SoSu_1_0" onchange='Check()'/><label class= "radio-label" for="SoSu_1_0"><i>Very Strongly Disagree</i></label></br>
+<input type="radio" value="1" name="SoSu_1" id="SoSu_1_1" onchange='Check()'/><label class= "radio-label" for="SoSu_1_1"><i>Strongly Disagree</i></label></br>
+<input type="radio" value="2" name="SoSu_1" id="SoSu_1_2" onchange='Check()'/><label class= "radio-label" for="SoSu_1_2"><i>Mildly Disagree</i></label></br>
+<input type="radio" value="3" name="SoSu_1" id="SoSu_1_3" onchange='Check()'/><label class= "radio-label" for="SoSu_1_3"><i>Neutral</i></label></br>
+<input type="radio" value="4" name="SoSu_1" id="SoSu_1_4" onchange='Check()'/><label class= "radio-label" for="SoSu_1_4"><i>Mildly Agree</i></label></br>
+<input type="radio" value="5" name="SoSu_1" id="SoSu_1_5" onchange='Check()'/><label class= "radio-label" for="SoSu_1_5"><i>Strongly Agree</i></label></br>
+<input type="radio" value="6" name="SoSu_1" id="SoSu_1_6" onchange='Check()'/><label class= "radio-label" for="SoSu_1_6"><i>Very Strongly Agree</i></label></br>
+</td>
+</tr>
+</div>
+<br>&nbsp;<br>
+<div style="background-color:#c9e1fc; padding: 15px;">
+<tr class="question">
+  <td class="questiontext">
+<b>2. There is a special person with whom I can share my joys and sorrows. </b></br>
+</td>
+<td class="answer">
+<input type="radio" value="0" name="SoSu_2" id="SoSu_2_0" onchange='Check()'/><label class= "radio-label" for="SoSu_2_0"><i>Very Strongly Disagree</i></label></br>
+<input type="radio" value="1" name="SoSu_2" id="SoSu_2_1" onchange='Check()'/><label class= "radio-label" for="SoSu_2_1"><i>Strongly Disagree</i></label></br>
+<input type="radio" value="2" name="SoSu_2" id="SoSu_2_2" onchange='Check()'/><label class= "radio-label" for="SoSu_2_2"><i>Mildly Disagree</i></label></br>
+<input type="radio" value="3" name="SoSu_2" id="SoSu_2_3" onchange='Check()'/><label class= "radio-label" for="SoSu_2_3"><i>Neutral</i></label></br>
+<input type="radio" value="4" name="SoSu_2" id="SoSu_2_4" onchange='Check()'/><label class= "radio-label" for="SoSu_2_4"><i>Mildly Agree</i></label></br>
+<input type="radio" value="5" name="SoSu_2" id="SoSu_2_5" onchange='Check()'/><label class= "radio-label" for="SoSu_2_5"><i>Strongly Agree</i></label></br>
+<input type="radio" value="6" name="SoSu_2" id="SoSu_2_6" onchange='Check()'/><label class= "radio-label" for="SoSu_2_6"><i>Very Strongly Agree</i></label></br>
+</td>
+</tr>
+</div>
+<br>&nbsp;<br>
+  <div style="background-color:#c9e1fc; padding: 15px;">
+  <td class="questiontext">
+<b>3. My family really tries to help me.</b></br>
+</td>
+</tr>
+<td class="answer">
+<input type="radio" value="0" name="SoSu_3" id="SoSu_3_0" onchange='Check()'/><label class= "radio-label" for="SoSu_3_0"><i>Very Strongly Disagree</i></label></br>
+<input type="radio" value="1" name="SoSu_3" id="SoSu_3_1" onchange='Check()'/><label class= "radio-label" for="SoSu_3_1"><i>Strongly Disagree</i></label></br>
+<input type="radio" value="2" name="SoSu_3" id="SoSu_3_2" onchange='Check()'/><label class= "radio-label" for="SoSu_3_2"><i>Mildly Disagree</i></label></br>
+<input type="radio" value="3" name="SoSu_3" id="SoSu_3_3" onchange='Check()'/><label class= "radio-label" for="SoSu_3_3"><i>Neutral</i></label></br>
+<input type="radio" value="4" name="SoSu_3" id="SoSu_3_4" onchange='Check()'/><label class= "radio-label" for="SoSu_3_4"><i>Mildly Agree</i></label></br>
+<input type="radio" value="5" name="SoSu_3" id="SoSu_3_5" onchange='Check()'/><label class= "radio-label" for="SoSu_3_5"><i>Strongly Agree</i></label></br>
+<input type="radio" value="6" name="SoSu_3" id="SoSu_3_6" onchange='Check()'/><label class= "radio-label" for="SoSu_3_6"><i>Very Strongly Agree</i></label></br>
+</td>
+</tr>
+</div>
+<br>&nbsp;<br>
+<div style="background-color:#c9e1fc; padding: 15px;">
+<tr class="question">
+  <td class="questiontext">
+<b>4. I get the emotional help and support I need from my family. </b></br>
+</td>
+<td class="answer">
+<input type="radio" value="0" name="SoSu_4" id="SoSu_4_0" onchange='Check()'/><label class= "radio-label" for="SoSu_4_0"><i>Very Strongly Disagree</i></label></br>
+<input type="radio" value="1" name="SoSu_4" id="SoSu_4_1" onchange='Check()'/><label class= "radio-label" for="SoSu_4_1"><i>Strongly Disagree</i></label></br>
+<input type="radio" value="2" name="SoSu_4" id="SoSu_4_2" onchange='Check()'/><label class= "radio-label" for="SoSu_4_2"><i>Mildly Disagree</i></label></br>
+<input type="radio" value="3" name="SoSu_4" id="SoSu_4_3" onchange='Check()'/><label class= "radio-label" for="SoSu_4_3"><i>Neutral</i></label></br>
+<input type="radio" value="4" name="SoSu_4" id="SoSu_4_4" onchange='Check()'/><label class= "radio-label" for="SoSu_4_4"><i>Mildly Agree</i></label></br>
+<input type="radio" value="5" name="SoSu_4" id="SoSu_4_5" onchange='Check()'/><label class= "radio-label" for="SoSu_4_5"><i>Strongly Agree</i></label></br>
+<input type="radio" value="6" name="SoSu_4" id="SoSu_4_6" onchange='Check()'/><label class= "radio-label" for="SoSu_4_6"><i>Very Strongly Agree</i></label></br>
+</td>
+</tr>
+</div>
+<br>&nbsp;<br>
+  <div style="background-color:#c9e1fc; padding: 15px;">
+<tr class="question">
+  <td class="questiontext">
+<b>5. I have a special person who is a real source of comfort to me. </b></br>
+</td>
+<td class="answer">
+<input type="radio" value="0" name="SoSu_5" id="SoSu_5_0" onchange='Check()'/><label class= "radio-label" for="SoSu_5_0"><i>Very Strongly Disagree</i></label></br>
+<input type="radio" value="1" name="SoSu_5" id="SoSu_5_1" onchange='Check()'/><label class= "radio-label" for="SoSu_5_1"><i>Strongly Disagree</i></label></br>
+<input type="radio" value="2" name="SoSu_5" id="SoSu_5_2" onchange='Check()'/><label class= "radio-label" for="SoSu_5_2"><i>Mildly Disagree</i></label></br>
+<input type="radio" value="3" name="SoSu_5" id="SoSu_5_3" onchange='Check()'/><label class= "radio-label" for="SoSu_5_3"><i>Neutral</i></label></br>
+<input type="radio" value="4" name="SoSu_5" id="SoSu_5_4" onchange='Check()'/><label class= "radio-label" for="SoSu_5_4"><i>Mildly Agree</i></label></br>
+<input type="radio" value="5" name="SoSu_5" id="SoSu_5_5" onchange='Check()'/><label class= "radio-label" for="SoSu_5_5"><i>Strongly Agree</i></label></br>
+<input type="radio" value="6" name="SoSu_5" id="SoSu_5_6" onchange='Check()'/><label class= "radio-label" for="SoSu_5_6"><i>Very Strongly Agree</i></label></br>
+</td>
+</tr>
+</div>
+<br>&nbsp;<br>
+<div style="background-color:#c9e1fc; padding: 15px;">
+<tr class="question">
+  <td class="questiontext">
+<b>6. My friends really try to help me. </b></br>
+</td>
+<td class="answer">
+<input type="radio" value="0" name="SoSu_6" id="SoSu_6_0" onchange='Check()'/><label class= "radio-label" for="SoSu_6_0"><i>Very Strongly Disagree</i></label></br>
+<input type="radio" value="1" name="SoSu_6" id="SoSu_6_1" onchange='Check()'/><label class= "radio-label" for="SoSu_6_1"><i>Strongly Disagree</i></label></br>
+<input type="radio" value="2" name="SoSu_6" id="SoSu_6_2" onchange='Check()'/><label class= "radio-label" for="SoSu_6_2"><i>Mildly Disagree</i></label></br>
+<input type="radio" value="3" name="SoSu_6" id="SoSu_6_3" onchange='Check()'/><label class= "radio-label" for="SoSu_6_3"><i>Neutral</i></label></br>
+<input type="radio" value="4" name="SoSu_6" id="SoSu_6_4" onchange='Check()'/><label class= "radio-label" for="SoSu_6_4"><i>Mildly Agree</i></label></br>
+<input type="radio" value="5" name="SoSu_6" id="SoSu_6_5" onchange='Check()'/><label class= "radio-label" for="SoSu_6_5"><i>Strongly Agree</i></label></br>
+<input type="radio" value="6" name="SoSu_6" id="SoSu_6_6" onchange='Check()'/><label class= "radio-label" for="SoSu_6_6"><i>Very Strongly Agree</i></label></br>
+</td>
+</tr>
+</div>
+<br>&nbsp;<br>
+  <div style="background-color:#c9e1fc; padding: 15px;">
+<tr class="question">
+  <td class="questiontext">
+<b>7. I can count on my friends when things go wrong. </b></br>
+</td>
+<td class="answer">
+<input type="radio" value="0" name="SoSu_7" id="SoSu_7_0" onchange='Check()'/><label class= "radio-label" for="SoSu_7_0"><i>Very Strongly Disagree</i></label></br>
+<input type="radio" value="1" name="SoSu_7" id="SoSu_7_1" onchange='Check()'/><label class= "radio-label" for="SoSu_7_1"><i>Strongly Disagree</i></label></br>
+<input type="radio" value="2" name="SoSu_7" id="SoSu_7_2" onchange='Check()'/><label class= "radio-label" for="SoSu_7_2"><i>Mildly Disagree</i></label></br>
+<input type="radio" value="3" name="SoSu_7" id="SoSu_7_3" onchange='Check()'/><label class= "radio-label" for="SoSu_7_3"><i>Neutral</i></label></br>
+<input type="radio" value="4" name="SoSu_7" id="SoSu_7_4" onchange='Check()'/><label class= "radio-label" for="SoSu_7_4"><i>Mildly Agree</i></label></br>
+<input type="radio" value="5" name="SoSu_7" id="SoSu_7_5" onchange='Check()'/><label class= "radio-label" for="SoSu_7_5"><i>Strongly Agree</i></label></br>
+<input type="radio" value="6" name="SoSu_7" id="SoSu_7_6" onchange='Check()'/><label class= "radio-label" for="SoSu_7_6"><i>Very Strongly Agree</i></label></br>
+</td>
+</tr>
+</div>
+<br>&nbsp;<br>
+<div style="background-color:#c9e1fc; padding: 15px;">
+<tr class="question">
+  <td class="questiontext">
+<b>8. I can talk about my problems with my family. </b></br>
+</td>
+<td class="answer">
+<input type="radio" value="0" name="SoSu_8" id="SoSu_8_0" onchange='Check()'/><label class= "radio-label" for="SoSu_8_0"><i>Very Strongly Disagree</i></label></br>
+<input type="radio" value="1" name="SoSu_8" id="SoSu_8_1" onchange='Check()'/><label class= "radio-label" for="SoSu_8_1"><i>Strongly Disagree</i></label></br>
+<input type="radio" value="2" name="SoSu_8" id="SoSu_8_2" onchange='Check()'/><label class= "radio-label" for="SoSu_8_2"><i>Mildly Disagree</i></label></br>
+<input type="radio" value="3" name="SoSu_8" id="SoSu_8_3" onchange='Check()'/><label class= "radio-label" for="SoSu_8_3"><i>Neutral</i></label></br>
+<input type="radio" value="4" name="SoSu_8" id="SoSu_8_4" onchange='Check()'/><label class= "radio-label" for="SoSu_8_4"><i>Mildly Agree</i></label></br>
+<input type="radio" value="5" name="SoSu_8" id="SoSu_8_5" onchange='Check()'/><label class= "radio-label" for="SoSu_8_5"><i>Strongly Agree</i></label></br>
+<input type="radio" value="6" name="SoSu_8" id="SoSu_8_6" onchange='Check()'/><label class= "radio-label" for="SoSu_8_6"><i>Very Strongly Agree</i></label></br>
+</td>
+</tr>
+</div>
+<br>&nbsp;<br>
+  <div style="background-color:#c9e1fc; padding: 15px;">
+<tr class="question">
+  <td class="questiontext">
+<b>9. I have friends with whom I can share my joys and sorrows. </b></br>
+</td>
+<td class="answer">
+<input type="radio" value="0" name="SoSu_9" id="SoSu_9_0" onchange='Check()'/><label class= "radio-label" for="SoSu_9_0"><i>Very Strongly Disagree</i></label></br>
+<input type="radio" value="1" name="SoSu_9" id="SoSu_9_1" onchange='Check()'/><label class= "radio-label" for="SoSu_9_1"><i>Strongly Disagree</i></label></br>
+<input type="radio" value="2" name="SoSu_9" id="SoSu_9_2" onchange='Check()'/><label class= "radio-label" for="SoSu_9_2"><i>Mildly Disagree</i></label></br>
+<input type="radio" value="3" name="SoSu_9" id="SoSu_9_3" onchange='Check()'/><label class= "radio-label" for="SoSu_9_3"><i>Neutral</i></label></br>
+<input type="radio" value="4" name="SoSu_9" id="SoSu_9_4" onchange='Check()'/><label class= "radio-label" for="SoSu_9_4"><i>Mildly Agree</i></label></br>
+<input type="radio" value="5" name="SoSu_9" id="SoSu_9_5" onchange='Check()'/><label class= "radio-label" for="SoSu_9_5"><i>Strongly Agree</i></label></br>
+<input type="radio" value="6" name="SoSu_9" id="SoSu_9_6" onchange='Check()'/><label class= "radio-label" for="SoSu_9_6"><i>Very Strongly Agree</i></label></br>
+</td>
+</tr>
+</div>
+<br>&nbsp;<br>
+<div style="background-color:#c9e1fc; padding: 15px;">
+<tr class="question">
+  <td class="questiontext">
+<b>10. There is a special person in my life who cares about my feelings. </b></br>
+</td>
+<td class="answer">
+<input type="radio" value="0" name="SoSu_10" id="SoSu_10_0" onchange='Check()'/><label class= "radio-label" for="SoSu_10_0"><i>Very Strongly Disagree</i></label></br>
+<input type="radio" value="1" name="SoSu_10" id="SoSu_10_1" onchange='Check()'/><label class= "radio-label" for="SoSu_10_1"><i>Strongly Disagree</i></label></br>
+<input type="radio" value="2" name="SoSu_10" id="SoSu_10_2" onchange='Check()'/><label class= "radio-label" for="SoSu_10_2"><i>Mildly Disagree</i></label></br>
+<input type="radio" value="3" name="SoSu_10" id="SoSu_10_3" onchange='Check()'/><label class= "radio-label" for="SoSu_10_3"><i>Neutral</i></label></br>
+<input type="radio" value="4" name="SoSu_10" id="SoSu_10_4" onchange='Check()'/><label class= "radio-label" for="SoSu_10_4"><i>Mildly Agree</i></label></br>
+<input type="radio" value="5" name="SoSu_10" id="SoSu_10_5" onchange='Check()'/><label class= "radio-label" for="SoSu_10_5"><i>Strongly Agree</i></label></br>
+<input type="radio" value="6" name="SoSu_10" id="SoSu_10_6" onchange='Check()'/><label class= "radio-label" for="SoSu_10_6"><i>Very Strongly Agree</i></label></br>
+</td>
+</tr>
+</div>
+<br>&nbsp;<br>
+  <div style="background-color:#c9e1fc; padding: 15px;">
+<tr class="question">
+  <td class="questiontext">
+<b>11. My family is willing to help me make decisions. </b></br>
+</td>
+<td class="answer">
+<input type="radio" value="0" name="SoSu_11" id="SoSu_11_0" onchange='Check()'/><label class= "radio-label" for="SoSu_11_0"><i>Very Strongly Disagree</i></label></br>
+<input type="radio" value="1" name="SoSu_11" id="SoSu_11_1" onchange='Check()'/><label class= "radio-label" for="SoSu_11_1"><i>Strongly Disagree</i></label></br>
+<input type="radio" value="2" name="SoSu_11" id="SoSu_11_2" onchange='Check()'/><label class= "radio-label" for="SoSu_11_2"><i>Mildly Disagree</i></label></br>
+<input type="radio" value="3" name="SoSu_11" id="SoSu_11_3" onchange='Check()'/><label class= "radio-label" for="SoSu_11_3"><i>Neutral</i></label></br>
+<input type="radio" value="4" name="SoSu_11" id="SoSu_11_4" onchange='Check()'/><label class= "radio-label" for="SoSu_11_4"><i>Mildly Agree</i></label></br>
+<input type="radio" value="5" name="SoSu_11" id="SoSu_11_5" onchange='Check()'/><label class= "radio-label" for="SoSu_11_5"><i>Strongly Agree</i></label></br>
+<input type="radio" value="6" name="SoSu_11" id="SoSu_11_6" onchange='Check()'/><label class= "radio-label" for="SoSu_11_6"><i>Very Strongly Agree</i></label></br>
+</td>
+</tr>
+</div>
+<br>&nbsp;<br>
+<div style="background-color:#c9e1fc; padding: 15px;">
+<tr class="question">
+  <td class="questiontext">
+<b>12. I can talk about my problems with my friends. </b></br>
+</td>
+<td class="answer">
+<input type="radio" value="0" name="SoSu_12" id="SoSu_12_0" onchange='Check()'/><label class= "radio-label" for="SoSu_12_0"><i>Very Strongly Disagree</i></label></br>
+<input type="radio" value="1" name="SoSu_12" id="SoSu_12_1" onchange='Check()'/><label class= "radio-label" for="SoSu_12_1"><i>Strongly Disagree</i></label></br>
+<input type="radio" value="2" name="SoSu_12" id="SoSu_12_2" onchange='Check()'/><label class= "radio-label" for="SoSu_12_2"><i>Mildly Disagree</i></label></br>
+<input type="radio" value="3" name="SoSu_12" id="SoSu_12_3" onchange='Check()'/><label class= "radio-label" for="SoSu_12_3"><i>Neutral</i></label></br>
+<input type="radio" value="4" name="SoSu_12" id="SoSu_12_4" onchange='Check()'/><label class= "radio-label" for="SoSu_12_4"><i>Mildly Agree</i></label></br>
+<input type="radio" value="5" name="SoSu_12" id="SoSu_12_5" onchange='Check()'/><label class= "radio-label" for="SoSu_12_5"><i>Strongly Agree</i></label></br>
+<input type="radio" value="6" name="SoSu_12" id="SoSu_12_6" onchange='Check()'/><label class= "radio-label" for="SoSu_12_6"><i>Very Strongly Agree</i></label></br>
+</td>
+</tr>
+</div>
+<br>&nbsp;<br>
+
+
+<input type="button" class="continue" id="continue" value="Continue" style="visibility: hidden;"></input>
+</form>
+
+
+</div>
+<p><strong>The CONTINUE button will appear here once you have answered all of the questions. Please double check your answers if you think you are finished but do not see the continue button. </strong></p>
+
+</body>

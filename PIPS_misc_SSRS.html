@@ -1,0 +1,151 @@
+
+<!-- SRRS Life Stresses-->
+<head>
+
+<script>
+var ProgressBar = function(){
+if(q == -1){Progress.style.width = '0%'}
+if(q == 0){Progress.style.width = '0%'}
+if(q == 1){Progress.style.width = '10%'}
+if(q == 2){Progress.style.width = '20%'}
+if(q == 3){Progress.style.width = '30%'}
+if(q == 4){Progress.style.width = '40%'}
+if(q == 5){Progress.style.width = '50%'}
+if(q == 6){Progress.style.width = '60%'}
+if(q == 7){Progress.style.width = '70%'}
+if(q == 8){Progress.style.width = '80%'}
+if(q == 9){Progress.style.width = '90%'}
+
+
+return Progress.style.width
+}
+var Progress = document.querySelector('#progressbar');
+
+Progress.style.width = ProgressBar()
+</script>
+
+<style type="text/css">
+ p {margin-bottom: 0.5em;  margin-top: 0em; }
+ i {float: "left"; font-size: 14px}
+</style>
+
+
+</head>
+
+<body>
+  <center><h2>Progress within this questionnaire section</h2></center>
+  <div style="background-color: #e0eeff; width: 95%; margin:0 auto; height: 25px; border: 3px solid #000040; padding: 0px;">
+   <div id = "progressbar" style="background-color: #000040; height: 25px;overflow:hidden">&nbsp;</div>
+  </div>
+
+<br>&nbsp;<br>
+<div class="instruct" id="main">
+
+    <p>Please check each of the following life events that have happened to you in the <b>last 12 months</b>:</p>
+<br>&nbsp;<br>
+
+    <form id="postquiz" action="done" method="post">
+        <table>
+              <div style="background-color:#c9e1fc">
+              <p><INPUT TYPE="Checkbox" ID="SRSS_1" NAME="1" ><i>Death of partner</i></p>
+              </div>
+              <p><INPUT TYPE="Checkbox" ID="SRSS_2" NAME="2" ><i>Divorce</i></p>
+              <div style="background-color:#c9e1fc">
+              <p><INPUT TYPE="Checkbox" ID="SRSS_3" NAME="3" ><i>Marital Separation from mate</i></p>
+              </div>
+              <p><INPUT TYPE="Checkbox" ID="SRSS_4" NAME="4" ><i>Detention in jail or other institution</i></p>
+              <div style="background-color:#c9e1fc">
+              <p><INPUT TYPE="Checkbox" ID="SRSS_5" NAME="5" ><i>Death of a close family member</i></p>
+              </div>
+
+              <p><INPUT TYPE="Checkbox" ID="SRSS_6" NAME="6" ><i>Major personal injury or illness</i></p>
+              <div style="background-color:#c9e1fc">
+              <p><INPUT TYPE="Checkbox" ID="SRSS_7" NAME="7" ><i>Marriage</i></p>
+              </div>
+              <p><INPUT TYPE="Checkbox" ID="SRSS_8" NAME="8" ><i>Being fired at work</i></p>
+              <div style="background-color:#c9e1fc">
+              <p><INPUT TYPE="Checkbox" ID="SRSS_9" NAME="9" ><i>Marital reconciliation with mate</i></p>
+              </div>
+              <p><INPUT TYPE="Checkbox" ID="SRSS_10" NAME="10" ><i>Retirement from work</i></p>
+
+              <div style="background-color:#c9e1fc">
+              <p><INPUT TYPE="Checkbox" ID="SRSS_11" NAME="11" ><i>Major change in health or behavior of a family member</i></p>
+              </div>
+              <p><INPUT TYPE="Checkbox" ID="SRSS_12" NAME="12" ><i>Pregnancy</i></p>
+              <div style="background-color:#c9e1fc">
+              <p><INPUT TYPE="Checkbox" ID="SRSS_13" NAME="13" ><i>Sexual difficulties</i></p>
+              </div>
+              <p><INPUT TYPE="Checkbox" ID="SRSS_14" NAME="14" ><i>Gaining a new famlily member</i></p>
+              <div style="background-color:#c9e1fc">
+              <p><INPUT TYPE="Checkbox" ID="SRSS_15" NAME="15" ><i>Major business readjustment</i></p>
+              </div>
+
+              <p><INPUT TYPE="Checkbox" ID="SRSS_16" NAME="16" ><i>Major change in financial state (i.e. a lot worse or better off than usual)</i></p>
+              <div style="background-color:#c9e1fc">
+              <p><INPUT TYPE="Checkbox" ID="SRSS_17" NAME="17" ><i>Death of a close friend</i></p>
+              </div>
+              <p><INPUT TYPE="Checkbox" ID="SRSS_18" NAME="18" ><i>Changing to a different line of work</i></p>
+              <div style="background-color:#c9e1fc">
+              <p><INPUT TYPE="Checkbox" ID="SRSS_19" NAME="19" ><i>Major change in the number of arguments with partner (i.e. either a lot more or a lot less than usual regarding &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child rearing, personal habits, etc)</i></p>
+              </div>
+              <p><INPUT TYPE="Checkbox" ID="SRSS_20" NAME="20" ><i>Taking on a mortgage (e.g. for home, business, etc)</i></p>
+              <div style="background-color:#c9e1fc">
+              <p><INPUT TYPE="Checkbox" ID="SRSS_21" NAME="21" ><i>Foreclosure on a mortgage or loan</i></p>
+              </div>
+              <p><INPUT TYPE="Checkbox" ID="SRSS_22" NAME="22" ><i>Major change in responsibilities at work (i.e. promotion, demotion, etc)</i></p>
+              <div style="background-color:#c9e1fc">
+              <p><INPUT TYPE="Checkbox" ID="SRSS_23" NAME="23" ><i>Son or daughter leaving home (i.e. marriage, attending college, joined military, etc)</i></p>
+              </div>
+              <p><INPUT TYPE="Checkbox" ID="SRSS_24" NAME="24" ><i>In-law troubles</i></p>
+              <div style="background-color:#c9e1fc">
+              <p><INPUT TYPE="Checkbox" ID="SRSS_25" NAME="25" ><i>Outstanding personal achievement</i></p>
+              </div>
+
+              <p><INPUT TYPE="Checkbox" ID="SRSS_26" NAME="26" ><i>Partner beginnning or ceasing work outside the home</i></p>
+              <div style="background-color:#c9e1fc">
+              <p><INPUT TYPE="Checkbox" ID="SRSS_27" NAME="27" ><i>Beginning or ceasing formal schooling</i></p>
+              </div>
+              <p><INPUT TYPE="Checkbox" ID="SRSS_28" NAME="28" ><i>Major change in living condition (e.g. new home, remodeling, deterioration of neighborhood or home)</i></p>
+              <div style="background-color:#c9e1fc">
+              <p><INPUT TYPE="Checkbox" ID="SRSS_29" NAME="29" ><i>Revision of personal habits (e.g. dress, manners, associations, quitting smoking)</i></p>
+              </div>
+              <p><INPUT TYPE="Checkbox" ID="SRSS_30" NAME="30" ><i>Troubles with boss</i></p>
+
+              <div style="background-color:#c9e1fc">
+              <p><INPUT TYPE="Checkbox" ID="SRSS_31" NAME="31" ><i>Major changes in working hours or conditions</i></p>
+              </div>
+              <p><INPUT TYPE="Checkbox" ID="SRSS_32" NAME="32" ><i>Changes in residence</i></p>
+              <div style="background-color:#c9e1fc">
+              <p><INPUT TYPE="Checkbox" ID="SRSS_33" NAME="33" ><i>Changing to a new school</i></p>
+              </div>
+              <p><INPUT TYPE="Checkbox" ID="SRSS_34" NAME="34" ><i>Major change in usual type and/or amount of recreation</i></p>
+              <div style="background-color:#c9e1fc">
+              <p><INPUT TYPE="Checkbox" ID="SRSS_35" NAME="35" ><i>Major change in church activity (i.e. a lot more or a lot less than usual)</i></p>
+              </div>
+
+              <p><INPUT TYPE="Checkbox" ID="SRSS_36" NAME="36" ><i>Major change in social activities (clubs, movies, visiting, etc.)</i></p>
+              <div style="background-color:#c9e1fc">
+              <p><INPUT TYPE="Checkbox" ID="SRSS_37" NAME="37" ><i>Taking on a loan (e.g. car, tv, freezer, etc)</i></p>
+              </div>
+              <p><INPUT TYPE="Checkbox" ID="SRSS_38" NAME="38" ><i>Major change in sleeping habits (i.e. a lot more or a lot less than usual)</i></p>
+              <div style="background-color:#c9e1fc">
+              <p><INPUT TYPE="Checkbox" ID="SRSS_39" NAME="39" ><i>Major change in the number of family get-togethers</i></p>
+              </div>
+              <p><INPUT TYPE="Checkbox" ID="SRSS_40" NAME="40" ><i>Major change in eating habits (i.e. a lot more or less food intake, or very different meal hours or surroundings)</i></p>
+              <div style="background-color:#c9e1fc">
+              <p><INPUT TYPE="Checkbox" ID="SRSS_41" NAME="41" ><i>Vacation</i></p>
+              </div>
+              <p><INPUT TYPE="Checkbox" ID="SRSS_42" NAME="42" ><i>Major holidays</i></p>
+              <div style="background-color:#c9e1fc">
+              <p><INPUT TYPE="Checkbox" ID="SRSS_43" NAME="43" ><i>Minor violations of the law (e.g. traffic tickets, jaywalking, disturbing the peace, etc)</i></p>
+              </div>
+      </table>
+
+        <!-- <input type="button" class="continue" id="continue" value="Continue" style="width: 6em; height: 2.5em; font-size: 13pt; float: right; margin-right: 2em; visibility: visible;"></input> -->
+         <input type="button" class="continue" id="continue" value="Continue" style="float: right; visibility: visible;"></input>
+    </form>
+</div>
+
+
+<p style="text-align: left;"><b>If you are sure you have checked all the life events that are relevant to you, press the continue button. </b></p>
+</body>

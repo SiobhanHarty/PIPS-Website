@@ -1,0 +1,416 @@
+
+<!--
+Short Scales for Measuring Schizotypy (SCZ) scale with radio buttons
+-->
+<head>
+<script>
+  var ProgressBar = function(){
+  if(q == -1){Progress.style.width = '0%'}
+  if(q == 0){Progress.style.width = '0%'}
+  if(q == 1){Progress.style.width = '12.5%'}
+  if(q == 2){Progress.style.width = '25.0%'}
+  if(q == 3){Progress.style.width = '37.5%'}
+  if(q == 4){Progress.style.width = '50.0%'}
+  if(q == 5){Progress.style.width = '62.5%'}
+  if(q == 6){Progress.style.width = '75.0%'}
+  if(q == 7){Progress.style.width = '87.5%'}
+
+
+
+return Progress.style.width
+}
+var Progress = document.querySelector('#progressbar');
+
+Progress.style.width = ProgressBar();
+
+$(":radio").click(function() {
+                  $(this).closest("tr").addClass("active").
+                  siblings("div.active").removeClass("active");
+                  });
+
+
+    var Check = function(){
+        // this max number should be 1 greater than number of items on scsale
+        for (var i = 1; i < 44; i++) {
+            SCZ = document.getElementsByName("SCZ_" + i)
+
+            if(SCZ[0].checked || SCZ[1].checked){
+
+                $('input#continue').css('visibility','visible')
+            }
+            else{
+
+                $('input#continue').css('visibility','hidden')
+                return false
+            }
+        }
+    }
+
+    </script>
+
+  </head>
+
+<body>
+    <center><h2>Progress within this questionnaire section</h2></center>
+    <div style="background-color: #e0eeff; width: 95%; margin:0 auto; height: 25px; border: 3px solid #000040; padding: 0px;">
+     <div id = "progressbar" style="background-color: #000040; height: 25px;overflow:hidden">&nbsp;</div>
+    </div>
+
+<br>&nbsp;<br>
+<div class="instruct" id="main">
+
+    <p>This questionnaire contains questions that may relate to your <b>thoughts, feelings, experiences and preferences</b>.<br></p>
+    <p>There are no right or wrong answers or trick questions so <b>please be as honest as possible</b>. Do not spend too much time deliberating over each question, and choose answers that best reflect your own experiences.</p>
+
+    <form id="postquiz" action="done" method="post">
+        <table border =0.2 rules=rows>
+
+            <tr class="question">
+                <td class="questiontext">
+                    When in the dark, do you often see shapes and forms even though there is nothing there?
+                </td>
+                <td><b>Yes</b> <input type = "radio"  name= "SCZ_1" id="SCZ_1" value="1" style="border: none;" onchange='Check()'></td>
+                <td><b>No</b> <input type = "radio"  name= "SCZ_1" id="SCZ_1" value="0" style="border: none;" onchange='Check()'></td>
+            </tr>
+
+            <tr class="question">
+                <td class="questiontext">
+                    Are your thoughts sometimes so strong that you can almost hear them?
+                </td>
+                <td><b>Yes</b> <input type = "radio"  name= "SCZ_2" id="SCZ_2" value="1" style="border: none;" onchange='Check()'></td>
+                <td><b>No</b> <input type = "radio"  name= "SCZ_2" id="SCZ_2" value="0" style="border: none;" onchange='Check()'></td>
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                    Have you ever thought that you had special, almost magical powers?
+                </td>
+                <td><b>Yes</b> <input type = "radio"  name= "SCZ_3" id="SCZ_3" value="1" style="border: none;" onchange='Check()'></td>
+                <td><b>No</b> <input type = "radio"  name= "SCZ_3" id="SCZ_3" value="0" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                    Have you sometimes sensed an evil presence around you, even though you could not see it?
+                </td>
+                <td><b>Yes</b> <input type = "radio"  name= "SCZ_4" id="SCZ_4" value="1" style="border: none;" onchange='Check()'></td>
+                <td><b>No</b> <input type = "radio"  name= "SCZ_4" id="SCZ_4" value="0" style="border: none;" onchange='Check()'></td>
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                    Do you think that you could learn to read other’s minds if you wanted to?
+                </td>
+                <td><b>Yes</b> <input type = "radio"  name= "SCZ_5" id="SCZ_5" value="1" style="border: none;" onchange='Check()'></td>
+                <td><b>No</b> <input type = "radio"  name= "SCZ_5" id="SCZ_5" value="0" style="border: none;" onchange='Check()'></td>
+
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                    When you look in the mirror, does your face sometimes seem quite different from usual?
+                </td>
+                <td><b>Yes</b> <input type = "radio"  name= "SCZ_6" id="SCZ_6" value="1" style="border: none;" onchange='Check()'></td>
+                <td><b>No</b> <input type = "radio"  name= "SCZ_6" id="SCZ_6" value="0" style="border: none;" onchange='Check()'></td>
+            </tr>
+
+
+            <tr class="question">
+                <td class="questiontext">
+
+                    Do ideas and insights sometimes come to you so fast that you cannot express them all?
+                </td>
+                <td><b>Yes</b> <input type = "radio"  name= "SCZ_7" id="SCZ_7" value="1" style="border: none;" onchange='Check()'></td>
+                <td><b>No</b> <input type = "radio"  name= "SCZ_7" id="SCZ_7" value="0" style="border: none;" onchange='Check()'></td>
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                    Can some people make you aware of them just by thinking about you?
+                </td>
+                <td><b>Yes</b> <input type = "radio"  name= "SCZ_8" id="SCZ_8" value="1" style="border: none;" onchange='Check()'></td>
+                <td><b>No</b> <input type = "radio"  name= "SCZ_8" id="SCZ_8" value="0" style="border: none;" onchange='Check()'></td>
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                    Does a passing thought ever seem so real it frightens you?
+                </td>
+                <td><b>Yes</b> <input type = "radio"  name= "SCZ_9" id="SCZ_9" value="1" style="border: none;" onchange='Check()'></td>
+                <td><b>No</b> <input type = "radio"  name= "SCZ_9" id="SCZ_9" value="0" style="border: none;" onchange='Check()'></td>
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                    Do you feel that your accidents are caused by mysterious forces?
+                </td>
+                <td><b>Yes</b> <input type = "radio"  name= "SCZ_10" id="SCZ_10" value="1" style="border: none;" onchange='Check()'></td>
+                <td><b>No</b> <input type = "radio"  name= "SCZ_10" id="SCZ_10" value="0" style="border: none;" onchange='Check()'></td>
+            </tr>
+
+            <tr class="question">
+                <td class="questiontext">
+                    Do you ever have a sense of vague danger or sudden dread for reasons that you do not understand?
+                </td>
+                <td><b>Yes</b> <input type = "radio"  name= "SCZ_11" id="SCZ_11" value="1" style="border: none;" onchange='Check()'></td>
+                <td><b>No</b> <input type = "radio"  name= "SCZ_11" id="SCZ_11" value="0" style="border: none;" onchange='Check()'></td>
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                    Does your sense of smell sometimes become unusually strong?
+                </td>
+                <td><b>Yes</b> <input type = "radio"  name= "SCZ_12" id="SCZ_12" value="1" style="border: none;" onchange='Check()'></td>
+                <td><b>No</b> <input type = "radio"  name= "SCZ_12" id="SCZ_12" value="0" style="border: none;" onchange='Check()'></td>
+            </tr>
+
+
+
+
+            <tr class="question">
+                <td class="questiontext">
+                    Are you easily confused if too much happens at the same time?
+                </td>
+                <td><b>Yes</b> <input type = "radio"  name= "SCZ_13" id="SCZ_13" value="1" style="border: none;" onchange='Check()'></td>
+                <td><b>No</b> <input type = "radio"  name= "SCZ_13" id="SCZ_13" value="0" style="border: none;" onchange='Check()'></td>
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                    Do you frequently have difficulty in starting to do things?
+
+                </td>
+                <td><b>Yes</b> <input type = "radio"  name= "SCZ_14" id="SCZ_14" value="1" style="border: none;" onchange='Check()'></td>
+                <td><b>No</b> <input type = "radio"  name= "SCZ_14" id="SCZ_14" value="0" style="border: none;" onchange='Check()'></td>
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                    Are you a person whose mood goes up and down easily?
+                </td>
+                <td><b>Yes</b> <input type = "radio"  name= "SCZ_15" id="SCZ_15" value="1" style="border: none;" onchange='Check()'></td>
+                <td><b>No</b> <input type = "radio"  name= "SCZ_15" id="SCZ_15" value="0" style="border: none;" onchange='Check()'></td>
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                    Do you dread going into a room by yourself where other people have already gathered and are talking?
+
+                </td>
+                <td><b>Yes</b> <input type = "radio"  name= "SCZ_16" id="SCZ_16" value="1" style="border: none;" onchange='Check()'></td>
+                <td><b>No</b> <input type = "radio"  name= "SCZ_16" id="SCZ_16" value="0" style="border: none;" onchange='Check()'></td>
+            </tr>
+
+
+            <tr class="question">
+                <td class="questiontext">
+                    Do you find it difficult to keep interested in the same thing for a long time?
+
+                </td>
+                <td><b>Yes</b> <input type = "radio"  name= "SCZ_17" id="SCZ_17" value="1" style="border: none;" onchange='Check()'></td>
+                <td><b>No</b> <input type = "radio"  name= "SCZ_17" id="SCZ_17" value="0" style="border: none;" onchange='Check()'></td>
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                    Do you often have difficulties in controlling your thoughts?
+                </td>
+                <td><b>Yes</b> <input type = "radio"  name= "SCZ_18" id="SCZ_18" value="1" style="border: none;" onchange='Check()'></td>
+                <td><b>No</b> <input type = "radio"  name= "SCZ_18" id="SCZ_18" value="0" style="border: none;" onchange='Check()'></td>
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                    Are you easily distracted from work by daydreams?
+                </td>
+                <td><b>Yes</b> <input type = "radio"  name= "SCZ_19" id="SCZ_19" value="1" style="border: none;" onchange='Check()'></td>
+                <td><b>No</b> <input type = "radio"  name= "SCZ_19" id="SCZ_19" value="0" style="border: none;" onchange='Check()'></td>
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                    Do you ever feel that your speech is difficult to understand because the words are all mixed up and don’t make sense?
+                </td>
+                <td><b>Yes</b> <input type = "radio"  name= "SCZ_20" id="SCZ_20" value="1" style="border: none;" onchange='Check()'></td>
+                <td><b>No</b> <input type = "radio"  name= "SCZ_20" id="SCZ_20" value="0" style="border: none;" onchange='Check()'></td>
+            </tr>
+
+            <tr class="question">
+                <td class="questiontext">
+                    Are you easily distracted when you read or talk to someone?
+                </td>
+                <td><b>Yes</b> <input type = "radio"  name= "SCZ_21" id="SCZ_21" value="1" style="border: none;" onchange='Check()'></td>
+                <td><b>No</b> <input type = "radio"  name= "SCZ_21" id="SCZ_21" value="0" style="border: none;" onchange='Check()'></td>
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                    Is it hard for you to make decisions?
+                </td>
+                <td><b>Yes</b> <input type = "radio"  name= "SCZ_22" id="SCZ_22" value="1" style="border: none;" onchange='Check()'></td>
+                <td><b>No</b> <input type = "radio"  name= "SCZ_22" id="SCZ_22" value="0" style="border: none;" onchange='Check()'></td>
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                    When in a crowded room, do you often have difficulty in following a conversation?
+                </td>
+                <td><b>Yes</b> <input type = "radio"  name= "SCZ_23" id="SCZ_23" value="1" style="border: none;" onchange='Check()'></td>
+                <td><b>No</b> <input type = "radio"  name= "SCZ_23" id="SCZ_23" value="0" style="border: none;" onchange='Check()'></td>
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                    Are there very few things that you have ever enjoyed doing?
+                </td>
+                <td><b>Yes</b> <input type = "radio"  name= "SCZ_24" id="SCZ_24" value="1" style="border: none;" onchange='Check()'></td>
+                <td><b>No</b> <input type = "radio"  name= "SCZ_24" id="SCZ_24" value="0" style="border: none;" onchange='Check()'></td>
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                    Are you much too independent to get involved with other people?
+                </td>
+                <td><b>Yes</b> <input type = "radio"  name= "SCZ_25" id="SCZ_25" value="1" style="border: none;" onchange='Check()'></td>
+                <td><b>No</b> <input type = "radio"  name= "SCZ_25" id="SCZ_25" value="0" style="border: none;" onchange='Check()'></td>
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                    Do you love having your back massaged?
+                </td>
+                <td><b>Yes</b> <input type = "radio"  name= "SCZ_26" id="SCZ_26" value="1" style="border: none;" onchange='Check()'></td>
+                <td><b>No</b> <input type = "radio"  name= "SCZ_26" id="SCZ_26" value="0" style="border: none;" onchange='Check()'></td>
+            </tr>
+
+
+            <tr class="question">
+                <td class="questiontext">
+                    Do you find the bright lights of a city exciting to look at?
+                </td>
+                <td><b>Yes</b> <input type = "radio"  name= "SCZ_27" id="SCZ_27" value="1" style="border: none;" onchange='Check()'></td>
+                <td><b>No</b> <input type = "radio"  name= "SCZ_27" id="SCZ_27" value="0" style="border: none;" onchange='Check()'></td>
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                    Do you feel very close to your friends?
+                </td>
+                <td><b>Yes</b> <input type = "radio"  name= "SCZ_28" id="SCZ_28" value="1" style="border: none;" onchange='Check()'></td>
+                <td><b>No</b> <input type = "radio"  name= "SCZ_28" id="SCZ_28" value="0" style="border: none;" onchange='Check()'></td>
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                    Has dancing or the idea of it always seemed dull to you?
+                </td>
+                <td><b>Yes</b> <input type = "radio"  name= "SCZ_29" id="SCZ_29" value="1" style="border: none;" onchange='Check()'></td>
+                <td><b>No</b> <input type = "radio"  name= "SCZ_29" id="SCZ_29" value="0" style="border: none;" onchange='Check()'></td>
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                    Do you like mixing with people?
+                </td>
+                <td><b>Yes</b> <input type = "radio"  name= "SCZ_30" id="SCZ_30" value="1" style="border: none;" onchange='Check()'></td>
+                <td><b>No</b> <input type = "radio"  name= "SCZ_30" id="SCZ_30" value="0" style="border: none;" onchange='Check()'></td>
+            </tr>
+            <tr class="question">
+                <td class="questiontext">
+                    Is trying new foods something you have always enjoyed?
+                </td>
+                <td><b>Yes</b> <input type = "radio"  name= "SCZ_31" id="SCZ_31" value="1" style="border: none;" onchange='Check()'></td>
+                <td><b>No</b> <input type = "radio"  name= "SCZ_31" id="SCZ_31" value="0" style="border: none;" onchange='Check()'></td>
+            </tr>
+
+<tr class="question">
+    <td class="questiontext">
+        Have you often felt uncomfortable when your friends touch you?
+    </td>
+    <td><b>Yes</b> <input type = "radio"  name= "SCZ_32" id="SCZ_32" value="1" style="border: none;" onchange='Check()'></td>
+    <td><b>No</b> <input type = "radio"  name= "SCZ_32" id="SCZ_32" value="0" style="border: none;" onchange='Check()'></td>
+</tr>
+
+<tr class="question">
+    <td class="questiontext">
+        Do you prefer watching television to going out with people?
+    </td>
+    <td><b>Yes</b> <input type = "radio"  name= "SCZ_33" id="SCZ_33" value="1" style="border: none;" onchange='Check()'></td>
+    <td><b>No</b> <input type = "radio"  name= "SCZ_33" id="SCZ_33" value="0" style="border: none;" onchange='Check()'></td>
+</tr>
+
+<tr class="question">
+    <td class="questiontext">
+       Do you consider yourself to be pretty much an average sort of person?
+    </td>
+    <td><b>Yes</b> <input type = "radio"  name= "SCZ_34" id="SCZ_34" value="1" style="border: none;" onchange='Check()'></td>
+    <td><b>No</b> <input type = "radio"  name= "SCZ_34" id="SCZ_34" value="0" style="border: none;" onchange='Check()'></td>
+</tr>
+
+<tr class="question">
+    <td class="questiontext">
+        Would you like other people to be afraid of you?
+
+    </td>
+    <td><b>Yes</b> <input type = "radio"  name= "SCZ_35" id="SCZ_35" value="1" style="border: none;" onchange='Check()'></td>
+    <td><b>No</b> <input type = "radio"  name= "SCZ_35" id="SCZ_35" value="0" style="border: none;" onchange='Check()'></td>
+</tr>
+
+<tr class="question">
+    <td class="questiontext">
+        Do you often feel the impulse to spend money which you know you can’t afford?
+    </td>
+    <td><b>Yes</b> <input type = "radio"  name= "SCZ_36" id="SCZ_36" value="1" style="border: none;" onchange='Check()'></td>
+    <td><b>No</b> <input type = "radio"  name= "SCZ_36" id="SCZ_36" value="0" style="border: none;" onchange='Check()'></td>
+</tr>
+
+<tr class="question">
+    <td class="questiontext">
+       Are you usually in an average kind of mood, not too high and not too low?
+    </td>
+    <td><b>Yes</b> <input type = "radio"  name= "SCZ_37" id="SCZ_37" value="1" style="border: none;" onchange='Check()'></td>
+    <td><b>No</b> <input type = "radio"  name= "SCZ_37" id="SCZ_37" value="0" style="border: none;" onchange='Check()'></td>
+</tr>
+
+<tr class="question">
+    <td class="questiontext">
+        Do you at times have an urge to do something harmful or shocking?
+    </td>
+    <td><b>Yes</b> <input type = "radio"  name= "SCZ_38" id="SCZ_38" value="1" style="border: none;" onchange='Check()'></td>
+    <td><b>No</b> <input type = "radio"  name= "SCZ_38" id="SCZ_38" value="0" style="border: none;" onchange='Check()'></td>
+</tr>
+
+<tr class="question">
+    <td class="questiontext">
+        Do you stop to think things over before doing anything?
+    </td>
+    <td><b>Yes</b> <input type = "radio"  name= "SCZ_39" id="SCZ_39" value="1" style="border: none;" onchange='Check()'></td>
+    <td><b>No</b> <input type = "radio"  name= "SCZ_39" id="SCZ_39" value="0" style="border: none;" onchange='Check()'></td>
+</tr>
+
+<tr class="question">
+    <td class="questiontext">
+        Do you often overindulge in alcohol or food?
+    </td>
+    <td><b>Yes</b> <input type = "radio"  name= "SCZ_40" id="SCZ_40" value="1" style="border: none;" onchange='Check()'></td>
+    <td><b>No</b> <input type = "radio"  name= "SCZ_40" id="SCZ_40" value="0" style="border: none;" onchange='Check()'></td>
+</tr>
+
+<tr class="question">
+    <td class="questiontext">
+        Do you ever have the urge to break or smash things?
+    </td>
+    <td><b>Yes</b> <input type = "radio"  name= "SCZ_41" id="SCZ_41" value="1" style="border: none;" onchange='Check()'></td>
+    <td><b>No</b> <input type = "radio"  name= "SCZ_41" id="SCZ_41" value="0" style="border: none;" onchange='Check()'></td>
+</tr>
+
+<tr class="question">
+    <td class="questiontext">
+        Have you ever felt the urge to injure yourself?
+    </td>
+    <td><b>Yes</b> <input type = "radio"  name= "SCZ_42" id="SCZ_42" value="1" style="border: none;" onchange='Check()'></td>
+    <td><b>No</b> <input type = "radio"  name= "SCZ_42" id="SCZ_42" value="0" style="border: none;" onchange='Check()'></td>
+</tr>
+
+<tr class="question">
+    <td class="questiontext">
+        Do you often feel like doing the opposite of what other people suggest even though you know they are right?
+    </td>
+    <td><b>Yes</b> <input type = "radio"  name= "SCZ_43" id="SCZ_43" value="1" style="border: none;" onchange='Check()'></td>
+    <td><b>No</b> <input type = "radio"  name= "SCZ_43" id="SCZ_43" value="0" style="border: none;" onchange='Check()'></td>
+</tr>
+
+
+
+
+
+        </table>
+
+        <input type="button" class="continue" id="continue" value="Continue" style="visibility: hidden;"></input>
+    </form>
+</div>
+
+
+ <p class = "continueInstructions"><b>The CONTINUE button will appear here once you have answered all of the questions. Please double check your answers if you think you are finished but do not see the continue button. </b></p>
+
+
+</body>
